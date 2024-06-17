@@ -1,9 +1,5 @@
-import { formatButton, formatPanel, voteButton, consoleButtons, optionsCounter, storyText } from "../script.js";
-
-const displayImage = document.getElementById('display');
-const displayBG = document.getElementById('display-bg');
-const consolePanel = document.getElementById('console');
-const storyOptions = document.querySelector('.options');
+import displayScreen from "./display.js";
+import { storyText, storyOptions, optionsCounter, formatButton, voteButton, formatPanel, videoFrame, displayImage, displayBG, consoleButtons, consoleImage } from "../script.js";
 
 
 export function mobileView() {
@@ -14,8 +10,8 @@ export function mobileView() {
   formatButton.style.display = 'none';
   formatPanel.style.display = 'none';
   voteButton.style.display = 'none';
-  consolePanel.style.width = '125%';
-  consolePanel.style.translate = '-10% 0';
+  consoleImage.style.width = '125%';
+  consoleImage.style.translate = '-10% 0';
   consoleButtons.forEach((button) => {
     if(button.className.match('big')) {
       button.style.width = '25%';
@@ -35,8 +31,8 @@ export function computerView() {
   formatButton.style.display = 'block';
   voteButton.style.display = 'block';
   formatPanel.style.display = 'block';
-  consolePanel.style.width = '100%';
-  consolePanel.style.translate = 'none';
+  consoleImage.style.width = '100%';
+  consoleImage.style.translate = 'none';
   consoleButtons.forEach((button) => {
     if(button.className.match('big')) {
       button.style.width = '20%';
@@ -47,6 +43,22 @@ export function computerView() {
 
   textOnScreen();
   optionsOnScreen();
+}
+
+
+export function reView() {
+  if(window.outerWidth <= 600) {
+      mobileView();
+      videoFrame.style.visibility = 'visible';
+    }
+    else {
+      computerView();
+      if(formatButton.src.includes(displayScreen.displayButtons[0].video)) {
+        storyText.style.visibility = 'hidden';
+      } else if(formatButton.src.includes(displayScreen.displayButtons[0].text)) {
+        videoFrame.style.visibility = 'hidden';
+      }
+    }
 }
 
 

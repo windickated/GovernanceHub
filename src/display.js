@@ -1,4 +1,7 @@
-export const displayButtons = [
+import { displayContainer } from "../script.js";
+
+const displayScreen = {
+  displayButtons: [
   {
     id: "switcher",
     video: "assets/video.png",
@@ -12,16 +15,14 @@ export const displayButtons = [
     hover: "assets/vote-hover.png",
     click: "assets/vote-active.png",
     inactive: "assets/vote-inert.png"
+  }],
+
+  renderDisplayButtons() {
+    let html = '';
+    html += `<img src="${this.displayButtons[0].video}" class="display-btn">`;
+    html += `<img src="${this.displayButtons[1].image}" class="display-btn">`;
+    displayContainer.innerHTML = html;
   }
-]
-
-const displayContainer = document.querySelector('.display-buttons');
-
-function addDisplayButtons() {
-  let html = '';
-  html += `<img src="${displayButtons[0].video}" class="display-btn">`;
-  html += `<img src="${displayButtons[1].image}" class="display-btn">`;
-  displayContainer.innerHTML = html;
 }
 
-export default addDisplayButtons;
+export default displayScreen;

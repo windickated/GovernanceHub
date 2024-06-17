@@ -1,25 +1,40 @@
-import addConsoleButtons from "./src/console.js";
-import addDisplayButtons from "./src/display.js";
-import { displayButtons } from "./src/display.js";
-import { mobileView, computerView } from "./src/responsive.js";
-import addStory from "./src/story.js";
+import consolePanel from "./src/console.js";
+import displayScreen from "./src/display.js";
+import storyNode from "./src/story.js";
+import { mobileView, computerView, reView } from "./src/responsive.js";
 
 
-document.body.addEventListener('load', addConsoleButtons());
-document.body.addEventListener('load', addDisplayButtons());
-document.body.addEventListener('load', addStory());
+// Generating HTML
 
+export const displayContainer = document.querySelector('.display-buttons');
+export const consoleContainer = document.querySelector('.console-buttons');
+
+export const titleContainer = document.querySelector('.header');
+export const durationContainer = document.querySelector('.duration');
+export const textContainer = document.querySelector('.text');
+export const optionsContainer = document.querySelector('.options');
+
+document.body.addEventListener('load', consolePanel.renderConsoleButtons());
+document.body.addEventListener('load', displayScreen.renderDisplayButtons());
+document.body.addEventListener('load', storyNode.renderStory());
+
+
+// Declaring variables for Responsive design
 
 export const storyText = document.querySelector('.text');
+export const storyOptions = document.querySelector('.options');
 const optionsList = document.querySelectorAll('.option');
 export const optionsCounter = optionsList.length;
 
 export const formatButton = document.querySelector('.display-buttons').firstChild;
 export const voteButton = document.querySelector('.display-buttons').lastChild;
 export const formatPanel = document.getElementById('format');
-const videoFrame = document.getElementById('youtube');
+export const videoFrame = document.getElementById('youtube');
+export const displayImage = document.getElementById('display');
+export const displayBG = document.getElementById('display-bg');
 
 export const consoleButtons = document.querySelectorAll('.console-btn');
+export const consoleImage = document.getElementById('console');
 
 
 // Story text + options
@@ -39,48 +54,48 @@ optionsList.forEach((option) => {
 // Display
 
 formatButton.addEventListener('mouseenter', () => {
-  if(formatButton.src.includes(displayButtons[0].video)) {
-    formatButton.src = displayButtons[0].textHover;
+  if(formatButton.src.includes(displayScreen.displayButtons[0].video)) {
+    formatButton.src = displayScreen.displayButtons[0].textHover;
   } else {
-    formatButton.src = displayButtons[0].videoHover;
+    formatButton.src = displayScreen.displayButtons[0].videoHover;
   }
 })
 
 formatButton.addEventListener('mouseout', () => {
-  if(formatButton.src.includes(displayButtons[0].textHover)) {
-    formatButton.src = displayButtons[0].video;
-  } else if(formatButton.src.includes(displayButtons[0].videoHover)){
-    formatButton.src = displayButtons[0].text;
+  if(formatButton.src.includes(displayScreen.displayButtons[0].textHover)) {
+    formatButton.src = displayScreen.displayButtons[0].video;
+  } else if(formatButton.src.includes(displayScreen.displayButtons[0].videoHover)){
+    formatButton.src = displayScreen.displayButtons[0].text;
   }
 })
 
 formatButton.addEventListener('click', () => {
-  if(formatButton.src.includes(displayButtons[0].textHover) || formatButton.src.includes(displayButtons[0].video)) {
-    formatButton.src = displayButtons[0].text;
+  if(formatButton.src.includes(displayScreen.displayButtons[0].textHover) || formatButton.src.includes(displayScreen.displayButtons[0].video)) {
+    formatButton.src = displayScreen.displayButtons[0].text;
     storyText.style.visibility = 'visible';
     videoFrame.style.visibility = 'hidden';
   } else {
-    formatButton.src = displayButtons[0].video;
+    formatButton.src = displayScreen.displayButtons[0].video;
     storyText.style.visibility = 'hidden';
     videoFrame.style.visibility = 'visible';
   }
 })
 
 voteButton.addEventListener('mouseenter', () => {
-  if(voteButton.src.includes(displayButtons[1].image)) {
-    voteButton.src = displayButtons[1].hover;
+  if(voteButton.src.includes(displayScreen.displayButtons[1].image)) {
+    voteButton.src = displayScreen.displayButtons[1].hover;
   }
 })
 
 voteButton.addEventListener('mouseout', () => {
-  if(voteButton.src.includes(displayButtons[1].hover)) {
-    voteButton.src = displayButtons[1].image;
+  if(voteButton.src.includes(displayScreen.displayButtons[1].hover)) {
+    voteButton.src = displayScreen.displayButtons[1].image;
   }
 })
 
 voteButton.addEventListener('click', () => {
-  if(voteButton.src.includes(displayButtons[1].hover)) {
-    voteButton.src = displayButtons[1].click;
+  if(voteButton.src.includes(displayScreen.displayButtons[1].hover)) {
+    voteButton.src = displayScreen.displayButtons[1].click;
   }
 })
 
@@ -108,17 +123,3 @@ document.querySelectorAll('.console-btn').forEach( (button) => {
 window.addEventListener('load', reView())
 window.addEventListener('resize', () => reView())
 
-function reView() {
-  if(window.outerWidth <= 600) {
-      mobileView();
-      videoFrame.style.visibility = 'visible';
-    }
-    else {
-      computerView();
-      if(formatButton.src.includes(displayButtons[0].video)) {
-        storyText.style.visibility = 'hidden';
-      } else if(formatButton.src.includes(displayButtons[0].text)) {
-        videoFrame.style.visibility = 'hidden';
-      }
-    }
-}
