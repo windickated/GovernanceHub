@@ -2,7 +2,7 @@ import displayScreen from "./display.js";
 import { storyText, storyOptions, optionsCounter, formatButton, voteButton, formatPanel, videoFrame, displayImage, displayBG, consoleButtons, consoleImage } from "../script.js";
 
 
-export function mobileView() {
+function mobileView() {
   storyText.style.visibility = 'visible'
 
   displayImage.src = 'assets/displayMobile.png';
@@ -25,7 +25,7 @@ export function mobileView() {
 }
 
 
-export function computerView() {
+function computerView() {
   displayImage.src = 'assets/display.png';
   displayBG.src = 'assets/displayBG.png';
   formatButton.style.display = 'block';
@@ -43,22 +43,6 @@ export function computerView() {
 
   textOnScreen();
   optionsOnScreen();
-}
-
-
-export function reView() {
-  if(window.outerWidth <= 600) {
-      mobileView();
-      videoFrame.style.visibility = 'visible';
-    }
-    else {
-      computerView();
-      if(formatButton.src.includes(displayScreen.displayButtons[0].video)) {
-        storyText.style.visibility = 'hidden';
-      } else if(formatButton.src.includes(displayScreen.displayButtons[0].text)) {
-        videoFrame.style.visibility = 'hidden';
-      }
-    }
 }
 
 
@@ -83,6 +67,7 @@ function textOutScreen() {
   storyText.style.fontSize = 'inherit';
   storyText.style.lineHeight = 'inherit';
 }
+
 
 function optionsOnScreen() {
   storyOptions.style.position = 'absolute';
@@ -111,3 +96,21 @@ function optionsOutScreen() {
   storyOptions.style.overflowY = 'auto';
   storyOptions.style.fontSize = '1.1em';
 }
+
+
+function reView() {
+  if(window.outerWidth <= 600) {
+      mobileView();
+      videoFrame.style.visibility = 'visible';
+    }
+    else {
+      computerView();
+      if(formatButton.src.includes(displayScreen.displayButtons[0].video)) {
+        storyText.style.visibility = 'hidden';
+      } else if(formatButton.src.includes(displayScreen.displayButtons[0].text)) {
+        videoFrame.style.visibility = 'hidden';
+      }
+    }
+}
+
+export default reView;

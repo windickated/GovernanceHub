@@ -1,7 +1,7 @@
 import consolePanel from "./src/console.js";
 import displayScreen from "./src/display.js";
 import storyNode from "./src/story.js";
-import { mobileView, computerView, reView } from "./src/responsive.js";
+import reView from "./src/responsive.js";
 
 
 // Generating HTML
@@ -19,7 +19,7 @@ document.body.addEventListener('load', displayScreen.renderDisplayButtons());
 document.body.addEventListener('load', storyNode.renderStory());
 
 
-// Declaring variables for Responsive design
+// Responsive design
 
 export const storyText = document.querySelector('.text');
 export const storyOptions = document.querySelector('.options');
@@ -35,6 +35,9 @@ export const displayBG = document.getElementById('display-bg');
 
 export const consoleButtons = document.querySelectorAll('.console-btn');
 export const consoleImage = document.getElementById('console');
+
+window.addEventListener('load', reView())
+window.addEventListener('resize', () => reView())
 
 
 // Story text + options
@@ -102,7 +105,7 @@ voteButton.addEventListener('click', () => {
 
 // Console buttons
 
-document.querySelectorAll('.console-btn').forEach( (button) => {
+consoleButtons.forEach( (button) => {
   button.addEventListener('mouseenter', () => {
     button.src = `assets/${button.dataset.name}-hover.png`;
   });
@@ -111,15 +114,15 @@ document.querySelectorAll('.console-btn').forEach( (button) => {
   });
   button.addEventListener('mousedown', () => {
     button.src = `assets/${button.dataset.name}-active.png`;
+    switch (button.dataset.name) {
+      case 'conexus': break;
+      case 'back': break;
+      case 'omnihub': break;
+      case 'forward': break;
+      case 'sagaverse': break;
+    }
   });
   button.addEventListener('mouseup', () => {
     button.src = `assets/${button.dataset.name}.png`;
   });
 })
-
-
-// Responsive design
-
-window.addEventListener('load', reView())
-window.addEventListener('resize', () => reView())
-

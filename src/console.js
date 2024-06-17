@@ -10,10 +10,10 @@ const consolePanel = {
       size: "big"
     },
     {
-      id: "left",
-      image: "assets/left.png",
-      hover: "assets/left-hover.png",
-      click: "assets/left-active.png",
+      id: "back",
+      image: "assets/back.png",
+      hover: "assets/back-hover.png",
+      click: "assets/back-active.png",
       size: "small"
     },
     {
@@ -24,10 +24,10 @@ const consolePanel = {
       size: "big"
     },
     {
-      id: "right",
-      image: "assets/right.png",
-      hover: "assets/right-hover.png",
-      click: "assets/right-active.png",
+      id: "forward",
+      image: "assets/forward.png",
+      hover: "assets/forward-hover.png",
+      click: "assets/forward-active.png",
       size: "small"
     },
     {
