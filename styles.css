@@ -174,3 +174,34 @@ img {
 .small {
   width: 10%;
 }
+
+/* Side panel */
+
+.panel-icon {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  right: 70vw;
+  height: 8vw;
+  width: 8vw;
+  filter: drop-shadow(-0.1vw 0.1vw 0.5vw black);
+}
+
+.panel-border {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: auto;
+}
+
+.side-panel {
+  position: fixed;
+  z-index: 19;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 70vw;
+  background-color: rgba(1, 0, 32, 0.5);
+  backdrop-filter: blur(1vw);
+  filter: drop-shadow(-0.1vw 0.1vw 0.5vw black);
+}

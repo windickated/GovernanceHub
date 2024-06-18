@@ -2,6 +2,7 @@ import consolePanel from "./src/console.js";
 import displayScreen from "./src/display.js";
 import storyNode from "./src/story.js";
 import reView from "./src/responsive.js";
+import sidePanel from './src/sidepanel.js';
 
 
 // Generating HTML
@@ -14,9 +15,12 @@ export const durationContainer = document.querySelector('.duration');
 export const textContainer = document.querySelector('.text');
 export const optionsContainer = document.querySelector('.options');
 
+export const sidePanelContainer = document.querySelector('.side-panel-container');
+
 document.body.addEventListener('load', consolePanel.renderConsoleButtons());
 document.body.addEventListener('load', displayScreen.renderDisplayButtons());
 document.body.addEventListener('load', storyNode.renderStory());
+document.body.addEventListener('load', sidePanel.renderPanel());
 
 
 // Responsive design
@@ -157,3 +161,17 @@ consoleButtons.forEach( (button) => {
     button.src = `assets/${button.dataset.name}-hover.png`;
   });
 })
+
+
+// Side panel
+
+export const sidePanelIcon = document.querySelector('.panel-icon');
+export const sidePanelBar = document.querySelector('.side-panel');
+
+sidePanelIcon.addEventListener('click', () => {
+  if(sidePanel.panelState) {
+    sidePanel.close();
+  } else {
+    sidePanel.open();
+  }
+});
