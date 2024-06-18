@@ -1,4 +1,5 @@
 import { sidePanelContainer, sidePanelIcon, sidePanelBar } from "../script.js";
+import potentials from "./tiles.js";
 
 const sidePanel = {
   panelState: false,
