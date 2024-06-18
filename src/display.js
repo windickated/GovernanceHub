@@ -1,4 +1,4 @@
-import { displayContainer } from "../script.js";
+import { displayContainer, clickedOption, voteButton } from "../script.js";
 
 const displayScreen = {
   displayButtons: [
@@ -20,8 +20,14 @@ const displayScreen = {
   renderDisplayButtons() {
     let html = '';
     html += `<img src="${this.displayButtons[0].video}" class="display-btn">`;
-    html += `<img src="${this.displayButtons[1].image}" class="display-btn">`;
+    html += `<img src="${this.displayButtons[1].inactive}" class="display-btn">`;
     displayContainer.innerHTML = html;
+  },
+
+  changeButtonState() {
+    if(clickedOption) {
+      voteButton.src = this.displayButtons[1].image;
+    }
   }
 }
 

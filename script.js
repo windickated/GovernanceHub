@@ -21,6 +21,8 @@ document.body.addEventListener('load', storyNode.renderStory());
 
 // Responsive design
 
+export const storyTitle = document.querySelector('.header');
+export const storyDuration = document.querySelector('.duration');
 export const storyText = document.querySelector('.text');
 export const storyOptions = document.querySelector('.options');
 const optionsList = document.querySelectorAll('.option');
@@ -42,14 +44,28 @@ window.addEventListener('resize', () => reView())
 
 // Story text + options
 
+export let clickedOption;
+
 optionsList.forEach((option) => {
-  option.addEventListener('mouseenter', () => {
+  option.addEventListener('mouseover', () => {
     option.style.color = '#33E2E6';
     option.style.textShadow = '0 0 3px #33E2E6';
   })
   option.addEventListener('mouseout', () => {
-    option.style.color = '#dedede';
-    option.style.textShadow = '';
+    if(option != clickedOption) {
+      option.style.color = '#dedede';
+      option.style.textShadow = '';
+    }
+  })
+  option.addEventListener('mousedown', () => {
+    clickedOption = option;
+    optionsList.forEach((opt) => {
+      if(opt != clickedOption) {
+        opt.style.color = '#dedede';
+        opt.style.textShadow = '';
+      }
+    })
+    displayScreen.changeButtonState();
   })
 })
 
@@ -99,6 +115,10 @@ voteButton.addEventListener('mouseout', () => {
 voteButton.addEventListener('click', () => {
   if(voteButton.src.includes(displayScreen.displayButtons[1].hover)) {
     voteButton.src = displayScreen.displayButtons[1].click;
+    optionsList.forEach((option) => {
+      option.style.color = '#dedede';
+      option.style.textShadow = '';
+    })
   }
 })
 
@@ -123,6 +143,6 @@ consoleButtons.forEach( (button) => {
     }
   });
   button.addEventListener('mouseup', () => {
-    button.src = `assets/${button.dataset.name}.png`;
+    button.src = `assets/${button.dataset.name}-hover.png`;
   });
 })

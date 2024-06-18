@@ -1,9 +1,11 @@
 import displayScreen from "./display.js";
-import { storyText, storyOptions, optionsCounter, formatButton, voteButton, formatPanel, videoFrame, displayImage, displayBG, consoleButtons, consoleImage } from "../script.js";
+import { storyTitle, storyDuration, storyText, storyOptions, optionsCounter, formatButton, voteButton, formatPanel, videoFrame, displayImage, displayBG, consoleButtons, consoleImage } from "../script.js";
 
 
 function mobileView() {
-  storyText.style.visibility = 'visible'
+  storyTitle.style.fontSize = '1.6em';
+  storyDuration.style.fontSize = '1.2em';
+  storyText.style.visibility = 'visible';
 
   displayImage.src = 'assets/displayMobile.png';
   displayBG.src = 'assets/displayMobileBG.png';
@@ -26,6 +28,9 @@ function mobileView() {
 
 
 function computerView() {
+  storyTitle.style.fontSize = '3.5vw';
+  storyDuration.style.fontSize = '2.5vw';
+
   displayImage.src = 'assets/display.png';
   displayBG.src = 'assets/displayBG.png';
   formatButton.style.display = 'block';
@@ -86,6 +91,7 @@ function optionsOnScreen() {
       storyOptions.style.paddingTop = '7vw';
     }
   }
+  storyOptions.style.whiteSpace = 'nowrap';
 }
 
 function optionsOutScreen() {
@@ -94,7 +100,8 @@ function optionsOutScreen() {
   storyOptions.style.width = 'auto';
   storyOptions.style.height = 'auto';
   storyOptions.style.overflowY = 'auto';
-  storyOptions.style.fontSize = '1.1em';
+  storyOptions.style.fontSize = '1.2em';
+  storyOptions.style.whiteSpace = 'wrap';
 }
 
 
