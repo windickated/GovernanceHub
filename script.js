@@ -45,8 +45,9 @@ window.addEventListener('resize', () => reView())
 // Story text + options
 
 export let clickedOption;
+let clickedOptionNumber;
 
-optionsList.forEach((option) => {
+optionsList.forEach((option, i) => {
   option.addEventListener('mouseover', () => {
     option.style.color = '#33E2E6';
     option.style.textShadow = '0 0 3px #33E2E6';
@@ -59,13 +60,22 @@ optionsList.forEach((option) => {
   })
   option.addEventListener('mousedown', () => {
     clickedOption = option;
+    clickedOptionNumber = i + 1;
     optionsList.forEach((opt) => {
       if(opt != clickedOption) {
         opt.style.color = '#dedede';
         opt.style.textShadow = '';
       }
     })
-    displayScreen.changeButtonState();
+    if(window.outerWidth <= 600) {
+      optionsList.forEach((option, i) => {
+        option.style.color = '#dedede';
+        option.style.textShadow = '';
+      })
+      alert('You chose option ' + clickedOptionNumber);
+    } else {
+      displayScreen.changeButtonState();
+    }
   })
 })
 
@@ -115,10 +125,11 @@ voteButton.addEventListener('mouseout', () => {
 voteButton.addEventListener('click', () => {
   if(voteButton.src.includes(displayScreen.displayButtons[1].hover)) {
     voteButton.src = displayScreen.displayButtons[1].click;
-    optionsList.forEach((option) => {
+    optionsList.forEach((option, i) => {
       option.style.color = '#dedede';
       option.style.textShadow = '';
     })
+    alert('You chose option ' + clickedOptionNumber);
   }
 })
 
