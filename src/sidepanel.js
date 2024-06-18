@@ -1,4 +1,4 @@
-import { sidePanelContainer, sidePanelIcon, sidePanelBar } from "../script.js";
+import { sidePanelContainer, sidePanelIcon, sidePanelBar, tilesContainer } from "../script.js";
 import potentials from "./tiles.js";
 
 const sidePanel = {
@@ -42,7 +42,19 @@ const sidePanel = {
       }
     }
     this.panelState = true;
-    }
+    },
+  renderTiles() {
+    let html = '';
+    for(let i in potentials) {
+      html += `
+        <div class="tile" id="${potentials[i].name}">
+          <img src="${potentials[i].image}"></img>
+          <p class="tile-name">${potentials[i].name}</p>
+          <p class="tile-class">${potentials[i].class}</p>
+        </div>
+      `;}
+    tilesContainer.innerHTML = html;
+  }
 }
 
 export default sidePanel;
