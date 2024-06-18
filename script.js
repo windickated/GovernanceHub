@@ -4,6 +4,8 @@ import storyNode from "./src/story.js";
 import reView from "./src/responsive.js";
 import sidePanel from './src/sidepanel.js';
 
+import './src/tiles.js';
+
 
 // Generating HTML
 
@@ -170,8 +172,8 @@ export const sidePanelBar = document.querySelector('.side-panel');
 
 sidePanelIcon.addEventListener('click', () => {
   if(sidePanel.panelState) {
-    sidePanel.close();
-  } else {
     sidePanel.open();
+  } else {
+    sidePanel.close();
   }
 });
