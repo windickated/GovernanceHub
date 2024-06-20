@@ -1,20 +1,41 @@
-import potentialsMetadate from "./metadateSample.js";
+import potentialsMetadate from "../date/metadate.js";
 
 const metadate = JSON.parse(potentialsMetadate);
 
 class Tile {
   constructor(date, i) {
     this.name = date[i].name;
-    this.image = date[i].image;
-    this.class;
+    this.image = 'https://i.seadn.io/s/raw/files/767c9a1e5c36f2f2ceef317cd2bd3189.jpg?auto=format&dpr=1&w=1200';
+  //this.image = date[i].image;
 
-    if(Object.entries((Object.entries(date[i].attributes)[Object.entries(date[i].attributes).length - 1][1]))[1].includes('Demagi')) {
-      this.class = date[i].attributes[14].value;
-    } else if(Object.entries((Object.entries(date[i].attributes)[Object.entries(date[i].attributes).length - 1][1]))[1].includes('Quarchon')) {
-      this.class = date[i].attributes[11].value;
-    } else {
-      this.class = null;
+    const attributesValues = 
+    (Object.entries(date[i].attributes).flat()).map((attribute) => {
+      return (attribute.value + attribute.trait_type);
+    });
+
+    const stringAttributes = attributesValues.toString();
+    const trueValue = true;
+
+    switch (trueValue) {
+      case stringAttributes.includes('OracleClass'):
+        this.class = 'Oracle';
+        break;
+      case stringAttributes.includes('AssassinClass'):
+        this.class = 'Assassin';
+        break;
+      case stringAttributes.includes('SoldierClass'):
+        this.class = 'Soldier';
+        break;
+      case stringAttributes.includes('SpyClass'):
+        this.class = 'Spy';
+        break;
+      case stringAttributes.includes('EngineerClass'):
+        this.class = 'Engineer';
+        break;
+      default:
+        this.class = 'NeYon';
     }
+
   } 
 }
 
