@@ -48,7 +48,7 @@ const sidePanel = {
     for(let i in potentials) {
       html += `
         <div class="tile" id="${potentials[i].name}">
-          <img src="${potentials[i].image}"></img>
+          <img class="tile-image" src="${potentials[i].image}"></img>
           <p class="tile-name">${potentials[i].name}</p>
           <p class="tile-class">${potentials[i].class}</p>
         </div>

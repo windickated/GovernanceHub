@@ -22,6 +22,8 @@ function mobileView() {
     }
   });
 
+  
+
   textOutScreen();
   optionsOutScreen();
 }
