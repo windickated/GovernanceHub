@@ -4,8 +4,6 @@ import storyNode from "./src/story.js";
 import reView from "./src/responsive.js";
 import sidePanel from './src/sidepanel.js';
 
-import './src/tiles.js';
-
 
 // Generating HTML
 

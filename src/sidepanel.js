@@ -54,6 +54,7 @@ const sidePanel = {
         </div>
       `;}
     tilesContainer.innerHTML = html;
+    return document.querySelectorAll('.tile');
   }
 }
 
