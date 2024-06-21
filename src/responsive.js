@@ -1,5 +1,6 @@
 import displayScreen from "./display.js";
 import { storyTitle, storyDuration, storyText, storyOptions, optionsCounter, formatButton, voteButton, formatPanel, videoFrame, displayImage, displayBG, consoleButtons, consoleImage } from "../script.js";
+import { sidePanel, nftTiles, nftTilesName, nftTilesClass } from "./sidepanel.js";
 
 
 function mobileView() {
@@ -22,10 +23,10 @@ function mobileView() {
     }
   });
 
-  
-
   textOutScreen();
   optionsOutScreen();
+
+  sideBarMobile();
 }
 
 
@@ -50,6 +51,8 @@ function computerView() {
 
   textOnScreen();
   optionsOnScreen();
+
+  sideBarComputer();
 }
 
 
@@ -105,6 +108,34 @@ function optionsOutScreen() {
   storyOptions.style.fontSize = '1.2em';
   storyOptions.style.whiteSpace = 'wrap';
 }
+
+
+function sideBarMobile() {
+  nftTiles.forEach((tile) => {
+    tile.style.width = '35vw';
+    tile.style.height = '45vw';
+  })
+  nftTilesName.forEach((name) => {
+    name.style.fontSize = 'inherit';
+  })
+  nftTilesClass.forEach((clas) => {
+    clas.style.fontSize = 'inherit';
+  })
+}
+
+function sideBarComputer() {
+  nftTiles.forEach((tile) => {
+    tile.style.width = '17vw';
+    tile.style.height = '23vw';
+  })
+  nftTilesName.forEach((name) => {
+    name.style.fontSize = '2vw';
+  })
+  nftTilesClass.forEach((clas) => {
+    clas.style.fontSize = '1.5vw';
+  })
+}
+
 
 
 function reView() {

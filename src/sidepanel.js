@@ -1,8 +1,14 @@
-import { sidePanelContainer, sidePanelIcon, sidePanelBar } from "../script.js";
+import { sidePanelContainer } from "../script.js";
 import potentials from "./tiles.js";
 
-const sidePanel = {
-  panelState: false,
+export let sidePanelIcon;
+export let sidePanelBar;
+export let nftTiles;
+export let nftTilesName;
+export let nftTilesClass;
+
+export const sidePanel = {
+  panelState: true,
   renderPanel() {
     let html = `
     <img src="assets/side-icon.png" class="panel-icon">
@@ -18,7 +24,11 @@ const sidePanel = {
         </div>
       `;}
     sidePanelContainer.innerHTML = html + '</div></div>';
-    return document.querySelectorAll('.tile');
+    sidePanelIcon = document.querySelector('.panel-icon');
+    sidePanelBar = document.querySelector('.side-panel');
+    nftTiles = document.querySelectorAll('.tile');
+    nftTilesName = document.querySelectorAll('.tile-name');
+    nftTilesClass = document.querySelectorAll('.tile-class');
   },
   open() {
     let interval;
@@ -34,11 +44,11 @@ const sidePanel = {
         sidePanelBar.style.right = `${finalPosition - 70}vw`;
       }
     }
-    this.panelState = false;
-    },
+    this.panelState = true;
+  },
   close() {
     let interval;
-    let finalPosition = 70;
+    let finalPosition = 80;
     clearInterval(interval);
     interval = setInterval(move, 5);
     function move() {
@@ -47,11 +57,9 @@ const sidePanel = {
       } else {
         finalPosition --;
         sidePanelIcon.style.right = `${finalPosition}vw`;
-        sidePanelBar.style.right = `${finalPosition - 70}vw`;
+        sidePanelBar.style.right = `${finalPosition - 80}vw`;
       }
     }
-    this.panelState = true;
-    }
+    this.panelState = false;
+  }
 }
-
-export default sidePanel;

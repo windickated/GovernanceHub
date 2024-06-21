@@ -181,7 +181,7 @@ img {
   position: fixed;
   z-index: 20;
   top: 0;
-  right: 70vw;
+  right: 80vw;
   height: 8vw;
   width: 8vw;
   filter: drop-shadow(-0.1vw 0.1vw 0.5vw black);
@@ -193,7 +193,7 @@ img {
   top: 0;
   right: 0;
   height: 100%;
-  width: 70vw;
+  width: 80vw;
   background-image: url('assets/side-border.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -212,8 +212,8 @@ img {
 .tile {
   position: relative;
   box-sizing: border-box;
-  width: 20vw;
-  height: 25vw;
+  width: 17vw;
+  height: 23vw;
   background-color: #161E5F;
   margin: 1vw;
   border: 0.05vw solid #33E2E6;
@@ -242,24 +242,4 @@ img {
 .tile-class {
   font-size: 1.5vw;
   color: #bebebe;
-}
-
-
-@media only screen and (max-width: 600px) {
-  .side-panel {
-    width: 80vw;
-  }
-
-  .panel-icon {
-    right: 80vw;
-  }
-  
-  .tile {
-    width: 35vw;
-    height: 45vw;
-  }
-
-  .tile-name, .tile-class {
-    font-size: inherit;
-  }
 }

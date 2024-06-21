@@ -2,7 +2,7 @@ import consolePanel from "./src/console.js";
 import displayScreen from "./src/display.js";
 import storyNode from "./src/story.js";
 import reView from "./src/responsive.js";
-import sidePanel from './src/sidepanel.js';
+import { nftTiles, sidePanel, sidePanelIcon } from './src/sidepanel.js';
 
 
 // Generating HTML
@@ -165,13 +165,19 @@ consoleButtons.forEach( (button) => {
 
 // Side panel
 
-export const sidePanelIcon = document.querySelector('.panel-icon');
-export const sidePanelBar = document.querySelector('.side-panel');
-
 sidePanelIcon.addEventListener('click', () => {
   if(sidePanel.panelState) {
-    sidePanel.open();
-  } else {
     sidePanel.close();
+  } else {
+    sidePanel.open();
   }
 });
+
+nftTiles.forEach((tile) => {
+  tile.addEventListener('mouseenter', () => {
+    tile.style.backgroundColor = '#171F6F';
+  })
+  tile.addEventListener('mouseout', () => {
+    tile.style.backgroundColor = '#161E5F';
+  })
+})
