@@ -187,13 +187,6 @@ img {
   filter: drop-shadow(-0.1vw 0.1vw 0.5vw black);
 }
 
-.panel-border {
-  position: absolute;
-  left: 0;
-  height: 100%;
-  width: auto;
-}
-
 .side-panel {
   position: fixed;
   z-index: 19;
@@ -210,7 +203,7 @@ img {
   overflow-y: scroll;
 }
 
-.tiles {
+.tiles-container {
   display: flex;
   flex-wrap: wrap;
   padding: 1vw 2vw;
@@ -219,10 +212,6 @@ img {
 .tile {
   position: relative;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
   width: 20vw;
   height: 25vw;
   background-color: #161E5F;
@@ -230,6 +219,11 @@ img {
   border: 0.05vw solid #33E2E6;
   border-radius: 1.5vw;
   padding-bottom: 1vw;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .tile-image {
@@ -248,4 +242,24 @@ img {
 .tile-class {
   font-size: 1.5vw;
   color: #bebebe;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .side-panel {
+    width: 80vw;
+  }
+
+  .panel-icon {
+    right: 80vw;
+  }
+  
+  .tile {
+    width: 35vw;
+    height: 45vw;
+  }
+
+  .tile-name, .tile-class {
+    font-size: inherit;
+  }
 }

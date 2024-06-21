@@ -1,16 +1,25 @@
-import { sidePanelContainer, sidePanelIcon, sidePanelBar, tilesContainer } from "../script.js";
+import { sidePanelContainer, sidePanelIcon, sidePanelBar } from "../script.js";
 import potentials from "./tiles.js";
 
 const sidePanel = {
   panelState: false,
   renderPanel() {
-    sidePanelContainer.innerHTML = `
+    let html = `
     <img src="assets/side-icon.png" class="panel-icon">
     <div class="side-panel">
-      <img src="assets/side-border.png" class="panel-border">
-      <div class="tiles"></div>
-    </div>
-    `;},
+      <div class="tiles-container">
+    `;
+    for(let i in potentials) {
+      html += `
+        <div class="tile" id="${potentials[i].name}">
+          <img class="tile-image" src="${potentials[i].image}"></img>
+          <p class="tile-name">${potentials[i].name}</p>
+          <p class="tile-class">${potentials[i].class}</p>
+        </div>
+      `;}
+    sidePanelContainer.innerHTML = html + '</div></div>';
+    return document.querySelectorAll('.tile');
+  },
   open() {
     let interval;
     let finalPosition = 0;
@@ -42,20 +51,7 @@ const sidePanel = {
       }
     }
     this.panelState = true;
-    },
-  renderTiles() {
-    let html = '';
-    for(let i in potentials) {
-      html += `
-        <div class="tile" id="${potentials[i].name}">
-          <img class="tile-image" src="${potentials[i].image}"></img>
-          <p class="tile-name">${potentials[i].name}</p>
-          <p class="tile-class">${potentials[i].class}</p>
-        </div>
-      `;}
-    tilesContainer.innerHTML = html;
-    return document.querySelectorAll('.tile');
-  }
+    }
 }
 
 export default sidePanel;

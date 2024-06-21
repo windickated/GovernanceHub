@@ -167,7 +167,6 @@ consoleButtons.forEach( (button) => {
 
 export const sidePanelIcon = document.querySelector('.panel-icon');
 export const sidePanelBar = document.querySelector('.side-panel');
-export const tilesContainer = document.querySelector('.tiles');
 
 sidePanelIcon.addEventListener('click', () => {
   if(sidePanel.panelState) {
@@ -176,5 +175,3 @@ sidePanelIcon.addEventListener('click', () => {
     sidePanel.close();
   }
 });
-
-tilesContainer.addEventListener('load', sidePanel.renderTiles());
