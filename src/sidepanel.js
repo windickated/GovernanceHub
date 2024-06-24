@@ -83,13 +83,18 @@ export function tilesInteraction() {
         tile.style.backgroundColor = '#2441BD';
         tile.style.filter = 'drop-shadow(0 0 0.5vw #33E2E6)';
         tile.clicked = true;
-        clickedTiles.push(nftTilesName[i].innerHTML);
+        if(!clickedTiles.includes(nftTilesName[i].innerHTML)) {
+          clickedTiles.push(nftTilesName[i].innerHTML);
+        }
       } else {
         tile.style.backgroundColor = '#161E5F';
         tile.style.filter = 'drop-shadow(0 0 0.1vw black)';
         tile.clicked = false;
-        //clickedTiles.includes(nftTilesName[i].innerHTML);
+        delete clickedTiles[(clickedTiles.indexOf(nftTilesName[i].innerHTML))]
       }
+      clickedTiles = clickedTiles.filter((value) => {
+        return value !== undefined;
+      })
     })
   })
 }
