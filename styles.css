@@ -60,6 +60,10 @@ body {
   line-height: 1.4em;
 }
 
+body::-webkit-scrollbar {
+  width: 0px;
+}
+
 img {
   width: 100%;
 }
@@ -128,6 +132,10 @@ img {
   margin: auto;
   color: #bebebe;
   -webkit-text-stroke: 0.05vw #010020;
+}
+
+.text::-webkit-scrollbar {
+  width: 0px;
 }
 
 .options {
@@ -201,6 +209,10 @@ img {
   backdrop-filter: blur(1vw);
   filter: drop-shadow(-0.1vw 0.1vw 0.5vw black);
   overflow-y: scroll;
+}
+
+.side-panel::-webkit-scrollbar {
+  width: 0px;
 }
 
 .tiles-container {
