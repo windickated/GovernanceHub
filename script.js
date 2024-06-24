@@ -2,7 +2,7 @@ import consolePanel from "./src/console.js";
 import displayScreen from "./src/display.js";
 import storyNode from "./src/story.js";
 import reView from "./src/responsive.js";
-import { nftTiles, sidePanel, sidePanelIcon } from './src/sidepanel.js';
+import { clickedTiles, sidePanel, sidePanelIcon, tilesInteraction } from './src/sidepanel.js';
 
 
 // Generating HTML
@@ -63,22 +63,24 @@ optionsList.forEach((option, i) => {
     }
   })
   option.addEventListener('mousedown', () => {
-    clickedOption = option;
-    clickedOptionNumber = i + 1;
-    optionsList.forEach((opt) => {
-      if(opt != clickedOption) {
-        opt.style.color = '#dedede';
-        opt.style.textShadow = '';
-      }
-    })
-    if(window.outerWidth <= 600) {
-      optionsList.forEach((option, i) => {
-        option.style.color = '#dedede';
-        option.style.textShadow = '';
+    if(clickedTiles.length > 0) {
+      clickedOption = option;
+      clickedOptionNumber = i + 1;
+      optionsList.forEach((opt) => {
+        if(opt != clickedOption) {
+          opt.style.color = '#dedede';
+          opt.style.textShadow = '';
+        }
       })
-      alert('You chose option ' + clickedOptionNumber);
-    } else {
-      displayScreen.changeButtonState();
+      if(window.outerWidth <= 600) {
+        optionsList.forEach((option, i) => {
+          option.style.color = '#dedede';
+          option.style.textShadow = '';
+        })
+        alert('You chose option ' + clickedOptionNumber  + '\n' + clickedTiles);
+      } else {
+        displayScreen.changeButtonState();
+      }
     }
   })
 })
@@ -114,9 +116,10 @@ formatButton.addEventListener('click', () => {
   }
 })
 
+
 voteButton.addEventListener('mouseenter', () => {
   if(voteButton.src.includes(displayScreen.displayButtons[1].image)) {
-    voteButton.src = displayScreen.displayButtons[1].hover;
+      voteButton.src = displayScreen.displayButtons[1].hover;
   }
 })
 
@@ -133,7 +136,7 @@ voteButton.addEventListener('click', () => {
       option.style.color = '#dedede';
       option.style.textShadow = '';
     })
-    alert('You chose option ' + clickedOptionNumber);
+    alert('You chose option ' + clickedOptionNumber + '\n' + clickedTiles);
   }
 })
 
@@ -165,6 +168,8 @@ consoleButtons.forEach( (button) => {
 
 // Side panel
 
+sidePanelIcon.addEventListener('load', tilesInteraction());
+
 sidePanelIcon.addEventListener('click', () => {
   if(sidePanel.panelState) {
     sidePanel.close();
@@ -172,12 +177,3 @@ sidePanelIcon.addEventListener('click', () => {
     sidePanel.open();
   }
 });
-
-nftTiles.forEach((tile) => {
-  tile.addEventListener('mouseenter', () => {
-    tile.style.backgroundColor = '#171F6F';
-  })
-  tile.addEventListener('mouseout', () => {
-    tile.style.backgroundColor = '#161E5F';
-  })
-})

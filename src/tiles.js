@@ -32,10 +32,14 @@ class Tile {
       case stringAttributes.includes('EngineerClass'):
         this.class = 'Engineer';
         break;
-      default:
+      case stringAttributes.includes('NeyonClass'):
         this.class = 'NeYon';
+        break;
+      default:
+        this.class = '';
     }
 
+    this.clicked = false;
   } 
 }
 

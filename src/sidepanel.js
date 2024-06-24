@@ -8,7 +8,7 @@ export let nftTilesName;
 export let nftTilesClass;
 
 export const sidePanel = {
-  panelState: true,
+  panelState: false,
   renderPanel() {
     let html = `
     <img src="assets/side-icon.png" class="panel-icon">
@@ -36,12 +36,12 @@ export const sidePanel = {
     clearInterval(interval);
     interval = setInterval(move, 5);
     function move() {
-      if(finalPosition == 70) {
+      if(finalPosition == 80) {
         clearInterval(interval);
       } else {
         finalPosition ++;
         sidePanelIcon.style.right = `${finalPosition}vw`;
-        sidePanelBar.style.right = `${finalPosition - 70}vw`;
+        sidePanelBar.style.right = `${finalPosition - 80}vw`;
       }
     }
     this.panelState = true;
@@ -62,4 +62,34 @@ export const sidePanel = {
     }
     this.panelState = false;
   }
+}
+
+export let clickedTiles = [];
+
+export function tilesInteraction() {
+  nftTiles.forEach((tile, i) => {
+    tile.addEventListener('mouseover', () => {
+      if(!tile.clicked) {
+        tile.style.backgroundColor = '#171F6F';
+      }
+    })
+    tile.addEventListener('mouseout', () => {
+      if(!tile.clicked) {
+        tile.style.backgroundColor = '#161E5F';
+      }
+    })
+    tile.addEventListener('click', () => {
+      if(!tile.clicked) {
+        tile.style.backgroundColor = '#2441BD';
+        tile.style.filter = 'drop-shadow(0 0 0.5vw #33E2E6)';
+        tile.clicked = true;
+        clickedTiles.push(nftTilesName[i].innerHTML);
+      } else {
+        tile.style.backgroundColor = '#161E5F';
+        tile.style.filter = 'drop-shadow(0 0 0.1vw black)';
+        tile.clicked = false;
+        //clickedTiles.includes(nftTilesName[i].innerHTML);
+      }
+    })
+  })
 }
