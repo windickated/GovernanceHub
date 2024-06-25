@@ -13,8 +13,7 @@ function mobileView() {
   formatButton.style.display = 'none';
   formatPanel.style.display = 'none';
   voteButton.style.display = 'none';
-  consoleImage.style.width = '125%';
-  consoleImage.style.translate = '-10% 0';
+  consoleImage.src = 'assets/ConsoleMobile.png'
   consoleButtons.forEach((button) => {
     if(button.className.match('big')) {
       button.style.width = '25%';
