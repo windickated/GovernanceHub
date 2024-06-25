@@ -13,7 +13,7 @@ function mobileView() {
   formatButton.style.display = 'none';
   formatPanel.style.display = 'none';
   voteButton.style.display = 'none';
-  consoleImage.src = 'assets/ConsoleMobile.png'
+  consoleImage.src = 'assets/consoleMobile.png'
   consoleButtons.forEach((button) => {
     if(button.className.match('big')) {
       button.style.width = '25%';
@@ -38,7 +38,7 @@ function computerView() {
   formatButton.style.display = 'block';
   voteButton.style.display = 'block';
   formatPanel.style.display = 'block';
-  consoleImage.src = 'assets/Console.png'
+  consoleImage.src = 'assets/console.png'
   consoleButtons.forEach((button) => {
     if(button.className.match('big')) {
       button.style.width = '20%';
