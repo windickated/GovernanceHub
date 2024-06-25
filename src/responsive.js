@@ -38,8 +38,7 @@ function computerView() {
   formatButton.style.display = 'block';
   voteButton.style.display = 'block';
   formatPanel.style.display = 'block';
-  consoleImage.style.width = '100%';
-  consoleImage.style.translate = 'none';
+  consoleImage.src = 'assets/Console.png'
   consoleButtons.forEach((button) => {
     if(button.className.match('big')) {
       button.style.width = '20%';
