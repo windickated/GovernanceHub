@@ -1,6 +1,6 @@
 import displayScreen from "./display.js";
 import { storyTitle, storyDuration, storyText, storyOptions, optionsCounter, formatButton, voteButton, formatPanel, videoFrame, displayImage, displayBG, consoleButtons, consoleImage } from "../script.js";
-import { sidePanel, nftTiles, nftTilesName, nftTilesClass } from "./sidepanel.js";
+import { nftTiles, nftTilesName, nftTilesClass, nftTotal, nftSelected } from "./sidepanel.js";
 
 
 function mobileView() {
@@ -109,6 +109,8 @@ function optionsOutScreen() {
 
 
 function sideBarMobile() {
+  nftTotal.style.fontSize = 'inherit';
+  nftSelected.style.fontSize = 'inherit';
   nftTiles.forEach((tile) => {
     tile.style.width = '35vw';
     tile.style.height = '45vw';
@@ -122,6 +124,8 @@ function sideBarMobile() {
 }
 
 function sideBarComputer() {
+  nftTotal.style.fontSize = '2vw';
+  nftSelected.style.fontSize = '2vw';
   nftTiles.forEach((tile) => {
     tile.style.width = '17vw';
     tile.style.height = '23vw';

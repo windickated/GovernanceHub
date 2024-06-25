@@ -7,6 +7,8 @@ export let sidePanelBar;
 export let nftTiles;
 export let nftTilesName;
 export let nftTilesClass;
+export let nftTotal;
+export let nftSelected;
 
 export const sidePanel = {
   panelState: false,
@@ -14,6 +16,8 @@ export const sidePanel = {
     let html = `
     <img src="assets/side-icon.png" class="panel-icon">
     <div class="side-panel">
+    <p class="tiles-total">Total NFTs: ${potentials.length}</p>
+    <p class="tiles-selected">Selected NFTs: 0</p>
       <div class="tiles-container">
     `;
     for(let i in potentials) {
@@ -30,6 +34,8 @@ export const sidePanel = {
     nftTiles = document.querySelectorAll('.tile');
     nftTilesName = document.querySelectorAll('.tile-name');
     nftTilesClass = document.querySelectorAll('.tile-class');
+    nftTotal = document.querySelector('.tiles-total');
+    nftSelected = document.querySelector('.tiles-selected');
   },
   open() {
     let interval;
@@ -107,6 +113,7 @@ export function tilesInteraction() {
       } else {
         undefinedOption = false;
       }
+      nftSelected.innerHTML = `Selected NFTs: ${clickedTiles.length}`;
     })
   })
 }
