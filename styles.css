@@ -58,6 +58,7 @@ body {
   color: #dedede;
   word-spacing: 0.2em;
   line-height: 1.4em;
+  width: auto;
 }
 
 body::-webkit-scrollbar {
