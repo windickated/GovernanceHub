@@ -2,7 +2,7 @@ import consolePanel from "./src/console.js";
 import displayScreen from "./src/display.js";
 import storyNode from "./src/story.js";
 import reView from "./src/responsive.js";
-import { clickedTiles, sidePanel, sidePanelIcon, tilesInteraction } from './src/sidepanel.js';
+import { clickedTiles, sidePanel, sidePanelIcon, tilesInteraction, undefinedOption } from './src/sidepanel.js';
 
 
 // Generating HTML
@@ -29,7 +29,7 @@ export const storyTitle = document.querySelector('.header');
 export const storyDuration = document.querySelector('.duration');
 export const storyText = document.querySelector('.text');
 export const storyOptions = document.querySelector('.options');
-const optionsList = document.querySelectorAll('.option');
+export const optionsList = document.querySelectorAll('.option');
 export const optionsCounter = optionsList.length;
 
 export const formatButton = document.querySelector('.display-buttons').firstChild;
@@ -49,7 +49,7 @@ window.addEventListener('resize', () => reView())
 // Story text + options
 
 export let clickedOption;
-let clickedOptionNumber;
+export let clickedOptionNumber;
 
 optionsList.forEach((option, i) => {
   option.addEventListener('mouseover', () => {
@@ -58,6 +58,10 @@ optionsList.forEach((option, i) => {
   })
   option.addEventListener('mouseout', () => {
     if(option != clickedOption) {
+      option.style.color = '#dedede';
+      option.style.textShadow = '';
+    }
+    if(undefinedOption) {
       option.style.color = '#dedede';
       option.style.textShadow = '';
     }

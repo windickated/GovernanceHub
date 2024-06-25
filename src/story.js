@@ -8,7 +8,7 @@ const storyNode = {
   storyOptions: [
     'Abandon the Pyramid and Head to the City.',
     'Attempt to Speak with the Shadows.',
-    'Send Your Spies to the City.',
+    'Establish a Defense Perimeter.',
     'Send Your Spies to the City.',
     'Build a Communications Relay.'
   ],

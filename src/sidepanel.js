@@ -1,5 +1,6 @@
-import { sidePanelContainer } from "../script.js";
+import { sidePanelContainer, optionsList, clickedOptionNumber } from "../script.js";
 import potentials from "./tiles.js";
+import displayScreen from "./display.js";
 
 export let sidePanelIcon;
 export let sidePanelBar;
@@ -65,6 +66,7 @@ export const sidePanel = {
 }
 
 export let clickedTiles = [];
+export let undefinedOption = false;
 
 export function tilesInteraction() {
   nftTiles.forEach((tile, i) => {
@@ -95,6 +97,14 @@ export function tilesInteraction() {
       clickedTiles = clickedTiles.filter((value) => {
         return value !== undefined;
       })
+      if(clickedTiles.length == 0) {
+        optionsList[clickedOptionNumber - 1].style.color = '#dedede';
+        optionsList[clickedOptionNumber - 1].style.textShadow = '';
+        undefinedOption = true;
+        displayScreen.changeButtonState();
+      } else {
+        undefinedOption = false;
+      }
     })
   })
 }
