@@ -84,6 +84,7 @@ export function tilesInteraction() {
       if(!tile.clicked) {
         tile.style.backgroundColor = '#2441BD';
         tile.style.filter = 'drop-shadow(0 0 0.5vw #33E2E6)';
+        tile.style.color = '#33E2E6';
         tile.clicked = true;
         if(!clickedTiles.includes(nftTilesName[i].innerHTML)) {
           clickedTiles.push(nftTilesName[i].innerHTML);
@@ -91,6 +92,7 @@ export function tilesInteraction() {
       } else {
         tile.style.backgroundColor = '#161E5F';
         tile.style.filter = 'drop-shadow(0 0 0.1vw black)';
+        tile.style.color = '#dedede';
         tile.clicked = false;
         delete clickedTiles[(clickedTiles.indexOf(nftTilesName[i].innerHTML))]
       }
