@@ -140,9 +140,9 @@ voteButton.addEventListener('click', () => {
       option.style.color = '#dedede';
       option.style.textShadow = '';
     })
+    alert('You chose option ' + clickedOptionNumber + '\n' + clickedTiles);
     clickedOption = undefined;
     clickedOptionNumber = undefined;
-    alert('You chose option ' + clickedOptionNumber + '\n' + clickedTiles);
   }
 })
 
