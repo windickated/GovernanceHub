@@ -1,4 +1,4 @@
-import potentialsMetadate from "../date/metadate.js";
+import potentialsMetadate from "../date/metadateSample.js";
 
 const metadate = JSON.parse(potentialsMetadate);
 
