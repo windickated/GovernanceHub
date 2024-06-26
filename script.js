@@ -2,7 +2,7 @@ import consolePanel from "./src/console.js";
 import displayScreen from "./src/display.js";
 import storyNode from "./src/story.js";
 import reView from "./src/responsive.js";
-import { clickedTiles, sidePanel, sidePanelIcon, tilesInteraction, undefinedOption } from './src/sidepanel.js';
+import { clickedTiles, sidePanel, sidePanelIcon, tilesInteraction, undefinedOption, tilesInactive } from './src/sidepanel.js';
 
 
 // Generating HTML
@@ -143,6 +143,7 @@ voteButton.addEventListener('click', () => {
     alert('You chose option ' + clickedOptionNumber + '\n' + clickedTiles);
     clickedOption = undefined;
     clickedOptionNumber = undefined;
+    tilesInactive();
   }
 })
 

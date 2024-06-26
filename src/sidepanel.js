@@ -117,3 +117,18 @@ export function tilesInteraction() {
     })
   })
 }
+
+export function tilesInactive() {
+  for(let i in nftTiles) {
+    if(clickedTiles.toString().match(nftTilesName[i].innerHTML)) {
+      nftTiles[i].style.backgroundColor = '#161E5F';
+      nftTiles[i].style.filter = 'drop-shadow(0 0 0.1vw black)';
+      nftTiles[i].style.color = '#dedede';
+      nftTiles[i].style.opacity = '0.5';
+      nftTiles[i].style.pointerEvents = 'none';
+      nftTiles[i].clicked = false;
+      nftTiles[i].active = false;
+      clickedTiles.splice(clickedTiles.indexOf(nftTilesName[i].innerHTML), 1);
+    }
+  }
+}

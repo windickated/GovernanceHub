@@ -40,6 +40,7 @@ class Tile {
     }
 
     this.clicked = false;
+    this.active = true;
   } 
 }
 
@@ -49,3 +50,13 @@ for(let i in metadate) {
 }
 
 export default potentials;
+
+/*
+let metadate = '';
+
+fetch('https://api.degenerousdao.com/nft/data/1')
+  .then((response) => response.json())
+  .then((potential) => {
+    metadate = potential;
+  });
+  */
