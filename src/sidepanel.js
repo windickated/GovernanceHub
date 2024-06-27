@@ -46,7 +46,7 @@ export const sidePanel = {
       if(finalPosition == 80) {
         clearInterval(interval);
       } else {
-        finalPosition ++;
+        finalPosition += 2;
         sidePanelIcon.style.right = `${finalPosition}vw`;
         sidePanelBar.style.right = `${finalPosition - 80}vw`;
       }
@@ -62,7 +62,7 @@ export const sidePanel = {
       if(finalPosition == 0) {
         clearInterval(interval);
       } else {
-        finalPosition --;
+        finalPosition -= 2;
         sidePanelIcon.style.right = `${finalPosition}vw`;
         sidePanelBar.style.right = `${finalPosition - 80}vw`;
       }

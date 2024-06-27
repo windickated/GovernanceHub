@@ -148,7 +148,7 @@ img {
 }
 
 .option {
-  -webkit-text-stroke: 0.05vw #33E2E6;
+  -webkit-text-stroke: 0.025vw #33E2E6;
   cursor: pointer;
 }
 

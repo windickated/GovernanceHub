@@ -55,15 +55,18 @@ optionsList.forEach((option, i) => {
   option.addEventListener('mouseover', () => {
     option.style.color = '#33E2E6';
     option.style.textShadow = '0 0 3px #33E2E6';
+    option.style.listStyleType = 'disc';
   })
   option.addEventListener('mouseout', () => {
     if(option != clickedOption) {
       option.style.color = '#dedede';
       option.style.textShadow = '';
+      option.style.listStyleType = 'circle';
     }
     if(undefinedOption) {
       option.style.color = '#dedede';
       option.style.textShadow = '';
+      option.style.listStyleType = 'circle';
     }
   })
   option.addEventListener('mousedown', () => {
@@ -74,14 +77,16 @@ optionsList.forEach((option, i) => {
         if(opt != clickedOption) {
           opt.style.color = '#dedede';
           opt.style.textShadow = '';
+          opt.style.listStyleType = 'circle';
         }
       })
       if(window.outerWidth <= 600) {
-        optionsList.forEach((option, i) => {
-          option.style.color = '#dedede';
-          option.style.textShadow = '';
+        optionsList.forEach((opt, i) => {
+          opt.style.color = '#dedede';
+          opt.style.textShadow = '';
+          opt.style.listStyleType = 'circle';
         })
-        alert('You chose option ' + clickedOptionNumber  + '\n' + clickedTiles);
+        console.log('You chose option ' + clickedOptionNumber  + '\n' + clickedTiles);
       } else {
         displayScreen.changeButtonState();
       }
@@ -139,8 +144,9 @@ voteButton.addEventListener('click', () => {
     optionsList.forEach((option, i) => {
       option.style.color = '#dedede';
       option.style.textShadow = '';
+      option.style.listStyleType = 'circle';
     })
-    alert('You chose option ' + clickedOptionNumber + '\n' + clickedTiles);
+    console.log('You chose option ' + clickedOptionNumber + '\n' + clickedTiles);
     clickedOption = undefined;
     clickedOptionNumber = undefined;
     tilesInactive();
