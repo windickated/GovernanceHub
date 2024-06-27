@@ -4,8 +4,9 @@ import { nftTiles, nftTilesName, nftTilesClass, nftTotal, nftSelected } from "./
 
 
 function mobileView() {
-  storyTitle.style.fontSize = '1.6em';
-  storyDuration.style.fontSize = '1.2em';
+  storyTitle.style.fontSize = '1.4em';
+  storyDuration.style.fontSize = '1.1em';
+  storyDuration.style.marginBottom = '4vw';
   storyText.style.visibility = 'visible';
 
   displayImage.src = 'assets/displayMobile.png';
@@ -30,8 +31,9 @@ function mobileView() {
 
 
 function computerView() {
-  storyTitle.style.fontSize = '3.5vw';
-  storyDuration.style.fontSize = '2.5vw';
+  storyTitle.style.fontSize = '3vw';
+  storyDuration.style.fontSize = '2vw';
+  storyDuration.style.marginBottom = '-2vw';
 
   displayImage.src = 'assets/display.png';
   displayBG.src = 'assets/displayBG.png';

@@ -87,6 +87,9 @@ optionsList.forEach((option, i) => {
           opt.style.listStyleType = 'circle';
         })
         console.log('You chose option ' + clickedOptionNumber  + '\n' + clickedTiles);
+        clickedOption = undefined;
+        clickedOptionNumber = undefined;
+        tilesInactive();
       } else {
         displayScreen.changeButtonState();
       }
