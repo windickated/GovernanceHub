@@ -6,7 +6,7 @@ import { nftTiles, nftTilesName, nftTilesClass, nftTotal, nftSelected } from "./
 function mobileView() {
   storyTitle.style.fontSize = '1.4em';
   storyDuration.style.fontSize = '1.1em';
-  storyDuration.style.marginBottom = '4vw';
+  storyDuration.style.marginBottom = '2vw';
   storyText.style.visibility = 'visible';
 
   displayImage.src = 'assets/displayMobile.png';
@@ -58,11 +58,11 @@ function computerView() {
 
 function textOnScreen() {
   storyText.style.position = 'absolute';
-  storyText.style.top = '8vw';
-  storyText.style.width = '85%';
-  storyText.style.left = '7%';
+  storyText.style.top = '10.1vw';
+  storyText.style.width = '80.6vw';
+  storyText.style.left = '7.7vw';
   storyText.style.overflowY = 'scroll';
-  storyText.style.height = '50vw';
+  storyText.style.height = '43.6vw';
   storyText.style.fontSize = '2vw';
   storyText.style.lineHeight = '3vw';
 }

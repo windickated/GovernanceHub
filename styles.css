@@ -138,7 +138,7 @@ img {
 }
 
 .text {
-  margin: auto;
+  padding: 2vw;
   color: #bebebe;
   -webkit-text-stroke: 0.05vw #010020;
 }
