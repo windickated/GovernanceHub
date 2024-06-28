@@ -38,6 +38,7 @@ export const sidePanel = {
     nftSelected = document.querySelector('.tiles-selected');
   },
   open() {
+    nftSelected.innerHTML = `Selected NFTs: ${clickedTiles.length}`;
     let interval;
     let finalPosition = 0;
     clearInterval(interval);

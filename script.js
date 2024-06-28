@@ -80,19 +80,29 @@ optionsList.forEach((option, i) => {
           opt.style.listStyleType = 'circle';
         }
       })
-      if(window.outerWidth <= 600) {
-        optionsList.forEach((opt, i) => {
-          opt.style.color = '#dedede';
-          opt.style.textShadow = '';
-          opt.style.listStyleType = 'circle';
-        })
-        console.log('You chose option ' + clickedOptionNumber  + '\n' + clickedTiles);
-        clickedOption = undefined;
-        clickedOptionNumber = undefined;
-        tilesInactive();
-      } else {
-        displayScreen.changeButtonState();
-      }
+      displayScreen.changeButtonState();
+    }
+  })
+  option.addEventListener('touchstart', () => {
+    option.style.color = '#33E2E6';
+    option.style.textShadow = '0 0 3px #33E2E6';
+    option.style.listStyleType = 'disc';
+  })
+  option.addEventListener('touchend', () => {
+    if(clickedTiles.length > 0) {
+      option.style.color = '#33E2E6';
+      option.style.textShadow = '0 0 3px #33E2E6';
+      option.style.listStyleType = 'disc';
+      clickedOption = option;
+      clickedOptionNumber = i + 1;
+      console.log('You chose option ' + clickedOptionNumber  + '\n' + clickedTiles);
+      clickedOption = undefined;
+      clickedOptionNumber = undefined;
+      tilesInactive();
+    } else {
+      option.style.color = '#dedede';
+      option.style.textShadow = '';
+      option.style.listStyleType = 'circle';
     }
   })
 })
@@ -162,10 +172,10 @@ voteButton.addEventListener('click', () => {
 consoleButtons.forEach( (button) => {
   button.addEventListener('mouseenter', () => {
     button.src = `assets/${button.dataset.name}-hover.png`;
-  });
+  })
   button.addEventListener('mouseout', () => {
     button.src = `assets/${button.dataset.name}.png`;
-  });
+  })
   button.addEventListener('mousedown', () => {
     button.src = `assets/${button.dataset.name}-active.png`;
     switch (button.dataset.name) {
@@ -175,16 +185,29 @@ consoleButtons.forEach( (button) => {
       case 'forward': break;
       case 'sagaverse': break;
     }
-  });
+  })
   button.addEventListener('mouseup', () => {
     button.src = `assets/${button.dataset.name}-hover.png`;
-  });
+  })
+  button.addEventListener('touchstart', () => {
+    button.src = `assets/${button.dataset.name}-active.png`;
+    switch (button.dataset.name) {
+      case 'conexus': break;
+      case 'back': break;
+      case 'omnihub': break;
+      case 'forward': break;
+      case 'sagaverse': break;
+    }
+  })
+  button.addEventListener('touchend', () => {
+    button.src = `assets/${button.dataset.name}-hover.png`;
+  })
 })
 
 
 // Side panel
 
-sidePanelIcon.addEventListener('load', tilesInteraction());
+sidePanelIcon.addEventListener('load', tilesInteraction())
 
 sidePanelIcon.addEventListener('click', () => {
   if(sidePanel.panelState) {
@@ -192,4 +215,4 @@ sidePanelIcon.addEventListener('click', () => {
   } else {
     sidePanel.open();
   }
-});
+})
