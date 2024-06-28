@@ -76,6 +76,11 @@ img {
 
 /* Top */
 
+.top {
+  margin: 2.5vw;
+  margin-bottom: 0;
+}
+
 .display-buttons, #format {
   position: absolute;
   width: 27.5%;
@@ -90,10 +95,10 @@ img {
 
 .video {
   position: absolute;
-  height: 50vw;
-  width: 89vw;
-  top: 8vw;
-  left: 5.5vw;
+  height: 47.6vw;
+  width: 84.6vw;
+  top: 7.6vw;
+  left: 5.2vw;
 }
 
 #youtube {
@@ -144,10 +149,16 @@ img {
 
 .options {
   list-style: circle inside;
-  margin: 5% 2.5%;
+  margin: 2vw;
+  padding-left: 3vw;
   font-size: 1.2em;
   line-height: 2em;
   white-space: nowrap;
+  overflow-y: hidden;
+}
+
+.options::-webkit-scrollbar {
+  width: 0px;
 }
 
 .option {

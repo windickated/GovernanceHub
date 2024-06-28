@@ -81,17 +81,16 @@ function textOutScreen() {
 
 function optionsOnScreen() {
   storyOptions.style.position = 'absolute';
-  storyOptions.style.top = '58vw';
-  storyOptions.style.width = '62vw';
-  storyOptions.style.height = '24vw';
-  storyOptions.style.overflowY = 'hidden';
+  storyOptions.style.top = '59vw';
+  storyOptions.style.width = '59.8vw';
+  storyOptions.style.height = '23vw';
   if(optionsCounter >= 4) {
-    storyOptions.style.fontSize = `${9.5/optionsCounter}vw`;
-    storyOptions.style.paddingTop = `${9.5/optionsCounter}vw`;
+    storyOptions.style.fontSize = `${10/optionsCounter}vw`;
+    storyOptions.style.paddingTop = `${10/optionsCounter}vw`;
   } else {
     storyOptions.style.fontSize = '2.5vw';
     if(optionsCounter == 3) {
-      storyOptions.style.paddingTop = '4vw';
+      storyOptions.style.paddingTop = '5vw';
     } else {
       storyOptions.style.paddingTop = '7vw';
     }
@@ -104,7 +103,6 @@ function optionsOutScreen() {
   storyOptions.style.top = '';
   storyOptions.style.width = 'auto';
   storyOptions.style.height = 'auto';
-  storyOptions.style.overflowY = 'auto';
   storyOptions.style.fontSize = '1.2em';
   storyOptions.style.whiteSpace = 'wrap';
 }
