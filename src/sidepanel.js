@@ -4,6 +4,7 @@ import displayScreen from "./display.js";
 
 export let sidePanelIcon;
 export let sidePanelBar;
+export let sidePanelBG;
 export let nftTiles;
 export let nftTilesName;
 export let nftTilesClass;
@@ -31,6 +32,7 @@ export const sidePanel = {
     sidePanelContainer.innerHTML = html + '</div></div>';
     sidePanelIcon = document.querySelector('.panel-icon');
     sidePanelBar = document.querySelector('.side-panel');
+    sidePanelBG = document.querySelector('.side-panel-bg');
     nftTiles = document.querySelectorAll('.tile');
     nftTilesName = document.querySelectorAll('.tile-name');
     nftTilesClass = document.querySelectorAll('.tile-class');
@@ -38,6 +40,7 @@ export const sidePanel = {
     nftSelected = document.querySelector('.tiles-selected');
   },
   open() {
+    sidePanelBG.style.display = 'block';
     nftSelected.innerHTML = `Selected NFTs: ${clickedTiles.length}`;
     let interval;
     let finalPosition = 0;
@@ -55,6 +58,7 @@ export const sidePanel = {
     this.panelState = true;
   },
   close() {
+    sidePanelBG.style.display = 'none';
     let interval;
     let finalPosition = 80;
     clearInterval(interval);

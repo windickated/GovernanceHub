@@ -1,6 +1,6 @@
 import displayScreen from "./display.js";
 import { storyTitle, storyDuration, storyText, storyOptions, optionsCounter, formatButton, voteButton, formatPanel, videoFrame, displayImage, displayBG, consoleButtons, consoleImage } from "../script.js";
-import { nftTiles, nftTilesName, nftTilesClass, nftTotal, nftSelected, sidePanelIcon } from "./sidepanel.js";
+import { nftTiles, nftTilesName, nftTilesClass, nftTotal, nftSelected } from "./sidepanel.js";
 
 
 function mobileView() {
@@ -26,8 +26,6 @@ function mobileView() {
   textOutScreen();
   optionsOutScreen();
 
-  sidePanelIcon.style.width = '11vw';
-  sidePanelIcon.style.height = '11vw';
   sideBarMobile();
 }
 
@@ -54,8 +52,6 @@ function computerView() {
   textOnScreen();
   optionsOnScreen();
 
-  sidePanelIcon.style.width = '8vw';
-  sidePanelIcon.style.height = '8vw';
   sideBarComputer();
 }
 
