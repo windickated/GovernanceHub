@@ -4,9 +4,9 @@ import { nftTiles, nftTilesName, nftTilesClass, nftTotal, nftSelected } from "./
 
 
 function mobileView() {
-  storyTitle.style.fontSize = '1.4em';
-  storyDuration.style.fontSize = '1.1em';
-  storyDuration.style.marginBottom = '2vw';
+  storyTitle.style.fontSize = '1.1em';
+  storyDuration.style.fontSize = 'inherit';
+  storyDuration.style.marginBottom = '4vw';
   storyText.style.visibility = 'visible';
 
   displayImage.src = 'assets/displayMobile.png';
@@ -65,6 +65,7 @@ function textOnScreen() {
   storyText.style.height = '43.6vw';
   storyText.style.fontSize = '2vw';
   storyText.style.lineHeight = '3vw';
+  storyText.style.marginBottom = '';
 }
 
 function textOutScreen() {
@@ -76,6 +77,7 @@ function textOutScreen() {
   storyText.style.height = 'auto';
   storyText.style.fontSize = 'inherit';
   storyText.style.lineHeight = 'inherit';
+  storyText.style.marginBottom = '2vw';
 }
 
 
@@ -96,15 +98,19 @@ function optionsOnScreen() {
     }
   }
   storyOptions.style.whiteSpace = 'nowrap';
+  storyOptions.style.marginLeft = '';
+  storyOptions.style.marginBottom = '';
 }
 
 function optionsOutScreen() {
   storyOptions.style.position = 'static';
   storyOptions.style.top = '';
-  storyOptions.style.width = 'auto';
+  storyOptions.style.width = '95vw';
   storyOptions.style.height = 'auto';
-  storyOptions.style.fontSize = '1.2em';
+  storyOptions.style.fontSize = '1.1em';
   storyOptions.style.whiteSpace = 'wrap';
+  storyOptions.style.marginLeft = '-2.5vw';
+  storyOptions.style.marginBottom = '4vw';
 }
 
 
