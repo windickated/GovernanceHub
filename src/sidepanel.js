@@ -95,6 +95,7 @@ export function tilesInteraction() {
         if(!clickedTiles.includes(nftTilesName[i].innerHTML)) {
           clickedTiles.push(nftTilesName[i].innerHTML);
         }
+        displayScreen.changeButtonState();
       } else {
         tile.style.backgroundColor = '#161E5F';
         tile.style.filter = 'drop-shadow(0 0 0.1vw black)';

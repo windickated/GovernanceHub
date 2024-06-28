@@ -26,12 +26,10 @@ const displayScreen = {
   },
 
   changeButtonState() {
-    if(!undefinedOption) {
-      if(clickedOption) {
-        voteButton.src = this.displayButtons[1].image;
-      }
+    if(clickedOption) {
+      voteButton.src = this.displayButtons[1].image;
     } else {
-      voteButton.src = this.displayButtons[1].inactive;
+    voteButton.src = this.displayButtons[1].inactive;
     }
   }
 }
