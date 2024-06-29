@@ -1,6 +1,6 @@
 import displayScreen from "./display.js";
 import { storyTitle, storyDuration, storyText, storyOptions, optionsCounter, formatButton, voteButton, formatPanel, videoFrame, displayImage, displayBG, consoleButtons, consoleImage } from "../script.js";
-import { nftTiles, nftTilesName, nftTilesClass, nftTotal, nftSelected } from "./sidepanel.js";
+import { nftTiles, nftTilesName, nftTilesClass, nftTotal, nftSelected, sidePanel, sidePanelIcon, sidePanelBar } from "./sidepanel.js";
 
 
 function mobileView() {
@@ -115,6 +115,11 @@ function optionsOutScreen() {
 
 
 function sideBarMobile() {
+  document.body.style.paddingTop = '12vw';
+  sidePanelIcon.style.width = '100vw';
+  sidePanelIcon.style.height = 'auto';
+  sidePanelIcon.src = 'assets/sideIconMobileClosed.png';
+
   nftTotal.style.fontSize = 'inherit';
   nftSelected.style.fontSize = 'inherit';
   nftTiles.forEach((tile) => {
@@ -130,6 +135,11 @@ function sideBarMobile() {
 }
 
 function sideBarComputer() {
+  document.body.style.paddingTop = '';
+  sidePanelIcon.style.width = '10vw';
+  sidePanelIcon.style.height = '10vw';
+  sidePanelIcon.src = 'assets/sideIcon.png';
+
   nftTotal.style.fontSize = '2vw';
   nftSelected.style.fontSize = '2vw';
   nftTiles.forEach((tile) => {

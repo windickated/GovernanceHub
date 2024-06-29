@@ -15,7 +15,7 @@ export const sidePanel = {
   panelState: false,
   renderPanel() {
     let html = `
-    <img src="assets/side-icon.png" class="panel-icon">
+    <img src="assets/sideIcon.png" class="panel-icon">
     <div class="side-panel">
     <p class="tiles-total">Total NFTs: ${potentials.length}</p>
     <p class="tiles-selected">Selected NFTs: 0</p>

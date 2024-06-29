@@ -223,7 +223,7 @@ img {
   right: -80vw;
   height: 100%;
   width: 80vw;
-  background-image: url('assets/side-border.png');
+  background-image: url('assets/sideBorder.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-color: rgba(1, 0, 32, 0.5);
