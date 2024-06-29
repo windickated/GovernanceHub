@@ -17,8 +17,10 @@ export const sidePanel = {
     let html = `
     <img src="assets/sideIcon.png" class="panel-icon">
     <div class="side-panel">
-    <p class="tiles-total">Total NFTs: ${potentials.length}</p>
-    <p class="tiles-selected">Selected NFTs: 0</p>
+      <div class="tiles-legend">
+        <p class="tiles-total">Total NFTs: ${potentials.length}</p>
+        <p class="tiles-selected">Selected NFTs: 0</p>
+      </div>
       <div class="tiles-container">
     `;
     for(let i in potentials) {

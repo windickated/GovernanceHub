@@ -248,8 +248,13 @@ img {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.tiles-legend {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
 .tiles-total, .tiles-selected {
-  display: inline-block;
   color: #33E2E6;
   -webkit-text-stroke: 0.1vw #33E2E6;
   padding-top: 2.5vw;
