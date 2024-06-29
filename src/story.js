@@ -1,18 +1,34 @@
-import { titleContainer, durationContainer, textContainer, optionsContainer } from '../script.js'
+import { videoContainer, titleContainer, durationContainer, textContainer, optionsContainer } from '../script.js'
 
 const storyNode = {
-  storyTitle: 'The Dischordian Saga: Illuminated Shadows - Episode 9',
-  storyDuration: 'Duration: 14.6.2024-17.6.2024',
+  videoLink: 'https://www.youtube.com/embed/OeA_acfD-e8',
+  storyTitle: 'The Dischordian Saga: The Artifact - Episode 10',
+  storyDuration: 'Duration: 28.06.2024 - 01.07.2024',
   storyText: 
-    "In the alien landscape, beneath the canopy of towering, dark trees, the Potentials ventured forth. The forest was dense, shrouded in mystery, its silence punctuated by the soft rustling of leaves and distant, unidentifiable calls. As they moved deeper into the forest, an unsettling sensation of being watched crept over them. Every shadow seemed to twitch at the corner of their vision, every rustle of leaves hinting at the presence of unseen observers. Despite the foreboding atmosphere, the Potentials pressed on, driven by a mix of curiosity and necessity to establish a base in this unknown world. \n  Their journey led them to a clearing where the shadows parted to reveal a massive structure—an ancient pyramid made of what appeared to be ivory. It stood stark and imposing against the darkening sky, its surfaces smooth and cold to the touch. Inside, the air was cool and musty with the scent of ages. Their lights swept across walls adorned with intricate murals that told the history of a lost people. The images depicted serene cityscapes being invaded by horrific demonic figures, summoned by an evil tribe from the depths of dark, swirling portals. The demons laid waste to the cities, and the murals showed battles fought with a desperation that was palpable even through the ancient artwork. \n  As the Potentials absorbed the stories painted on the walls, the sun dipped below the horizon outside, and the forest transitioned into a deeper shade of darkness. It was then that the shadows around them began to stir more distinctly. The darkness seemed to thicken, and ghostly figures emerged from the murk, ethereal echoes of the creatures depicted in the murals. The Potentials watched, transfixed, as these shadowy apparitions re-enacted the ancient wars in silence—a haunting spectacle of a battle against invaders that seemed both spectral and eternal. The figures clashed with one another, their forms blending and separating in a dance of light and shadow, their silent screams echoing a timeless agony. Realizing the significance of their discovery, the Potentials quickly set about establishing a temporary base within the pyramid, using it as both shelter and a strategic vantage point. The murals and the ghostly re-enactments provided clues to the history of this planet and its people—a history that now seemed inextricably linked to their mission. \n  As they prepared for the night, the implications of what they had witnessed weighed heavily upon them. They were no longer just survivors or explorers; they had become part of a larger narrative, a cosmic drama that spanned millennia. The shadows of the past, it seemed, were not just memories but warnings. Here, in this dark forest on the edge of a forgotten world, the Potentials found themselves standing on the precipice of ancient secrets that could either be their salvation or their doom.",
+    `<p>
+      As the Potentials settled into their temporary base within the ancient pyramid, the haunting re-enactments of spectral battles cast a somber mood among them. The eerie silence of the ghostly figures stirred a mix of fascination and trepidation, pushing them to seek understanding and perhaps a way to communicate with these shadows of a bygone era.
+    </p><p>
+      Gathered around the murals, their Oracles, gifted with mystic powers of perception, focused their energies on deciphering the encrypted images and ethereal messages embedded in the ancient artwork. Their efforts uncovered the depiction of an ancient helmet, intricately designed, which was said to grant its wearer the ability to bridge the realms of the living and the spectral.
+    </p><p>
+      In a secluded chamber of the pyramid, shrouded in cobwebs and the dust of ages, the helmet sat upon a stone pedestal, pulsating with a ghostly luminescence. It was an artifact of sinister beauty, etched with arcane runes that seemed to shift and writhe under the gaze of the onlookers. Despite the ominous aura it exuded, one brave assassin—volunteered to don the helmet, compelled by a mission to bridge the gap between the living and the spectral.
+    </p><p>
+      The moment the helmet settled upon its head, it awakened with a malevolent life of its own. The interior mechanisms, long dormant, activated with a sinister intent, burrowing into the Potential's metallic skull with a series of chilling mechanical screeches and the sickening crunch of metal. Its screams echoed through the pyramid's hollow chambers, a horrifying symphony of pain and transformation. Before the eyes of the horrified Oracles, the helmet morphed into an exoskeleton, encasing the Potential in a grotesque armor of ancient design.
+    </p><p>
+      The transformation was merciless and final. As the last remnants of the Potential's cries faded, a new, chilling presence filled the chamber. Its voice, icy and devoid of humanity, reverberated off the stone walls.
+    </p><p>
+      "I am the Collector," it intoned, its voice a deathly whisper that seemed to leech the warmth from the air. "I am reborn. Let the Harvest begin."
+    </p><p>
+      The Potentials recoiled in horror and realization at the grave mistake they had made. The helmet was not a bridge for communication but a prison for a dark entity, and they had unwittingly unleashed it upon themselves. Now, they faced an immediate and dire threat—not from the spectral shadows of the past, but from a tangible and present adversary, one that threatened to extinguish their potential and add them to its collection.
+    </p>
+      `,
   storyOptions: [
-    'Abandon the Pyramid and Head to the City.',
-    'Attempt to Speak with the Shadows.',
-    'Establish a Defense Perimeter.',
-    'Send Your Spies to the City.',
-    'Build a Communications Relay.'
+    'Attack the Collector.',
+    'Escape the Pyramid and Head to the City.',
+    'Make a Bargain with the Collector.',
+    'Retreat to the Forest and Build a Defense Perimeter.'
   ],
   renderStory() {
+    videoContainer.src = this.videoLink;
     titleContainer.innerHTML = this.storyTitle;
     durationContainer.innerHTML = this.storyDuration;
     textContainer.innerHTML = this.storyText;

@@ -10,6 +10,7 @@ import { clickedTiles, sidePanel, sidePanelIcon, sidePanelBG, tilesInteraction, 
 export const displayContainer = document.querySelector('.display-buttons');
 export const consoleContainer = document.querySelector('.console-buttons');
 
+export const videoContainer = document.getElementById('youtube');
 export const titleContainer = document.querySelector('.header');
 export const durationContainer = document.querySelector('.duration');
 export const textContainer = document.querySelector('.text');

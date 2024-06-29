@@ -78,6 +78,10 @@ img {
   display: block;
 }
 
+p {
+  padding-bottom: 2vw;
+}
+
 /* Top */
 
 .top {
