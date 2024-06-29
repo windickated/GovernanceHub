@@ -104,6 +104,7 @@ function optionsOnScreen() {
   storyOptions.style.backdropFilter = '';
   storyOptions.style.border = '';
   storyOptions.style.borderRadius = '';
+  storyOptions.style.paddingBottom = '';
 }
 
 function optionsOutScreen() {
@@ -119,6 +120,8 @@ function optionsOutScreen() {
   storyOptions.style.backdropFilter = 'blur(1vw)';
   storyOptions.style.border = '0.1vw solid #33E2E6';
   storyOptions.style.borderRadius = '2.5vw';
+  storyOptions.style.paddingTop = '2vw';
+  storyOptions.style.paddingBottom = '2vw';
 }
 
 
