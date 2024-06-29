@@ -54,7 +54,7 @@ export const sidePanel = {
         if(finalPosition == 80) {
           clearInterval(interval);
         } else {
-          finalPosition += 2;
+          finalPosition += 4;
           sidePanelIcon.style.right = `${finalPosition}vw`;
           sidePanelBar.style.right = `${finalPosition - 80}vw`;
         }
@@ -66,7 +66,7 @@ export const sidePanel = {
         if(finalPosition == 80) {
           clearInterval(interval);
         } else {
-          finalPosition += 2;
+          finalPosition += 4;
           sidePanelIcon.style.top = `${finalPosition}%`;
           sidePanelBar.style.top = `${finalPosition - 80}%`;
         }
@@ -86,7 +86,7 @@ export const sidePanel = {
         if(finalPosition == 0) {
           clearInterval(interval);
         } else {
-          finalPosition -= 2;
+          finalPosition -= 4;
           sidePanelIcon.style.right = `${finalPosition}vw`;
           sidePanelBar.style.right = `${finalPosition - 80}vw`;
         }
@@ -98,7 +98,7 @@ export const sidePanel = {
         if(finalPosition == 0) {
           clearInterval(interval);
         } else {
-          finalPosition -= 2;
+          finalPosition -= 4;
           sidePanelIcon.style.top = `${finalPosition}%`;
           sidePanelBar.style.top = `${finalPosition - 80}%`;
         }
