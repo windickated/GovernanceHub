@@ -130,7 +130,8 @@ img {
   text-align: center;
   margin-bottom: 2vw;
   margin-top: 2vw;
-  -webkit-text-stroke: 0.05vw #33E2E6;
+  -webkit-text-stroke: 0.03vw #33E2E6;
+  filter: drop-shadow(0 0 0.1vw #33E2E6);
   line-height: 1.6em;
 }
 
@@ -138,14 +139,15 @@ img {
   font-size: 2vw;
   text-align: center;
   margin-bottom: -2vw;
-  -webkit-text-stroke: 0.05vw #33E2E6;
+  -webkit-text-stroke: 0.03vw #33E2E6;
+  filter: drop-shadow(0 0 0.1vw #33E2E6);
   color: #bebebe;
 }
 
 .text {
   padding: 2vw;
   color: #bebebe;
-  -webkit-text-stroke: 0.05vw #010020;
+  -webkit-text-stroke: 0.02vw #010020;
 }
 
 .text::-webkit-scrollbar {
