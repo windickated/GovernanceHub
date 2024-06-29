@@ -45,14 +45,27 @@ export const sidePanel = {
     let interval;
     let finalPosition = 0;
     clearInterval(interval);
-    interval = setInterval(move, 5);
-    function move() {
-      if(finalPosition == 80) {
-        clearInterval(interval);
-      } else {
-        finalPosition += 2;
-        sidePanelIcon.style.right = `${finalPosition}vw`;
-        sidePanelBar.style.right = `${finalPosition - 80}vw`;
+    if(window.outerWidth >= 600) {
+      interval = setInterval(moveLeft, 5);
+      function moveLeft() {
+        if(finalPosition == 80) {
+          clearInterval(interval);
+        } else {
+          finalPosition += 2;
+          sidePanelIcon.style.right = `${finalPosition}vw`;
+          sidePanelBar.style.right = `${finalPosition - 80}vw`;
+        }
+      }
+    } else {
+      interval = setInterval(moveDown, 5);
+      function moveDown() {
+        if(finalPosition == 80) {
+          clearInterval(interval);
+        } else {
+          finalPosition += 2;
+          sidePanelIcon.style.top = `${finalPosition}%`;
+          sidePanelBar.style.top = `${finalPosition - 80}%`;
+        }
       }
     }
     this.panelState = true;
@@ -62,14 +75,27 @@ export const sidePanel = {
     let interval;
     let finalPosition = 80;
     clearInterval(interval);
-    interval = setInterval(move, 5);
-    function move() {
-      if(finalPosition == 0) {
-        clearInterval(interval);
-      } else {
-        finalPosition -= 2;
-        sidePanelIcon.style.right = `${finalPosition}vw`;
-        sidePanelBar.style.right = `${finalPosition - 80}vw`;
+    if(window.outerWidth >= 600) {
+      interval = setInterval(moveLeft, 5);
+      function moveLeft() {
+        if(finalPosition == 0) {
+          clearInterval(interval);
+        } else {
+          finalPosition -= 2;
+          sidePanelIcon.style.right = `${finalPosition}vw`;
+          sidePanelBar.style.right = `${finalPosition - 80}vw`;
+        }
+      }
+    } else {
+      interval = setInterval(moveDown, 5);
+      function moveDown() {
+        if(finalPosition == 0) {
+          clearInterval(interval);
+        } else {
+          finalPosition -= 2;
+          sidePanelIcon.style.top = `${finalPosition}%`;
+          sidePanelBar.style.top = `${finalPosition - 80}%`;
+        }
       }
     }
     this.panelState = false;

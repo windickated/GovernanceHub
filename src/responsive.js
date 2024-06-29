@@ -116,21 +116,29 @@ function optionsOutScreen() {
 
 function sideBarMobile() {
   document.body.style.paddingTop = '12vw';
-  sidePanelIcon.style.width = '100vw';
+  sidePanelIcon.style.width = '100%';
   sidePanelIcon.style.height = 'auto';
   sidePanelIcon.src = 'assets/sideIconMobileClosed.png';
+  sidePanelIcon.style.top = '0';
+
+  sidePanelBar.style.width = '100vw';
+  sidePanelBar.style.height = '80%';
+  sidePanelBar.style.right = '';
+  sidePanelBar.style.left = '0';
+  sidePanelBar.style.top = '-80%';
+  sidePanelBar.style.backgroundImage = 'none';
 
   nftTotal.style.fontSize = 'inherit';
   nftSelected.style.fontSize = 'inherit';
   nftTiles.forEach((tile) => {
-    tile.style.width = '35vw';
-    tile.style.height = '45vw';
+    tile.style.width = '46vw';
+    tile.style.height = '60vw';
   })
   nftTilesName.forEach((name) => {
-    name.style.fontSize = 'inherit';
+    name.style.fontSize = '1.2em';
   })
   nftTilesClass.forEach((clas) => {
-    clas.style.fontSize = 'inherit';
+    clas.style.fontSize = '0.9em';
   })
 }
 
@@ -139,6 +147,12 @@ function sideBarComputer() {
   sidePanelIcon.style.width = '10vw';
   sidePanelIcon.style.height = '10vw';
   sidePanelIcon.src = 'assets/sideIcon.png';
+
+  sidePanelBar.style.width = '80vw';
+  sidePanelBar.style.height = '100%';
+  sidePanelBar.style.right = '-80vw';
+  sidePanelBar.style.left = '';
+  sidePanelBar.style.backgroundImage = "url('assets/sideBorder.png')";
 
   nftTotal.style.fontSize = '2vw';
   nftSelected.style.fontSize = '2vw';
