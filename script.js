@@ -105,6 +105,11 @@ optionsList.forEach((option, i) => {
       option.style.listStyleType = 'circle';
     }
   })
+  option.addEventListener('touchcancel', () => {
+    option.style.color = '#dedede';
+    option.style.textShadow = '';
+    option.style.listStyleType = 'circle';
+  })
 })
 
 
