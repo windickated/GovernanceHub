@@ -147,7 +147,6 @@ img {
 .text {
   padding: 2vw;
   color: #bebebe;
-  -webkit-text-stroke: 0.02vw #010020;
 }
 
 .text::-webkit-scrollbar {
@@ -169,7 +168,7 @@ img {
 }
 
 .option {
-  -webkit-text-stroke: 0.025vw #33E2E6;
+  -webkit-text-stroke: 0.01vw #33E2E6;
   cursor: pointer;
 }
 

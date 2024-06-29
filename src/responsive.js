@@ -4,8 +4,8 @@ import { nftTiles, nftTilesName, nftTilesClass, nftTotal, nftSelected, sidePanel
 
 
 function mobileView() {
-  storyTitle.style.fontSize = '1.1em';
-  storyDuration.style.fontSize = 'inherit';
+  storyTitle.style.fontSize = '1.2em';
+  storyDuration.style.fontSize = '1.1em';
   storyDuration.style.marginBottom = '4vw';
   storyText.style.visibility = 'visible';
 
