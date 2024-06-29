@@ -100,17 +100,25 @@ function optionsOnScreen() {
   storyOptions.style.whiteSpace = 'nowrap';
   storyOptions.style.marginLeft = '';
   storyOptions.style.marginBottom = '';
+  storyOptions.style.backgroundColor = ''
+  storyOptions.style.backdropFilter = '';
+  storyOptions.style.border = '';
+  storyOptions.style.borderRadius = '';
 }
 
 function optionsOutScreen() {
   storyOptions.style.position = 'static';
   storyOptions.style.top = '';
-  storyOptions.style.width = '95vw';
+  storyOptions.style.width = '91vw';
   storyOptions.style.height = 'auto';
   storyOptions.style.fontSize = '1.1em';
   storyOptions.style.whiteSpace = 'wrap';
-  storyOptions.style.marginLeft = '-2.5vw';
+  storyOptions.style.marginLeft = '-2vw';
   storyOptions.style.marginBottom = '4vw';
+  storyOptions.style.backgroundColor = 'rgba(1, 0, 32, 0.5)'
+  storyOptions.style.backdropFilter = 'blur(1vw)';
+  storyOptions.style.border = '0.1vw solid #33E2E6';
+  storyOptions.style.borderRadius = '2.5vw';
 }
 
 
