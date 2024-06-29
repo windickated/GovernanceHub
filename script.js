@@ -53,9 +53,11 @@ export let clickedOptionNumber;
 
 optionsList.forEach((option, i) => {
   option.addEventListener('mouseover', () => {
-    option.style.color = '#33E2E6';
-    option.style.textShadow = '0 0 3px #33E2E6';
-    option.style.listStyleType = 'disc';
+    if(window.outerWidth >= 600) {
+      option.style.color = '#33E2E6';
+      option.style.textShadow = '0 0 3px #33E2E6';
+      option.style.listStyleType = 'disc';
+    }
   })
   option.addEventListener('mouseout', () => {
     if(option != clickedOption) {
@@ -95,7 +97,7 @@ optionsList.forEach((option, i) => {
       option.style.listStyleType = 'disc';
       clickedOption = option;
       clickedOptionNumber = i + 1;
-      console.log('You chose option ' + clickedOptionNumber  + '\n' + clickedTiles);
+      alert('You chose option ' + clickedOptionNumber  + '\n' + clickedTiles);
       clickedOption = undefined;
       clickedOptionNumber = undefined;
       tilesInactive();
@@ -104,11 +106,6 @@ optionsList.forEach((option, i) => {
       option.style.textShadow = '';
       option.style.listStyleType = 'circle';
     }
-  })
-  option.addEventListener('touchcancel', () => {
-    option.style.color = '#dedede';
-    option.style.textShadow = '';
-    option.style.listStyleType = 'circle';
   })
 })
 
@@ -164,7 +161,7 @@ voteButton.addEventListener('click', () => {
       option.style.textShadow = '';
       option.style.listStyleType = 'circle';
     })
-    console.log('You chose option ' + clickedOptionNumber + '\n' + clickedTiles);
+    alert('You chose option ' + clickedOptionNumber + '\n' + clickedTiles);
     clickedOption = undefined;
     clickedOptionNumber = undefined;
     tilesInactive();
