@@ -46,6 +46,7 @@ export const sidePanel = {
     let finalPosition = 0;
     clearInterval(interval);
     if(window.outerWidth >= 600) {
+      sidePanelIcon.src = 'assets/sideIcon.png';
       interval = setInterval(moveLeft, 5);
       function moveLeft() {
         if(finalPosition == 80) {
@@ -57,6 +58,7 @@ export const sidePanel = {
         }
       }
     } else {
+      sidePanelIcon.src = 'assets/sideIconMobileClose.png';
       interval = setInterval(moveDown, 5);
       function moveDown() {
         if(finalPosition == 80) {
@@ -76,6 +78,7 @@ export const sidePanel = {
     let finalPosition = 80;
     clearInterval(interval);
     if(window.outerWidth >= 600) {
+      sidePanelIcon.src = 'assets/sideIcon.png';
       interval = setInterval(moveLeft, 5);
       function moveLeft() {
         if(finalPosition == 0) {
@@ -87,6 +90,7 @@ export const sidePanel = {
         }
       }
     } else {
+      sidePanelIcon.src = 'assets/sideIconMobileOpen.png';
       interval = setInterval(moveDown, 5);
       function moveDown() {
         if(finalPosition == 0) {

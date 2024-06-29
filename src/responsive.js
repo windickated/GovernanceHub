@@ -115,11 +115,11 @@ function optionsOutScreen() {
 
 
 function sideBarMobile() {
-  document.body.style.paddingTop = '12vw';
+  document.body.style.paddingTop = '15%';
   sidePanelIcon.style.width = '100%';
   sidePanelIcon.style.height = 'auto';
-  sidePanelIcon.src = 'assets/sideIconMobileClosed.png';
   sidePanelIcon.style.top = '0';
+  sidePanelIcon.src = 'assets/sideIconMobileOpen.png';
 
   sidePanelBar.style.width = '100vw';
   sidePanelBar.style.height = '80%';
@@ -152,6 +152,7 @@ function sideBarComputer() {
   sidePanelBar.style.height = '100%';
   sidePanelBar.style.right = '-80vw';
   sidePanelBar.style.left = '';
+  sidePanelBar.style.top = '';
   sidePanelBar.style.backgroundImage = "url('assets/sideBorder.png')";
 
   nftTotal.style.fontSize = '2vw';
