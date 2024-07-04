@@ -1,12 +1,11 @@
-import potentialsMetadate from "../date/metadateSample.js";
+import potentialsMetadate from "../data/metadataSample.js";
 
 const metadate = JSON.parse(potentialsMetadate);
 
 class Tile {
   constructor(date, i) {
     this.name = date[i].name;
-    this.image = 'https://i.seadn.io/s/raw/files/767c9a1e5c36f2f2ceef317cd2bd3189.jpg?auto=format&dpr=1&w=1200';
-  //this.image = date[i].image;
+    this.image = `https://api.degenerousdao.com/nft/image/${date[i].name.slice(11, date[i].name.length)}`;
 
     const attributesValues = 
     (Object.entries(date[i].attributes).flat()).map((attribute) => {

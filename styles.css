@@ -302,8 +302,10 @@ p {
 
 .tile-name {
   font-size: 2vw;
+  padding-bottom: 0;
 }
 
 .tile-class {
   font-size: 1.5vw;
+  padding-bottom: 1vw;
 }
