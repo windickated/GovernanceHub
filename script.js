@@ -47,7 +47,7 @@ window.addEventListener('load', reView())
 window.addEventListener('resize', () => reView())
 
 
-// Story text + options
+// Story text + options events
 
 export let clickedOption;
 export let clickedOptionNumber;
@@ -98,10 +98,12 @@ optionsList.forEach((option, i) => {
       option.style.listStyleType = 'disc';
       clickedOption = option;
       clickedOptionNumber = i + 1;
-      alert('You chose option ' + clickedOptionNumber  + '\n' + clickedTiles);
-      clickedOption = undefined;
-      clickedOptionNumber = undefined;
-      tilesInactive();
+      if(window.outerWidth <= 600) {
+        alert('You chose option ' + clickedOptionNumber  + '\n' + clickedTiles);
+        clickedOption = undefined;
+        clickedOptionNumber = undefined;
+        tilesInactive();
+      }
     } else {
       option.style.color = '#dedede';
       option.style.textShadow = '';
@@ -111,7 +113,7 @@ optionsList.forEach((option, i) => {
 })
 
 
-// Display
+// Display buttons
 
 formatButton.addEventListener('mouseenter', () => {
   if(formatButton.src.includes(displayScreen.displayButtons[0].video)) {
@@ -208,7 +210,7 @@ consoleButtons.forEach( (button) => {
 })
 
 
-// Side panel
+// Side panel interaction
 
 sidePanelIcon.addEventListener('load', tilesInteraction())
 

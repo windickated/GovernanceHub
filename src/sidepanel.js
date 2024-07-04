@@ -108,6 +108,9 @@ export const sidePanel = {
   }
 }
 
+
+// Interaction with tiles
+
 export let clickedTiles = [];
 export let undefinedOption = false;
 

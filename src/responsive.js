@@ -3,6 +3,8 @@ import { storyTitle, storyDuration, storyText, storyOptions, optionsCounter, for
 import { nftTiles, nftTilesName, nftTilesClass, nftTotal, nftSelected, sidePanel, sidePanelIcon, sidePanelBar } from "./sidepanel.js";
 
 
+// Mobile view functions:
+
 function mobileView() {
   storyTitle.style.fontSize = '1.2em';
   storyDuration.style.fontSize = '1.1em';
@@ -29,45 +31,6 @@ function mobileView() {
   sideBarMobile();
 }
 
-
-function computerView() {
-  storyTitle.style.fontSize = '3vw';
-  storyDuration.style.fontSize = '2vw';
-  storyDuration.style.marginBottom = '-2vw';
-
-  displayImage.src = 'assets/display.png';
-  displayBG.src = 'assets/displayBG.png';
-  formatButton.style.display = 'block';
-  voteButton.style.display = 'block';
-  formatPanel.style.display = 'block';
-  consoleImage.src = 'assets/console.png'
-  consoleButtons.forEach((button) => {
-    if(button.className.match('big')) {
-      button.style.width = '20%';
-    } else {
-      button.style.width = '10%';
-    }
-  });
-
-  textOnScreen();
-  optionsOnScreen();
-
-  sideBarComputer();
-}
-
-
-function textOnScreen() {
-  storyText.style.position = 'absolute';
-  storyText.style.top = '10.1vw';
-  storyText.style.width = '80.6vw';
-  storyText.style.left = '7.7vw';
-  storyText.style.overflowY = 'scroll';
-  storyText.style.height = '43.6vw';
-  storyText.style.fontSize = '2vw';
-  storyText.style.lineHeight = '3vw';
-  storyText.style.marginBottom = '';
-}
-
 function textOutScreen() {
   storyText.style.position = 'static';
   storyText.style.top = '';
@@ -78,33 +41,6 @@ function textOutScreen() {
   storyText.style.fontSize = 'inherit';
   storyText.style.lineHeight = 'inherit';
   storyText.style.marginBottom = '2vw';
-}
-
-
-function optionsOnScreen() {
-  storyOptions.style.position = 'absolute';
-  storyOptions.style.top = '59vw';
-  storyOptions.style.width = '59.8vw';
-  storyOptions.style.height = '23vw';
-  if(optionsCounter >= 4) {
-    storyOptions.style.fontSize = `${10/optionsCounter}vw`;
-    storyOptions.style.paddingTop = `${10/optionsCounter}vw`;
-  } else {
-    storyOptions.style.fontSize = '2.5vw';
-    if(optionsCounter == 3) {
-      storyOptions.style.paddingTop = '5vw';
-    } else {
-      storyOptions.style.paddingTop = '7vw';
-    }
-  }
-  storyOptions.style.whiteSpace = 'nowrap';
-  storyOptions.style.marginLeft = '';
-  storyOptions.style.marginBottom = '';
-  storyOptions.style.backgroundColor = ''
-  storyOptions.style.backdropFilter = '';
-  storyOptions.style.border = '';
-  storyOptions.style.borderRadius = '';
-  storyOptions.style.paddingBottom = '';
 }
 
 function optionsOutScreen() {
@@ -123,7 +59,6 @@ function optionsOutScreen() {
   storyOptions.style.paddingTop = '2vw';
   storyOptions.style.paddingBottom = '2vw';
 }
-
 
 function sideBarMobile() {
   document.body.style.paddingTop = '15%';
@@ -151,6 +86,72 @@ function sideBarMobile() {
   nftTilesClass.forEach((clas) => {
     clas.style.fontSize = '0.9em';
   })
+}
+
+
+// Computer view functions:
+
+function computerView() {
+  storyTitle.style.fontSize = '3vw';
+  storyDuration.style.fontSize = '2vw';
+  storyDuration.style.marginBottom = '-2vw';
+
+  displayImage.src = 'assets/display.png';
+  displayBG.src = 'assets/displayBG.png';
+  formatButton.style.display = 'block';
+  voteButton.style.display = 'block';
+  formatPanel.style.display = 'block';
+  consoleImage.src = 'assets/console.png'
+  consoleButtons.forEach((button) => {
+    if(button.className.match('big')) {
+      button.style.width = '20%';
+    } else {
+      button.style.width = '10%';
+    }
+  });
+
+  textOnScreen();
+  optionsOnScreen();
+
+  sideBarComputer();
+}
+
+function textOnScreen() {
+  storyText.style.position = 'absolute';
+  storyText.style.top = '10.1vw';
+  storyText.style.width = '80.6vw';
+  storyText.style.left = '7.7vw';
+  storyText.style.overflowY = 'scroll';
+  storyText.style.height = '43.6vw';
+  storyText.style.fontSize = '2vw';
+  storyText.style.lineHeight = '3vw';
+  storyText.style.marginBottom = '';
+}
+
+function optionsOnScreen() {
+  storyOptions.style.position = 'absolute';
+  storyOptions.style.top = '59vw';
+  storyOptions.style.width = '59.8vw';
+  storyOptions.style.height = '23vw';
+  if(optionsCounter >= 4) {
+    storyOptions.style.fontSize = `${10/optionsCounter}vw`;
+    storyOptions.style.paddingTop = `${10/optionsCounter}vw`;
+  } else {
+    storyOptions.style.fontSize = '2.5vw';
+    if(optionsCounter == 3) {
+      storyOptions.style.paddingTop = '5vw';
+    } else {
+      storyOptions.style.paddingTop = '7vw';
+    }
+  }
+  storyOptions.style.whiteSpace = 'nowrap';
+  storyOptions.style.marginLeft = '';
+  storyOptions.style.marginBottom = '';
+  storyOptions.style.backgroundColor = ''
+  storyOptions.style.backdropFilter = '';
+  storyOptions.style.border = '';
+  storyOptions.style.borderRadius = '';
+  storyOptions.style.paddingBottom = '';
 }
 
 function sideBarComputer() {
@@ -181,6 +182,7 @@ function sideBarComputer() {
 }
 
 
+// Default responsive check:
 
 function reView() {
   if(window.outerWidth <= 600) {
