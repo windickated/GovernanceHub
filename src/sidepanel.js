@@ -1,6 +1,23 @@
 import { sidePanelContainer, optionsList, clickedOptionNumber } from "../script.js";
-import potentials from "./tiles.js";
 import displayScreen from "./display.js";
+import potentialsMetadate from "../data/metadata.js";
+
+const metadate = JSON.parse(potentialsMetadate);
+
+class Tile {
+  constructor(date, i) {
+    this.name = date[i].name;
+    this.image = date[i].image;
+    this.class = date[i].attributes[5].value;
+    this.clicked = false;
+    this.active = true;
+  } 
+}
+
+const potentials = [];
+for(let i in metadate) {
+  potentials[i] = new Tile(metadate, i);
+}
 
 export let sidePanelIcon;
 export let sidePanelBar;
@@ -117,21 +134,21 @@ export let undefinedOption = false;
 export function tilesInteraction() {
   nftTiles.forEach((tile, i) => {
     tile.addEventListener('mouseover', () => {
-      if(!tile.clicked) {
+      if(!potentials[i].clicked) {
         tile.style.backgroundColor = '#171F6F';
       }
     })
     tile.addEventListener('mouseout', () => {
-      if(!tile.clicked) {
+      if(!potentials[i].clicked) {
         tile.style.backgroundColor = '#161E5F';
       }
     })
     tile.addEventListener('click', () => {
-      if(!tile.clicked) {
+      if(!potentials[i].clicked) {
         tile.style.backgroundColor = '#2441BD';
         tile.style.filter = 'drop-shadow(0 0 0.5vw #33E2E6)';
         tile.style.color = '#33E2E6';
-        tile.clicked = true;
+        potentials[i].clicked = true;
         if(!clickedTiles.includes(nftTilesName[i].innerHTML)) {
           clickedTiles.push(nftTilesName[i].innerHTML);
         }
@@ -140,7 +157,7 @@ export function tilesInteraction() {
         tile.style.backgroundColor = '#161E5F';
         tile.style.filter = 'drop-shadow(0 0 0.1vw black)';
         tile.style.color = '#dedede';
-        tile.clicked = false;
+        potentials[i].clicked = false;
         delete clickedTiles[(clickedTiles.indexOf(nftTilesName[i].innerHTML))]
       }
       clickedTiles = clickedTiles.filter((value) => {
@@ -161,15 +178,16 @@ export function tilesInteraction() {
 }
 
 export function tilesInactive() {
-  for(let i in nftTiles) {
-    if(clickedTiles.toString().match(nftTilesName[i].innerHTML)) {
+  for(let i in potentials) {
+    
+    if(potentials[i].clicked) {
       nftTiles[i].style.backgroundColor = '#161E5F';
       nftTiles[i].style.filter = 'drop-shadow(0 0 0.1vw black)';
       nftTiles[i].style.color = '#dedede';
       nftTiles[i].style.opacity = '0.5';
       nftTiles[i].style.pointerEvents = 'none';
-      nftTiles[i].clicked = false;
-      nftTiles[i].active = false;
+      potentials[i].clicked = false;
+      potentials[i].active = false;
       clickedTiles.splice(clickedTiles.indexOf(nftTilesName[i].innerHTML), 1);
     }
   }

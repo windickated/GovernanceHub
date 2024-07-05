@@ -1,377 +1,1222 @@
 const metadate = [
   {
-    "name": "Potential #11",
-    "description": "Remember to replace this description",
-    "image": "ipfs://metadata_uri/1.png",
+    "name": "Potential #1",
+    "external_url": "https://degenerousdao.com",
+    "description": "The fight for all of reality has begun. Unlock your true [Potential](https://degenerousdao.com) and create your own destiny as you step into the captivating realm of The Dischordian Saga",
+    "image": "https://api.degenerousdao.com/nft/image/1",
     "edition": 1,
     "attributes": [
       {
+        "label": "Specie",
+        "type": "string",
+        "trait_type": "Specie",
+        "value": "Ne-Yon"
+      },
+      {
+        "label": "Gender",
+        "type": "string",
+        "trait_type": "Gender",
+        "value": "Male"
+      },
+      {
+        "label": "Unknown type",
+        "type": "string",
+        "trait_type": "Unknown type",
+        "value": "20"
+      },
+      {
+        "label": "Body",
+        "type": "string",
+        "trait_type": "Body",
+        "value": "Ne-Yon Blue"
+      },
+      {
+        "label": "Frame",
+        "type": "string",
+        "trait_type": "Frame",
+        "value": "Ne-Yon Frame"
+      },
+      {
+        "label": "Class",
+        "type": "string",
+        "trait_type": "Class",
+        "value": "Ne-Yon"
+      },
+      {
+        "label": "Background",
+        "type": "string",
         "trait_type": "Background",
-        "value": "Thessolar(Right)"
+        "value": "Ambassador of War"
       },
       {
-        "trait_type": "BackAccessory",
-        "value": "None"
+        "label": "Arm Accessory",
+        "type": "string",
+        "trait_type": "Arm Accessory",
+        "value": "Ordo Temporis Vambrace"
       },
       {
-        "trait_type": "BodyDeMagi",
-        "value": "DarkClosed"
+        "label": "Back Accessory",
+        "type": "string",
+        "trait_type": "Back Accessory",
+        "value": "Imperi Mentium Cloak"
       },
       {
-        "trait_type": "ArmAccessory",
-        "value": "SapphireProphet"
-      },
-      {
+        "label": "Outfit",
+        "type": "string",
         "trait_type": "Outfit",
-        "value": "LucidDream"
+        "value": "Finis Mundi Robe"
       },
       {
-        "trait_type": "WaistAccessory",
+        "label": "Waist Accessory",
+        "type": "string",
+        "trait_type": "Waist Accessory",
         "value": "None"
       },
       {
-        "trait_type": "EyesDeMagi",
-        "value": "Blinded"
-      },
-      {
-        "trait_type": "FacialHair",
-        "value": "Brown3"
-      },
-      {
-        "trait_type": "MaskDeMagi",
-        "value": "None"
-      },
-      {
-        "trait_type": "Hair",
-        "value": "Brown27"
-      },
-      {
-        "trait_type": "HeadwearDeMagi",
-        "value": "None"
-      },
-      {
-        "trait_type": "Weapon",
-        "value": "CryptonicStaff"
-      },
-      {
+        "label": "Familiar",
+        "type": "string",
         "trait_type": "Familiar",
         "value": "None"
       },
       {
+        "label": "Facial Hair",
+        "type": "string",
+        "trait_type": "Facial Hair",
+        "value": "None"
+      },
+      {
+        "label": "Mask",
+        "type": "string",
+        "trait_type": "Mask",
+        "value": "Mask Of Origo"
+      },
+      {
+        "label": "Hair",
+        "type": "string",
+        "trait_type": "Hair",
+        "value": "None"
+      },
+      {
+        "label": "Headwear",
+        "type": "string",
+        "trait_type": "Headwear",
+        "value": "Architectus Hood"
+      },
+      {
+        "label": "Weapon",
+        "type": "string",
+        "trait_type": "Weapon",
+        "value": "Baculus"
+      },
+      {
+        "label": "Badge slot #1",
+        "type": "string",
+        "trait_type": "Badge slot #1",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #2",
+        "type": "string",
+        "trait_type": "Badge slot #2",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #3",
+        "type": "string",
+        "trait_type": "Badge slot #3",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #4",
+        "type": "string",
+        "trait_type": "Badge slot #4",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #5",
+        "type": "string",
+        "trait_type": "Badge slot #5",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #6",
+        "type": "string",
+        "trait_type": "Badge slot #6",
+        "value": "None"
+      }
+    ]
+  },
+  {
+    "name": "Potential #2",
+    "external_url": "https://degenerousdao.com",
+    "description": "The fight for all of reality has begun. Unlock your true [Potential](https://degenerousdao.com) and create your own destiny as you step into the captivating realm of The Dischordian Saga",
+    "image": "https://api.degenerousdao.com/nft/image/2",
+    "edition": 1,
+    "attributes": [
+      {
+        "label": "Specie",
+        "type": "string",
+        "trait_type": "Specie",
+        "value": "Ne-Yon"
+      },
+      {
+        "label": "Gender",
+        "type": "string",
+        "trait_type": "Gender",
+        "value": "Male"
+      },
+      {
+        "label": "Unknown type",
+        "type": "string",
+        "trait_type": "Unknown type",
+        "value": "30"
+      },
+      {
+        "label": "Body",
+        "type": "string",
+        "trait_type": "Body",
+        "value": "Ne-Yon Blue"
+      },
+      {
+        "label": "Frame",
+        "type": "string",
+        "trait_type": "Frame",
+        "value": "Ne-Yon Frame"
+      },
+      {
+        "label": "Class",
+        "type": "string",
+        "trait_type": "Class",
+        "value": "Ne-Yon"
+      },
+      {
+        "label": "Background",
+        "type": "string",
+        "trait_type": "Background",
+        "value": "Akhaten"
+      },
+      {
+        "label": "Arm Accessory",
+        "type": "string",
+        "trait_type": "Arm Accessory",
+        "value": "Forge Bands"
+      },
+      {
+        "label": "Back Accessory",
+        "type": "string",
+        "trait_type": "Back Accessory",
+        "value": "Showl Of Ash"
+      },
+      {
+        "label": "Outfit",
+        "type": "string",
+        "trait_type": "Outfit",
+        "value": "Tunic Of The Inferno"
+      },
+      {
+        "label": "Waist Accessory",
+        "type": "string",
+        "trait_type": "Waist Accessory",
+        "value": "None"
+      },
+      {
+        "label": "Familiar",
+        "type": "string",
+        "trait_type": "Familiar",
+        "value": "None"
+      },
+      {
+        "label": "Facial Hair",
+        "type": "string",
+        "trait_type": "Facial Hair",
+        "value": "Hephaestus Beard"
+      },
+      {
+        "label": "Mask",
+        "type": "string",
+        "trait_type": "Mask",
+        "value": "None"
+      },
+      {
+        "label": "Hair",
+        "type": "string",
+        "trait_type": "Hair",
+        "value": "Hephaestus Hair"
+      },
+      {
+        "label": "Headwear",
+        "type": "string",
+        "trait_type": "Headwear",
+        "value": "None"
+      },
+      {
+        "label": "Weapon",
+        "type": "string",
+        "trait_type": "Weapon",
+        "value": "Pyr Hammer"
+      },
+      {
+        "label": "Badge slot #1",
+        "type": "string",
+        "trait_type": "Badge slot #1",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #2",
+        "type": "string",
+        "trait_type": "Badge slot #2",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #3",
+        "type": "string",
+        "trait_type": "Badge slot #3",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #4",
+        "type": "string",
+        "trait_type": "Badge slot #4",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #5",
+        "type": "string",
+        "trait_type": "Badge slot #5",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #6",
+        "type": "string",
+        "trait_type": "Badge slot #6",
+        "value": "None"
+      }
+    ]
+  },
+  {
+    "name": "Potential #15",
+    "external_url": "https://degenerousdao.com",
+    "description": "The fight for all of reality has begun. Unlock your true [Potential](https://degenerousdao.com) and create your own destiny as you step into the captivating realm of The Dischordian Saga",
+    "image": "https://api.degenerousdao.com/nft/image/15",
+    "edition": 1,
+    "attributes": [
+      {
+        "label": "Specie",
+        "type": "string",
+        "trait_type": "Specie",
+        "value": "DeMagi"
+      },
+      {
+        "label": "Gender",
+        "type": "string",
+        "trait_type": "Gender",
+        "value": "Male"
+      },
+      {
+        "label": "Level",
+        "type": "string",
+        "trait_type": "Level",
+        "value": "3"
+      },
+      {
+        "label": "Body",
+        "type": "string",
+        "trait_type": "Body",
+        "value": "Light Closed"
+      },
+      {
+        "label": "Frame",
+        "type": "string",
         "trait_type": "Frame",
         "value": "Frame"
       },
       {
+        "label": "Class",
+        "type": "string",
         "trait_type": "Class",
         "value": "Oracle"
       },
       {
-        "trait_type": "Level",
-        "value": "1"
+        "label": "Eyes",
+        "type": "string",
+        "trait_type": "Eyes",
+        "value": "Blue Inquisitive Full Light"
       },
       {
-        "trait_type": "Gender",
-        "value": "Male"
+        "label": "Background",
+        "type": "string",
+        "trait_type": "Background",
+        "value": "Ambassador of War"
       },
       {
-        "trait_type": "Specie",
-        "value": "Demagi"
+        "label": "Back Accessory",
+        "type": "string",
+        "trait_type": "Back Accessory",
+        "value": "Sunshield"
+      },
+      {
+        "label": "Familiar",
+        "type": "string",
+        "trait_type": "Familiar",
+        "value": "Terminite Alpha"
+      },
+      {
+        "label": "Arm Accessory",
+        "type": "string",
+        "trait_type": "Arm Accessory",
+        "value": "Lucid Dream"
+      },
+      {
+        "label": "Outfit",
+        "type": "string",
+        "trait_type": "Outfit",
+        "value": "Majestic Seer"
+      },
+      {
+        "label": "Waist Accessory",
+        "type": "string",
+        "trait_type": "Waist Accessory",
+        "value": "Mystic Fissure"
+      },
+      {
+        "label": "Facial Hair",
+        "type": "string",
+        "trait_type": "Facial Hair",
+        "value": "None"
+      },
+      {
+        "label": "Mask",
+        "type": "string",
+        "trait_type": "Mask",
+        "value": "None"
+      },
+      {
+        "label": "Hair",
+        "type": "string",
+        "trait_type": "Hair",
+        "value": "Black Fohawk"
+      },
+      {
+        "label": "Headwear",
+        "type": "string",
+        "trait_type": "Headwear",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #1",
+        "type": "string",
+        "trait_type": "Badge slot #1",
+        "value": "Order"
+      },
+      {
+        "label": "Badge slot #3",
+        "type": "string",
+        "trait_type": "Badge slot #3",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #5",
+        "type": "string",
+        "trait_type": "Badge slot #5",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #6",
+        "type": "string",
+        "trait_type": "Badge slot #6",
+        "value": "None"
+      },
+      {
+        "label": "Weapon",
+        "type": "string",
+        "trait_type": "Weapon",
+        "value": "Dream Baton"
       }
     ]
   },
   {
-    "name": "Potential #240",
-    "description": "Remember to replace this description",
-    "image": "ipfs://metadata_uri/49.png",
-    "edition": 49,
+    "name": "Potential #22",
+    "external_url": "https://degenerousdao.com",
+    "description": "The fight for all of reality has begun. Unlock your true [Potential](https://degenerousdao.com) and create your own destiny as you step into the captivating realm of The Dischordian Saga",
+    "image": "https://api.degenerousdao.com/nft/image/22",
+    "edition": 1,
     "attributes": [
       {
-        "trait_type": "Background",
-        "value": "Thessolar(Left)"
+        "label": "Specie",
+        "type": "string",
+        "trait_type": "Specie",
+        "value": "DeMagi"
       },
       {
-        "trait_type": "BackAccessory",
-        "value": "None"
+        "label": "Gender",
+        "type": "string",
+        "trait_type": "Gender",
+        "value": "Male"
       },
       {
-        "trait_type": "BodyDeMagi",
-        "value": "BronzeClosed"
+        "label": "Level",
+        "type": "string",
+        "trait_type": "Level",
+        "value": "2"
       },
       {
-        "trait_type": "ArmAccessory",
-        "value": "Nightshade"
+        "label": "Body",
+        "type": "string",
+        "trait_type": "Body",
+        "value": "Light Closed"
       },
       {
-        "trait_type": "Outfit",
-        "value": "WhiteLotus"
-      },
-      {
-        "trait_type": "WaistAccessory",
-        "value": "None"
-      },
-      {
-        "trait_type": "EyesDeMagi",
-        "value": "RedInquisitive(Full)"
-      },
-      {
-        "trait_type": "FacialHair",
-        "value": "Black6"
-      },
-      {
-        "trait_type": "MaskDeMagi",
-        "value": "Maurader"
-      },
-      {
-        "trait_type": "Hair",
-        "value": "Black1"
-      },
-      {
-        "trait_type": "HeadwearDeMagi",
-        "value": "None"
-      },
-      {
-        "trait_type": "Weapon",
-        "value": "SilverTongue"
-      },
-      {
-        "trait_type": "Familiar",
-        "value": "None"
-      },
-      {
+        "label": "Frame",
+        "type": "string",
         "trait_type": "Frame",
         "value": "Frame"
       },
       {
+        "label": "Class",
+        "type": "string",
+        "trait_type": "Class",
+        "value": "Oracle"
+      },
+      {
+        "label": "Eyes",
+        "type": "string",
+        "trait_type": "Eyes",
+        "value": "Blinded"
+      },
+      {
+        "label": "Background",
+        "type": "string",
+        "trait_type": "Background",
+        "value": "The Tombs Of The Forgotten"
+      },
+      {
+        "label": "Back Accessory",
+        "type": "string",
+        "trait_type": "Back Accessory",
+        "value": "Nightmares Grasp"
+      },
+      {
+        "label": "Familiar",
+        "type": "string",
+        "trait_type": "Familiar",
+        "value": "None"
+      },
+      {
+        "label": "Arm Accessory",
+        "type": "string",
+        "trait_type": "Arm Accessory",
+        "value": "Lucid Dream"
+      },
+      {
+        "label": "Outfit",
+        "type": "string",
+        "trait_type": "Outfit",
+        "value": "Lucid Dream"
+      },
+      {
+        "label": "Waist Accessory",
+        "type": "string",
+        "trait_type": "Waist Accessory",
+        "value": "Prophetic Plate"
+      },
+      {
+        "label": "Facial Hair",
+        "type": "string",
+        "trait_type": "Facial Hair",
+        "value": "Grey Braided"
+      },
+      {
+        "label": "Mask",
+        "type": "string",
+        "trait_type": "Mask",
+        "value": "None"
+      },
+      {
+        "label": "Hair",
+        "type": "string",
+        "trait_type": "Hair",
+        "value": "Grey Half Up"
+      },
+      {
+        "label": "Headwear",
+        "type": "string",
+        "trait_type": "Headwear",
+        "value": "Philosphers Crown"
+      },
+      {
+        "label": "Badge slot #1",
+        "type": "string",
+        "trait_type": "Badge slot #1",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #3",
+        "type": "string",
+        "trait_type": "Badge slot #3",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #5",
+        "type": "string",
+        "trait_type": "Badge slot #5",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #6",
+        "type": "string",
+        "trait_type": "Badge slot #6",
+        "value": "None"
+      },
+      {
+        "label": "Weapon",
+        "type": "string",
+        "trait_type": "Weapon",
+        "value": "Runearch Blade"
+      }
+    ]
+  },
+  {
+    "name": "Potential #298",
+    "external_url": "https://degenerousdao.com",
+    "description": "The fight for all of reality has begun. Unlock your true [Potential](https://degenerousdao.com) and create your own destiny as you step into the captivating realm of The Dischordian Saga",
+    "image": "https://api.degenerousdao.com/nft/image/298",
+    "edition": 1,
+    "attributes": [
+      {
+        "label": "Specie",
+        "type": "string",
+        "trait_type": "Specie",
+        "value": "Quarchon"
+      },
+      {
+        "label": "Gender",
+        "type": "string",
+        "trait_type": "Gender",
+        "value": "Male"
+      },
+      {
+        "label": "Level",
+        "type": "string",
+        "trait_type": "Level",
+        "value": "1"
+      },
+      {
+        "label": "Body",
+        "type": "string",
+        "trait_type": "Body",
+        "value": "Light Open"
+      },
+      {
+        "label": "Frame",
+        "type": "string",
+        "trait_type": "Frame",
+        "value": "Frame"
+      },
+      {
+        "label": "Class",
+        "type": "string",
         "trait_type": "Class",
         "value": "Assassin"
       },
       {
-        "trait_type": "Level",
-        "value": "1"
+        "label": "Eyes",
+        "type": "string",
+        "trait_type": "Eyes",
+        "value": "Yellow Sentry Shields"
       },
       {
-        "trait_type": "Gender",
-        "value": "Male"
-      },
-      {
-        "trait_type": "Specie",
-        "value": "Demagi"
-      }
-    ]
-  },
-  {
-    "name": "Potential #425",
-    "description": "Remember to replace this description",
-    "image": "ipfs://metadata_uri/173.png",
-    "edition": 173,
-    "attributes": [
-      {
+        "label": "Background",
+        "type": "string",
         "trait_type": "Background",
-        "value": "VeridianVI(Right)"
+        "value": "Road To Sanctuary Right"
       },
       {
-        "trait_type": "BackAccessory",
-        "value": "PowerCell"
-      },
-      {
-        "trait_type": "BodyDeMagi",
-        "value": "DarkOpen"
-      },
-      {
-        "trait_type": "ArmAccessory",
-        "value": "TheGallifreyan"
-      },
-      {
-        "trait_type": "Outfit",
-        "value": "StarSeeker"
-      },
-      {
-        "trait_type": "WaistAccessory",
+        "label": "Back Accessory",
+        "type": "string",
+        "trait_type": "Back Accessory",
         "value": "None"
       },
       {
-        "trait_type": "EyesDeMagi",
-        "value": "YellowPensive"
-      },
-      {
-        "trait_type": "FacialHair",
-        "value": "Black8"
-      },
-      {
-        "trait_type": "MaskDeMagi",
-        "value": "None"
-      },
-      {
-        "trait_type": "Hair",
-        "value": "Blue3"
-      },
-      {
-        "trait_type": "HeadwearDeMagi",
-        "value": "None"
-      },
-      {
-        "trait_type": "Weapon",
-        "value": "RocketRegulator"
-      },
-      {
+        "label": "Familiar",
+        "type": "string",
         "trait_type": "Familiar",
         "value": "None"
       },
       {
+        "label": "Arm Accessory",
+        "type": "string",
+        "trait_type": "Arm Accessory",
+        "value": "Scarlet Blade"
+      },
+      {
+        "label": "Outfit",
+        "type": "string",
+        "trait_type": "Outfit",
+        "value": "White Lotus"
+      },
+      {
+        "label": "Waist Accessory",
+        "type": "string",
+        "trait_type": "Waist Accessory",
+        "value": "None"
+      },
+      {
+        "label": "Mask",
+        "type": "string",
+        "trait_type": "Mask",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #1",
+        "type": "string",
+        "trait_type": "Badge slot #1",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #3",
+        "type": "string",
+        "trait_type": "Badge slot #3",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #5",
+        "type": "string",
+        "trait_type": "Badge slot #5",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #6",
+        "type": "string",
+        "trait_type": "Badge slot #6",
+        "value": "None"
+      },
+      {
+        "label": "Weapon",
+        "type": "string",
+        "trait_type": "Weapon",
+        "value": "Red Death"
+      }
+    ]
+  },
+  {
+    "name": "Potential #414",
+    "external_url": "https://degenerousdao.com",
+    "description": "The fight for all of reality has begun. Unlock your true [Potential](https://degenerousdao.com) and create your own destiny as you step into the captivating realm of The Dischordian Saga",
+    "image": "https://api.degenerousdao.com/nft/image/414",
+    "edition": 1,
+    "attributes": [
+      {
+        "label": "Specie",
+        "type": "string",
+        "trait_type": "Specie",
+        "value": "DeMagi"
+      },
+      {
+        "label": "Gender",
+        "type": "string",
+        "trait_type": "Gender",
+        "value": "Male"
+      },
+      {
+        "label": "Level",
+        "type": "string",
+        "trait_type": "Level",
+        "value": "2"
+      },
+      {
+        "label": "Body",
+        "type": "string",
+        "trait_type": "Body",
+        "value": "Light Closed"
+      },
+      {
+        "label": "Frame",
+        "type": "string",
         "trait_type": "Frame",
         "value": "Frame"
       },
       {
+        "label": "Class",
+        "type": "string",
         "trait_type": "Class",
         "value": "Engineer"
       },
       {
-        "trait_type": "Level",
-        "value": "1"
+        "label": "Eyes",
+        "type": "string",
+        "trait_type": "Eyes",
+        "value": "Yellow Inquisitive Snake"
       },
       {
-        "trait_type": "Gender",
-        "value": "Male"
+        "label": "Background",
+        "type": "string",
+        "trait_type": "Background",
+        "value": "Thessolar Left"
       },
       {
-        "trait_type": "Specie",
-        "value": "Demagi"
+        "label": "Back Accessory",
+        "type": "string",
+        "trait_type": "Back Accessory",
+        "value": "None"
+      },
+      {
+        "label": "Familiar",
+        "type": "string",
+        "trait_type": "Familiar",
+        "value": "None"
+      },
+      {
+        "label": "Arm Accessory",
+        "type": "string",
+        "trait_type": "Arm Accessory",
+        "value": "The Gallifreyan"
+      },
+      {
+        "label": "Outfit",
+        "type": "string",
+        "trait_type": "Outfit",
+        "value": "Martian Anomaly"
+      },
+      {
+        "label": "Waist Accessory",
+        "type": "string",
+        "trait_type": "Waist Accessory",
+        "value": "Tech Tether"
+      },
+      {
+        "label": "Facial Hair",
+        "type": "string",
+        "trait_type": "Facial Hair",
+        "value": "Black Braided"
+      },
+      {
+        "label": "Mask",
+        "type": "string",
+        "trait_type": "Mask",
+        "value": "None"
+      },
+      {
+        "label": "Hair",
+        "type": "string",
+        "trait_type": "Hair",
+        "value": "Black Half Up"
+      },
+      {
+        "label": "Headwear",
+        "type": "string",
+        "trait_type": "Headwear",
+        "value": "Environmental Lenses"
+      },
+      {
+        "label": "Badge slot #1",
+        "type": "string",
+        "trait_type": "Badge slot #1",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #3",
+        "type": "string",
+        "trait_type": "Badge slot #3",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #5",
+        "type": "string",
+        "trait_type": "Badge slot #5",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #6",
+        "type": "string",
+        "trait_type": "Badge slot #6",
+        "value": "None"
+      },
+      {
+        "label": "Weapon",
+        "type": "string",
+        "trait_type": "Weapon",
+        "value": "Arc Wrench"
       }
     ]
   },
   {
-    "name": "Potential #660",
-    "description": "Remember to replace this description",
-    "image": "ipfs://metadata_uri/118.png",
-    "edition": 118,
+    "name": "Potential #548",
+    "external_url": "https://degenerousdao.com",
+    "description": "The fight for all of reality has begun. Unlock your true [Potential](https://degenerousdao.com) and create your own destiny as you step into the captivating realm of The Dischordian Saga",
+    "image": "https://api.degenerousdao.com/nft/image/548",
+    "edition": 1,
     "attributes": [
       {
-        "trait_type": "Background",
-        "value": "NewAngelus(Left)"
+        "label": "Specie",
+        "type": "string",
+        "trait_type": "Specie",
+        "value": "DeMagi"
       },
       {
-        "trait_type": "BackAccessory",
-        "value": "None"
+        "label": "Gender",
+        "type": "string",
+        "trait_type": "Gender",
+        "value": "Female"
       },
       {
-        "trait_type": "BodyQuarchon",
-        "value": "LightOpen"
+        "label": "Level",
+        "type": "string",
+        "trait_type": "Level",
+        "value": "1"
       },
       {
-        "trait_type": "ArmAccessory",
-        "value": "StealthShield"
+        "label": "Body",
+        "type": "string",
+        "trait_type": "Body",
+        "value": "Light Open"
       },
       {
-        "trait_type": "Outfit",
-        "value": "PreservingScout"
-      },
-      {
-        "trait_type": "WaistAccessory",
-        "value": "AgentsBelt"
-      },
-      {
-        "trait_type": "EyesQuarchon",
-        "value": "Red4"
-      },
-      {
-        "trait_type": "MaskQuarchon",
-        "value": "None"
-      },
-      {
-        "trait_type": "Weapon",
-        "value": "SenatorialSilencer"
-      },
-      {
-        "trait_type": "Familiar",
-        "value": "AeroCapture"
-      },
-      {
+        "label": "Frame",
+        "type": "string",
         "trait_type": "Frame",
         "value": "Frame"
       },
       {
+        "label": "Class",
+        "type": "string",
+        "trait_type": "Class",
+        "value": "Engineer"
+      },
+      {
+        "label": "Eyes",
+        "type": "string",
+        "trait_type": "Eyes",
+        "value": "Brown Pensive"
+      },
+      {
+        "label": "Background",
+        "type": "string",
+        "trait_type": "Background",
+        "value": "Veridian VI Right"
+      },
+      {
+        "label": "Back Accessory",
+        "type": "string",
+        "trait_type": "Back Accessory",
+        "value": "None"
+      },
+      {
+        "label": "Familiar",
+        "type": "string",
+        "trait_type": "Familiar",
+        "value": "Terminite Alpha"
+      },
+      {
+        "label": "Arm Accessory",
+        "type": "string",
+        "trait_type": "Arm Accessory",
+        "value": "Arc Welder"
+      },
+      {
+        "label": "Outfit",
+        "type": "string",
+        "trait_type": "Outfit",
+        "value": "Temporal Ranger"
+      },
+      {
+        "label": "Waist Accessory",
+        "type": "string",
+        "trait_type": "Waist Accessory",
+        "value": "None"
+      },
+      {
+        "label": "Mask",
+        "type": "string",
+        "trait_type": "Mask",
+        "value": "None"
+      },
+      {
+        "label": "Hair",
+        "type": "string",
+        "trait_type": "Hair",
+        "value": "Blonde Pixie"
+      },
+      {
+        "label": "Headwear",
+        "type": "string",
+        "trait_type": "Headwear",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #1",
+        "type": "string",
+        "trait_type": "Badge slot #1",
+        "value": "Order"
+      },
+      {
+        "label": "Badge slot #3",
+        "type": "string",
+        "trait_type": "Badge slot #3",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #5",
+        "type": "string",
+        "trait_type": "Badge slot #5",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #6",
+        "type": "string",
+        "trait_type": "Badge slot #6",
+        "value": "None"
+      },
+      {
+        "label": "Weapon",
+        "type": "string",
+        "trait_type": "Weapon",
+        "value": "Rocket Regulator"
+      }
+    ]
+  },
+  {
+    "name": "Potential #671",
+    "external_url": "https://degenerousdao.com",
+    "description": "The fight for all of reality has begun. Unlock your true [Potential](https://degenerousdao.com) and create your own destiny as you step into the captivating realm of The Dischordian Saga",
+    "image": "https://api.degenerousdao.com/nft/image/671",
+    "edition": 1,
+    "attributes": [
+      {
+        "label": "Specie",
+        "type": "string",
+        "trait_type": "Specie",
+        "value": "Quarchon"
+      },
+      {
+        "label": "Gender",
+        "type": "string",
+        "trait_type": "Gender",
+        "value": "Male"
+      },
+      {
+        "label": "Level",
+        "type": "string",
+        "trait_type": "Level",
+        "value": "2"
+      },
+      {
+        "label": "Body",
+        "type": "string",
+        "trait_type": "Body",
+        "value": "Bronze Open"
+      },
+      {
+        "label": "Frame",
+        "type": "string",
+        "trait_type": "Frame",
+        "value": "Frame"
+      },
+      {
+        "label": "Class",
+        "type": "string",
         "trait_type": "Class",
         "value": "Spy"
       },
       {
-        "trait_type": "Level",
-        "value": "1"
+        "label": "Eyes",
+        "type": "string",
+        "trait_type": "Eyes",
+        "value": "Purple Mystic Mirror"
       },
       {
-        "trait_type": "Gender",
-        "value": "Male"
-      },
-      {
-        "trait_type": "Specie",
-        "value": "Quarchon"
-      }
-    ]
-  },
-  {
-    "name": "Potential #855",
-    "description": "Remember to replace this description",
-    "image": "ipfs://metadata_uri/12.png",
-    "edition": 12,
-    "attributes": [
-      {
+        "label": "Background",
+        "type": "string",
         "trait_type": "Background",
-        "value": "ArchitectsLaboratory(Right)"
+        "value": "The Last Resort Left"
       },
       {
-        "trait_type": "BackAccessory",
+        "label": "Back Accessory",
+        "type": "string",
+        "trait_type": "Back Accessory",
         "value": "None"
       },
       {
-        "trait_type": "BodyQuarchon",
-        "value": "BronzeClosed"
-      },
-      {
-        "trait_type": "ArmAccessory",
-        "value": "StormsEye"
-      },
-      {
-        "trait_type": "Outfit",
-        "value": "StormsEye"
-      },
-      {
-        "trait_type": "WaistAccessory",
-        "value": "RoyalRiddle"
-      },
-      {
-        "trait_type": "EyesQuarchon",
-        "value": "Grey13"
-      },
-      {
-        "trait_type": "MaskQuarchon",
-        "value": "None"
-      },
-      {
-        "trait_type": "Weapon",
-        "value": "Timberstrike"
-      },
-      {
+        "label": "Familiar",
+        "type": "string",
         "trait_type": "Familiar",
         "value": "None"
       },
       {
-        "trait_type": "Frame",
-        "value": "Frame"
+        "label": "Arm Accessory",
+        "type": "string",
+        "trait_type": "Arm Accessory",
+        "value": "Covert Iron"
       },
       {
-        "trait_type": "Class",
-        "value": "Soldier"
+        "label": "Outfit",
+        "type": "string",
+        "trait_type": "Outfit",
+        "value": "Imperial Intelligence"
       },
       {
-        "trait_type": "Level",
-        "value": "1"
+        "label": "Waist Accessory",
+        "type": "string",
+        "trait_type": "Waist Accessory",
+        "value": "None"
       },
       {
+        "label": "Mask",
+        "type": "string",
+        "trait_type": "Mask",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #1",
+        "type": "string",
+        "trait_type": "Badge slot #1",
+        "value": "Order"
+      },
+      {
+        "label": "Badge slot #3",
+        "type": "string",
+        "trait_type": "Badge slot #3",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #5",
+        "type": "string",
+        "trait_type": "Badge slot #5",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #6",
+        "type": "string",
+        "trait_type": "Badge slot #6",
+        "value": "None"
+      },
+      {
+        "label": "Weapon",
+        "type": "string",
+        "trait_type": "Weapon",
+        "value": "Senatorial Silencer"
+      }
+    ]
+  },
+  {
+    "name": "Potential #878",
+    "external_url": "https://degenerousdao.com",
+    "description": "The fight for all of reality has begun. Unlock your true [Potential](https://degenerousdao.com) and create your own destiny as you step into the captivating realm of The Dischordian Saga",
+    "image": "https://api.degenerousdao.com/nft/image/878",
+    "edition": 1,
+    "attributes": [
+      {
+        "label": "Specie",
+        "type": "string",
+        "trait_type": "Specie",
+        "value": "Quarchon"
+      },
+      {
+        "label": "Gender",
+        "type": "string",
         "trait_type": "Gender",
         "value": "Male"
       },
       {
-        "trait_type": "Specie",
-        "value": "Quarchon"
+        "label": "Level",
+        "type": "string",
+        "trait_type": "Level",
+        "value": "1"
+      },
+      {
+        "label": "Body",
+        "type": "string",
+        "trait_type": "Body",
+        "value": "Bronze Closed"
+      },
+      {
+        "label": "Frame",
+        "type": "string",
+        "trait_type": "Frame",
+        "value": "Frame"
+      },
+      {
+        "label": "Class",
+        "type": "string",
+        "trait_type": "Class",
+        "value": "Soldier"
+      },
+      {
+        "label": "Eyes",
+        "type": "string",
+        "trait_type": "Eyes",
+        "value": "Blue Guardian Gaze"
+      },
+      {
+        "label": "Background",
+        "type": "string",
+        "trait_type": "Background",
+        "value": "Emissary of Fate"
+      },
+      {
+        "label": "Back Accessory",
+        "type": "string",
+        "trait_type": "Back Accessory",
+        "value": "None"
+      },
+      {
+        "label": "Familiar",
+        "type": "string",
+        "trait_type": "Familiar",
+        "value": "None"
+      },
+      {
+        "label": "Arm Accessory",
+        "type": "string",
+        "trait_type": "Arm Accessory",
+        "value": "None"
+      },
+      {
+        "label": "Outfit",
+        "type": "string",
+        "trait_type": "Outfit",
+        "value": "Emerald Knight"
+      },
+      {
+        "label": "Waist Accessory",
+        "type": "string",
+        "trait_type": "Waist Accessory",
+        "value": "None"
+      },
+      {
+        "label": "Mask",
+        "type": "string",
+        "trait_type": "Mask",
+        "value": "Terminus Relay Beta"
+      },
+      {
+        "label": "Badge slot #1",
+        "type": "string",
+        "trait_type": "Badge slot #1",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #3",
+        "type": "string",
+        "trait_type": "Badge slot #3",
+        "value": "Order"
+      },
+      {
+        "label": "Badge slot #5",
+        "type": "string",
+        "trait_type": "Badge slot #5",
+        "value": "None"
+      },
+      {
+        "label": "Badge slot #6",
+        "type": "string",
+        "trait_type": "Badge slot #6",
+        "value": "None"
+      },
+      {
+        "label": "Weapon",
+        "type": "string",
+        "trait_type": "Weapon",
+        "value": "Timberstrike"
       }
     ]
   }
