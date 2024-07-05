@@ -213,7 +213,7 @@ consoleButtons.forEach( (button) => {
   })
 })
 
-// Inactive Omnihub button until it will be ready
+// Inactive Omnihub button until it is ready
 consoleButtons[2].src = 'assets/omnihub-inactive.png';
 consoleButtons[2].style.pointerEvents = 'none'
 
