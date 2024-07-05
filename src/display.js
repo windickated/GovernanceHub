@@ -1,4 +1,5 @@
-import { displayContainer, clickedOption, voteButton } from "../script.js";
+import { clickedOption, displayContainer, voteButton } from "../script.js";
+import { undefinedOption } from "./sidepanel.js";
 
 const displayScreen = {
   displayButtons: [
@@ -26,7 +27,11 @@ const displayScreen = {
 
   changeButtonState() {
     if(clickedOption) {
-      voteButton.src = this.displayButtons[1].image;
+      if(!undefinedOption) {
+        voteButton.src = this.displayButtons[1].image;
+      } else {
+        voteButton.src = this.displayButtons[1].click;
+      }
     } else {
     voteButton.src = this.displayButtons[1].inactive;
     }

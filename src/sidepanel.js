@@ -2,6 +2,9 @@ import { sidePanelContainer, optionsList, clickedOptionNumber } from "../script.
 import displayScreen from "./display.js";
 import potentialsMetadate from "../data/metadata.js";
 
+
+// Building NFT tiles from actual metadate (i used sample)
+
 const metadate = JSON.parse(potentialsMetadate);
 
 class Tile {
@@ -18,6 +21,7 @@ const potentials = [];
 for(let i in metadate) {
   potentials[i] = new Tile(metadate, i);
 }
+
 
 export let sidePanelIcon;
 export let sidePanelBar;
@@ -144,6 +148,7 @@ export function tilesInteraction() {
       }
     })
     tile.addEventListener('click', () => {
+      nftSelected.innerHTML = 'Selected NFTs: 0';
       if(!potentials[i].clicked) {
         tile.style.backgroundColor = '#2441BD';
         tile.style.filter = 'drop-shadow(0 0 0.5vw #33E2E6)';
@@ -179,7 +184,6 @@ export function tilesInteraction() {
 
 export function tilesInactive() {
   for(let i in potentials) {
-    
     if(potentials[i].clicked) {
       nftTiles[i].style.backgroundColor = '#161E5F';
       nftTiles[i].style.filter = 'drop-shadow(0 0 0.1vw black)';
