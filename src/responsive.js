@@ -11,12 +11,12 @@ function mobileView() {
   storyDuration.style.fontSize = '1.1em';
   storyText.style.visibility = 'visible';
 
-  displayImage.src = 'assets/displayMobile.png';
-  displayBG.src = 'assets/displayMobileBG.png';
+  displayImage.src = 'assets/displayMobile.avif';
+  displayBG.src = 'assets/displayMobileBG.avif';
   formatButton.style.display = 'none';
   formatPanel.style.display = 'none';
   voteButton.style.display = 'none';
-  consoleImage.src = 'assets/consoleMobile.png'
+  consoleImage.src = 'assets/consoleMobile.avif'
   consoleButtons.forEach((button) => {
     if(button.className.match('big')) {
       button.style.width = '25%';
@@ -101,12 +101,12 @@ function computerView() {
   storyTitle.style.fontSize = '3vw';
   storyDuration.style.fontSize = '2vw';
 
-  displayImage.src = 'assets/display.png';
-  displayBG.src = 'assets/displayBG.png';
+  displayImage.src = 'assets/display.avif';
+  displayBG.src = 'assets/displayBG.avif';
   formatButton.style.display = 'block';
   voteButton.style.display = 'block';
   formatPanel.style.display = 'block';
-  consoleImage.src = 'assets/console.png'
+  consoleImage.src = 'assets/console.avif'
   consoleButtons.forEach((button) => {
     if(button.className.match('big')) {
       button.style.width = '20%';
