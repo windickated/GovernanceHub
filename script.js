@@ -184,11 +184,15 @@ consoleButtons.forEach( (button) => {
   button.addEventListener('mousedown', () => {
     button.src = `assets/${button.dataset.name}-active.png`;
     switch (button.dataset.name) {
-      case 'conexus': break;
+      case 'conexus': 
+        window.open('https://conexus.degenerousdao.com/', '_blank');
+        break;
       case 'back': break;
       case 'omnihub': break;
       case 'forward': break;
-      case 'sagaverse': break;
+      case 'sagaverse':
+        window.open('https://degenerousdao.com/', '_blank');
+        break;
     }
   })
   button.addEventListener('mouseup', () => {
