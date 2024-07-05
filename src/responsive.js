@@ -41,6 +41,11 @@ function textOutScreen() {
   storyText.style.fontSize = 'inherit';
   storyText.style.lineHeight = 'inherit';
   storyText.style.marginBottom = '2vw';
+  storyText.style.backgroundColor = 'rgba(22, 30, 95, 0.75)'
+  storyText.style.backdropFilter = 'blur(2vw)';
+  storyText.style.border = '0.1vw solid rgba(51, 226, 230, 0.5)';
+  storyText.style.borderRadius = '2.5vw';
+  storyText.style.padding = '3vw';
 }
 
 function optionsOutScreen() {
@@ -126,6 +131,11 @@ function textOnScreen() {
   storyText.style.fontSize = '2vw';
   storyText.style.lineHeight = '3vw';
   storyText.style.marginBottom = '';
+  storyText.style.backgroundColor = ''
+  storyText.style.backdropFilter = '';
+  storyText.style.border = '';
+  storyText.style.borderRadius = '';
+  storyText.style.padding = '2vw';
 }
 
 function optionsOnScreen() {
