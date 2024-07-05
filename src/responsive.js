@@ -1,6 +1,6 @@
 import displayScreen from "./display.js";
 import { storyLegend, storyTitle, storyDuration, storyText, storyOptions, optionsCounter, formatButton, voteButton, formatPanel, videoFrame, displayImage, displayBG, consoleButtons, consoleImage } from "../script.js";
-import { nftTiles, nftTilesName, nftTilesClass, nftTotal, nftSelected, sidePanel, sidePanelIcon, sidePanelBar } from "./sidepanel.js";
+import { nftTiles, nftTilesName, nftTilesClass, nftTotal, nftSelected, sidePanelIcon, sidePanelBar } from "./sidepanel.js";
 
 
 // Mobile view functions:
@@ -68,9 +68,9 @@ function optionsOutScreen() {
 function sideBarMobile() {
   document.body.style.paddingTop = '15%';
   sidePanelIcon.style.width = '100%';
-  sidePanelIcon.style.height = 'auto';
   sidePanelIcon.style.top = '0';
   sidePanelIcon.src = 'assets/sideIconMobileOpen.png';
+  sidePanelIcon.style.filter = 'drop-shadow(0 0.5vw 1vw black)';
 
   sidePanelBar.style.width = '100vw';
   sidePanelBar.style.height = '80%';
@@ -166,9 +166,9 @@ function optionsOnScreen() {
 
 function sideBarComputer() {
   document.body.style.paddingTop = '';
-  sidePanelIcon.style.width = '10vw';
-  sidePanelIcon.style.height = '10vw';
-  sidePanelIcon.src = 'assets/sideIcon.png';
+  sidePanelIcon.style.width = '15vw';
+  sidePanelIcon.src = 'assets/sideIconPCOpen.png';
+  sidePanelIcon.style.filter = 'drop-shadow(-0.1vw 0.1vw 0.5vw black)';
 
   sidePanelBar.style.width = '80vw';
   sidePanelBar.style.height = '100%';
