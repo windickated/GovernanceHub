@@ -149,6 +149,7 @@ export function tilesInteraction() {
       if(clickedTiles.length == 0) {
         optionsList[clickedOptionNumber - 1].style.color = '#dedede';
         optionsList[clickedOptionNumber - 1].style.textShadow = '';
+        optionsList[clickedOptionNumber - 1].style.listStyleType = 'circle';
         undefinedOption = true;
         displayScreen.changeButtonState();
       } else {
