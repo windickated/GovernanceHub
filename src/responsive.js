@@ -1,14 +1,14 @@
 import displayScreen from "./display.js";
-import { storyTitle, storyDuration, storyText, storyOptions, optionsCounter, formatButton, voteButton, formatPanel, videoFrame, displayImage, displayBG, consoleButtons, consoleImage } from "../script.js";
+import { storyLegend, storyTitle, storyDuration, storyText, storyOptions, optionsCounter, formatButton, voteButton, formatPanel, videoFrame, displayImage, displayBG, consoleButtons, consoleImage } from "../script.js";
 import { nftTiles, nftTilesName, nftTilesClass, nftTotal, nftSelected, sidePanel, sidePanelIcon, sidePanelBar } from "./sidepanel.js";
 
 
 // Mobile view functions:
 
 function mobileView() {
+  storyLegend.style.marginBottom = '2vw';
   storyTitle.style.fontSize = '1.2em';
   storyDuration.style.fontSize = '1.1em';
-  storyDuration.style.marginBottom = '4vw';
   storyText.style.visibility = 'visible';
 
   displayImage.src = 'assets/displayMobile.png';
@@ -52,9 +52,9 @@ function optionsOutScreen() {
   storyOptions.style.whiteSpace = 'wrap';
   storyOptions.style.marginLeft = '-2vw';
   storyOptions.style.marginBottom = '4vw';
-  storyOptions.style.backgroundColor = 'rgba(1, 0, 32, 0.5)'
+  storyOptions.style.backgroundColor = 'rgba(1, 0, 32, 0.6)'
   storyOptions.style.backdropFilter = 'blur(1vw)';
-  storyOptions.style.border = '0.1vw solid #33E2E6';
+  storyOptions.style.border = '0.1vw solid rgba(51, 226, 230, 0.5)';
   storyOptions.style.borderRadius = '2.5vw';
   storyOptions.style.paddingTop = '2vw';
   storyOptions.style.paddingBottom = '2vw';
@@ -92,9 +92,9 @@ function sideBarMobile() {
 // Computer view functions:
 
 function computerView() {
+  storyLegend.style.marginBottom = '-4vw';
   storyTitle.style.fontSize = '3vw';
   storyDuration.style.fontSize = '2vw';
-  storyDuration.style.marginBottom = '-2vw';
 
   displayImage.src = 'assets/display.png';
   displayBG.src = 'assets/displayBG.png';
