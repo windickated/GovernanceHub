@@ -234,3 +234,27 @@ sidePanelIcon.addEventListener('click', () => {
 sidePanelBG.addEventListener('click', () => {
   sidePanel.close();
 })
+
+
+/*
+const response = await fetch('./data/episode10.json');
+const json = await response.json()
+const storyNode10 = json
+console.log(storyNode10)
+*/
+
+/*
+const response = await fetch('https://api.degenerousdao.com/nft/data/2')
+const json = await response.json()
+console.log(json)
+*/
+
+/*
+const storyNodes = [];
+fetch('./data/episode10.json')
+  .then((response) => response.json())
+  .then((json) => {
+    storyNodes[1] = json;
+    console.log(storyNodes[1])
+  })
+*/
