@@ -209,6 +209,10 @@ consoleButtons.forEach( (button) => {
   })
 })
 
+// Inactive Omnihub button until it will be ready
+consoleButtons[2].src = 'assets/omnihub-inactive.png';
+consoleButtons[2].style.pointerEvents = 'none'
+
 
 // Side panel interaction
 

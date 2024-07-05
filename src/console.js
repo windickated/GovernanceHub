@@ -19,6 +19,7 @@ const consolePanel = {
     {
       id: "omnihub",
       image: "assets/omnihub.png",
+      inactive: "assets/omnihub-inactive.png",
       hover: "assets/omnihub-hover.png",
       click: "assets/omnihub-active.png",
       size: "big"

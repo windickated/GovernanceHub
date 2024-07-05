@@ -50,7 +50,10 @@ table {
 /* General */
 
 html {
-  background-image: linear-gradient(#010020, #192138);
+  background-image: url("assets/spaceshipBG.png"), linear-gradient(#000000, #161E5F);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
   background-color: #010020;
 }
 
