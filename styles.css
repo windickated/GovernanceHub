@@ -157,7 +157,17 @@ p {
 }
 
 .text::-webkit-scrollbar {
-  width: 0px;
+  width: 0.3vw;
+  border: none;
+}
+
+.text::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.text::-webkit-scrollbar-thumb {
+  background-color: rgba(51, 226, 230, 0.5);
+  border-radius: 0.5vw;
 }
 
 .options {
