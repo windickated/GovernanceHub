@@ -73,11 +73,15 @@ export async function renderStory(n) {
         option.style.listStyleType = 'disc';
         clickedOption = option;
         clickedOptionNumber = i + 1;
+        if(opt != clickedOption) {
+          opt.style.color = '#dedede';
+          opt.style.textShadow = '';
+          opt.style.listStyleType = 'circle';
+        }
         if(window.outerWidth <= 600) {
-          alert('You chose option ' + clickedOptionNumber  + '\n' + clickedTiles);
-          clickedOption = undefined;
-          clickedOptionNumber = undefined;
-          tilesInactive();
+          inactiveOptions();
+        } else {
+          displayScreen.changeButtonState();
         }
       } else {
         option.style.color = '#dedede';
