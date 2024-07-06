@@ -17,8 +17,12 @@ export async function renderStory(n) {
   videoContainer.src = storyNode[n].videoLink;
   titleContainer.innerHTML = storyNode[n].storyTitle;
   durationContainer.innerHTML = storyNode[n].storyDuration;
-  textContainer.innerHTML = storyNode[n].storyText;
   let html = '';
+  storyNode[n].storyText.forEach((paragraph) => {
+    html += `<p class="story-p">${paragraph}</p>`
+  })
+  textContainer.innerHTML = html;
+  html = '';
   storyNode[n].storyOptions.forEach((option) => {
     html += `<li class="option" id="option${n}">${option}</li>`;
   })

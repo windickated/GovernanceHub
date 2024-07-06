@@ -24,6 +24,18 @@ for(let i in metadata) {
 }
 
 
+/*
+async function renderTiles() {
+  for(let i = 0; i < 10; i++) {
+    const response = await fetch(`https://api.degenerousdao.com/nft/data/${i + 1}`)
+    potentials[i] = await response.json();
+  }
+  console.log(potentials)
+}
+renderTiles();
+*/
+
+
 export let sidePanelIcon;
 export let sidePanelBar;
 export let sidePanelBG;
