@@ -3,6 +3,7 @@ import { clickedTiles, undefinedOption, tilesInactive } from './sidepanel.js';
 import displayScreen from './display.js';
 import reView from './responsive.js';
 
+
 const storyNode = [];
 export let optionsList;
 export let optionsCounter;
@@ -10,6 +11,7 @@ export let clickedOption;
 export let clickedOptionNumber;
 
 export async function renderStory(n) {
+  // Getting story node JSON and render HTML
   const response = await fetch(`./data/episode${n}.json`);
   storyNode[n] = await response.json();
   videoContainer.src = storyNode[n].videoLink;
@@ -24,6 +26,7 @@ export async function renderStory(n) {
   optionsList = document.querySelectorAll('.option');
   optionsCounter = optionsList.length;
 
+  // Setting up event listeners for each option
   optionsList.forEach((option, i) => {
     option.addEventListener('mouseover', () => {
       if(window.outerWidth >= 600) {
@@ -83,9 +86,10 @@ export async function renderStory(n) {
       }
     })
   })
-
+  // Options container adjustment
   reView()
 }
+
 
 export function inactiveOptions() {
   optionsList.forEach((option, i) => {
@@ -98,18 +102,3 @@ export function inactiveOptions() {
   clickedOptionNumber = undefined;
   tilesInactive();
 }
-
-/*
-fetch('./data/episode10.json')
-  .then((response) => response.json())
-  .then((json) => {
-    storyNode[0] = json;
-    console.log(storyNode[0])
-  })
-*/
-
-/*
-const response = await fetch('https://api.degenerousdao.com/nft/data/2')
-const json = await response.json()
-console.log(json)
-*/
