@@ -1,4 +1,5 @@
-import { sidePanelContainer, optionsList, clickedOptionNumber } from "../script.js";
+import { sidePanelContainer } from "../script.js";
+import { optionsList, clickedOptionNumber } from "./story.js";
 import displayScreen from "./display.js";
 import potentialsMetadate from "../data/metadata.js";
 

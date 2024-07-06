@@ -1,5 +1,6 @@
 import displayScreen from "./display.js";
-import { storyLegend, storyTitle, storyDuration, storyText, storyOptions, optionsCounter, formatButton, voteButton, formatPanel, videoFrame, displayImage, displayBG, consoleButtons, consoleImage } from "../script.js";
+import { storyLegend, storyTitle, storyDuration, storyText, storyOptions, formatButton, voteButton, formatPanel, videoFrame, displayImage, displayBG, consoleButtons, consoleImage } from "../script.js";
+import { optionsCounter } from "./story.js";
 import { nftTiles, nftTilesName, nftTilesClass, nftTotal, nftSelected, sidePanelIcon, sidePanelBar } from "./sidepanel.js";
 
 

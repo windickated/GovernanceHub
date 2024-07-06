@@ -1,4 +1,5 @@
-import { clickedOption, displayContainer, voteButton } from "../script.js";
+import { displayContainer, voteButton } from "../script.js";
+import { clickedOption } from "./story.js";
 import { undefinedOption } from "./sidepanel.js";
 
 const displayScreen = {

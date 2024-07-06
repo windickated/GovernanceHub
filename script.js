@@ -1,6 +1,6 @@
 import consolePanel from "./src/console.js";
 import displayScreen from "./src/display.js";
-import storyNode from "./src/story.js";
+import { renderStory, optionsList, optionsCounter, clickedOption, clickedOptionNumber, inactiveOptions } from "./src/story.js";
 import reView from "./src/responsive.js";
 import { clickedTiles, sidePanel, sidePanelIcon, sidePanelBG, tilesInteraction, undefinedOption, tilesInactive } from './src/sidepanel.js';
 
@@ -21,7 +21,6 @@ export const sidePanelContainer = document.querySelector('.side-panel-container'
 
 document.body.addEventListener('load', consolePanel.renderConsoleButtons());
 document.body.addEventListener('load', displayScreen.renderDisplayButtons());
-document.body.addEventListener('load', storyNode.renderStory());
 document.body.addEventListener('load', sidePanel.renderPanel());
 
 
@@ -31,8 +30,6 @@ export const storyTitle = document.querySelector('.header');
 export const storyDuration = document.querySelector('.duration');
 export const storyText = document.querySelector('.text');
 export const storyOptions = document.querySelector('.options');
-export const optionsList = document.querySelectorAll('.option');
-export const optionsCounter = optionsList.length;
 
 export const formatButton = document.querySelector('.display-buttons').firstChild;
 export const voteButton = document.querySelector('.display-buttons').lastChild;
@@ -44,74 +41,10 @@ export const displayBG = document.getElementById('display-bg');
 export const consoleButtons = document.querySelectorAll('.console-btn');
 export const consoleImage = document.getElementById('console');
 
-window.addEventListener('load', reView())
-window.addEventListener('resize', () => reView())
-
 
 // Story text + options events
 
-export let clickedOption;
-export let clickedOptionNumber;
-
-optionsList.forEach((option, i) => {
-  option.addEventListener('mouseover', () => {
-    if(window.outerWidth >= 600) {
-      option.style.color = '#33E2E6';
-      option.style.textShadow = '0 0 3px #33E2E6';
-      option.style.listStyleType = 'disc';
-    }
-  })
-  option.addEventListener('mouseout', () => {
-    if(option != clickedOption) {
-      option.style.color = '#dedede';
-      option.style.textShadow = '';
-      option.style.listStyleType = 'circle';
-    }
-    if(undefinedOption) {
-      option.style.color = '#dedede';
-      option.style.textShadow = '';
-      option.style.listStyleType = 'circle';
-    }
-  })
-  option.addEventListener('mousedown', () => {
-    if(clickedTiles.length > 0) {
-      clickedOption = option;
-      clickedOptionNumber = i + 1;
-      optionsList.forEach((opt) => {
-        if(opt != clickedOption) {
-          opt.style.color = '#dedede';
-          opt.style.textShadow = '';
-          opt.style.listStyleType = 'circle';
-        }
-      })
-      displayScreen.changeButtonState();
-    }
-  })
-  option.addEventListener('touchstart', () => {
-    option.style.color = '#33E2E6';
-    option.style.textShadow = '0 0 3px #33E2E6';
-    option.style.listStyleType = 'disc';
-  })
-  option.addEventListener('touchend', () => {
-    if(clickedTiles.length > 0) {
-      option.style.color = '#33E2E6';
-      option.style.textShadow = '0 0 3px #33E2E6';
-      option.style.listStyleType = 'disc';
-      clickedOption = option;
-      clickedOptionNumber = i + 1;
-      if(window.outerWidth <= 600) {
-        alert('You chose option ' + clickedOptionNumber  + '\n' + clickedTiles);
-        clickedOption = undefined;
-        clickedOptionNumber = undefined;
-        tilesInactive();
-      }
-    } else {
-      option.style.color = '#dedede';
-      option.style.textShadow = '';
-      option.style.listStyleType = 'circle';
-    }
-  })
-})
+renderStory(5)
 
 
 // Display buttons
@@ -165,10 +98,7 @@ voteButton.addEventListener('click', () => {
       option.style.textShadow = '';
       option.style.listStyleType = 'circle';
     })
-    alert('You chose option ' + clickedOptionNumber + '\n' + clickedTiles);
-    clickedOption = undefined;
-    clickedOptionNumber = undefined;
-    tilesInactive();
+    inactiveOptions();
   }
 })
 
@@ -236,25 +166,6 @@ sidePanelBG.addEventListener('click', () => {
 })
 
 
-/*
-const response = await fetch('./data/episode10.json');
-const json = await response.json()
-const storyNode10 = json
-console.log(storyNode10)
-*/
-
-/*
-const response = await fetch('https://api.degenerousdao.com/nft/data/2')
-const json = await response.json()
-console.log(json)
-*/
-
-/*
-const storyNodes = [];
-fetch('./data/episode10.json')
-  .then((response) => response.json())
-  .then((json) => {
-    storyNodes[1] = json;
-    console.log(storyNodes[1])
-  })
-*/
+console.log('reView')
+window.addEventListener('load', reView())
+window.addEventListener('resize', () => reView())
