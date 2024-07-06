@@ -5,6 +5,10 @@ import reView from "./src/responsive.js";
 import { sidePanel, sidePanelIcon, sidePanelBG, tilesInteraction } from './src/sidepanel.js';
 
 
+// Story node shown
+let storyNumber = 10;
+
+
 // Generating HTML
 
 export const displayContainer = document.querySelector('.display-buttons');
@@ -21,7 +25,7 @@ export const sidePanelContainer = document.querySelector('.side-panel-container'
 
 document.body.addEventListener('load', consolePanel.renderConsoleButtons());
 document.body.addEventListener('load', displayScreen.renderDisplayButtons());
-document.body.addEventListener('load', renderStory(9));
+document.body.addEventListener('load', renderStory(storyNumber));
 document.body.addEventListener('load', sidePanel.renderPanel());
 
 
@@ -112,9 +116,19 @@ consoleButtons.forEach( (button) => {
       case 'conexus': 
         window.open('https://conexus.degenerousdao.com/', '_blank');
         break;
-      case 'back': break;
+      case 'back': 
+      if(storyNumber != 1) {
+        storyNumber -= 1;
+        renderStory(storyNumber);
+      }
+        break;
       case 'omnihub': break;
-      case 'forward': break;
+      case 'forward':
+        if(storyNumber != 10) {
+          storyNumber += 1;
+          renderStory(storyNumber);
+        }
+        break;
       case 'sagaverse':
         window.open('https://degenerousdao.com/', '_blank');
         break;
@@ -158,4 +172,3 @@ sidePanelIcon.addEventListener('click', () => {
 sidePanelBG.addEventListener('click', () => {
   sidePanel.close();
 })
-
