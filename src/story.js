@@ -88,6 +88,11 @@ export async function renderStory(n) {
 }
 
 export function inactiveOptions() {
+  optionsList.forEach((option, i) => {
+    option.style.color = '#dedede';
+    option.style.textShadow = '';
+    option.style.listStyleType = 'circle';
+  })
   alert('You chose option ' + clickedOptionNumber  + '\n' + clickedTiles);
   clickedOption = undefined;
   clickedOptionNumber = undefined;

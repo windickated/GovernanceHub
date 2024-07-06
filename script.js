@@ -1,8 +1,8 @@
 import consolePanel from "./src/console.js";
 import displayScreen from "./src/display.js";
-import { renderStory, optionsList, optionsCounter, clickedOption, clickedOptionNumber, inactiveOptions } from "./src/story.js";
+import { renderStory, inactiveOptions } from "./src/story.js";
 import reView from "./src/responsive.js";
-import { clickedTiles, sidePanel, sidePanelIcon, sidePanelBG, tilesInteraction, undefinedOption, tilesInactive } from './src/sidepanel.js';
+import { sidePanel, sidePanelIcon, sidePanelBG, tilesInteraction } from './src/sidepanel.js';
 
 
 // Generating HTML
@@ -21,6 +21,7 @@ export const sidePanelContainer = document.querySelector('.side-panel-container'
 
 document.body.addEventListener('load', consolePanel.renderConsoleButtons());
 document.body.addEventListener('load', displayScreen.renderDisplayButtons());
+document.body.addEventListener('load', renderStory(9));
 document.body.addEventListener('load', sidePanel.renderPanel());
 
 
@@ -41,10 +42,8 @@ export const displayBG = document.getElementById('display-bg');
 export const consoleButtons = document.querySelectorAll('.console-btn');
 export const consoleImage = document.getElementById('console');
 
-
-// Story text + options events
-
-renderStory(5)
+window.addEventListener('load', reView())
+window.addEventListener('resize', () => reView())
 
 
 // Display buttons
@@ -93,11 +92,6 @@ voteButton.addEventListener('mouseout', () => {
 voteButton.addEventListener('click', () => {
   if(voteButton.src.includes(displayScreen.displayButtons[1].hover)) {
     voteButton.src = displayScreen.displayButtons[1].click;
-    optionsList.forEach((option, i) => {
-      option.style.color = '#dedede';
-      option.style.textShadow = '';
-      option.style.listStyleType = 'circle';
-    })
     inactiveOptions();
   }
 })
@@ -165,7 +159,3 @@ sidePanelBG.addEventListener('click', () => {
   sidePanel.close();
 })
 
-
-console.log('reView')
-window.addEventListener('load', reView())
-window.addEventListener('resize', () => reView())
