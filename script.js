@@ -112,6 +112,17 @@ consoleButtons.forEach( (button) => {
   })
   button.addEventListener('mousedown', () => {
     button.src = `assets/${button.dataset.name}-active.png`;
+  })
+  button.addEventListener('mouseup', () => {
+    button.src = `assets/${button.dataset.name}-hover.png`;
+  })
+  button.addEventListener('touchstart', () => {
+    button.src = `assets/${button.dataset.name}-active.png`;
+  })
+  button.addEventListener('touchend', () => {
+    button.src = `assets/${button.dataset.name}-hover.png`;
+  })
+  button.addEventListener('click', () => {
     switch (button.dataset.name) {
       case 'conexus': 
         window.open('https://conexus.degenerousdao.com/', '_blank');
@@ -122,7 +133,9 @@ consoleButtons.forEach( (button) => {
         renderStory(storyNumber);
       }
         break;
-      case 'omnihub': break;
+      case 'omnihub': 
+        //window.open();
+        break;
       case 'forward':
         if(storyNumber != 10) {
           storyNumber += 1;
@@ -133,22 +146,6 @@ consoleButtons.forEach( (button) => {
         window.open('https://degenerousdao.com/', '_blank');
         break;
     }
-  })
-  button.addEventListener('mouseup', () => {
-    button.src = `assets/${button.dataset.name}-hover.png`;
-  })
-  button.addEventListener('touchstart', () => {
-    button.src = `assets/${button.dataset.name}-active.png`;
-    switch (button.dataset.name) {
-      case 'conexus': break;
-      case 'back': break;
-      case 'omnihub': break;
-      case 'forward': break;
-      case 'sagaverse': break;
-    }
-  })
-  button.addEventListener('touchend', () => {
-    button.src = `assets/${button.dataset.name}-hover.png`;
   })
 })
 
