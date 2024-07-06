@@ -1,12 +1,12 @@
 import { sidePanelContainer } from "../script.js";
 import { optionsList, clickedOptionNumber } from "./story.js";
 import displayScreen from "./display.js";
-import potentialsMetadate from "../data/metadata.js";
+import potentialsMetadata from "../data/metadata.js";
 
 
 // Building NFT tiles from actual metadate (i used sample)
 
-const metadate = JSON.parse(potentialsMetadate);
+const metadata = JSON.parse(potentialsMetadata);
 
 class Tile {
   constructor(date, i) {
@@ -19,8 +19,8 @@ class Tile {
 }
 
 const potentials = [];
-for(let i in metadate) {
-  potentials[i] = new Tile(metadate, i);
+for(let i in metadata) {
+  potentials[i] = new Tile(metadata, i);
 }
 
 

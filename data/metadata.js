@@ -1,4 +1,4 @@
-const metadate = [
+const metadata = [
   {
     "name": "Potential #1",
     "external_url": "https://degenerousdao.com",
@@ -1222,6 +1222,6 @@ const metadate = [
   }
 ]
 
-const potentialsMetadate = JSON.stringify(metadate);
+const potentialsMetadata = JSON.stringify(metadata);
 
-export default potentialsMetadate;
+export default potentialsMetadata;
