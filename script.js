@@ -117,10 +117,10 @@ consoleButtons.forEach( (button) => {
     button.src = `assets/${button.dataset.name}-hover.png`;
   })
   button.addEventListener('touchstart', () => {
-    button.src = `assets/${button.dataset.name}-active.png`;
+    button.src = `assets/${button.dataset.name}-hover.png`;
   })
   button.addEventListener('touchend', () => {
-    button.src = `assets/${button.dataset.name}-hover.png`;
+    button.src = `assets/${button.dataset.name}.png`;
   })
   button.addEventListener('click', () => {
     switch (button.dataset.name) {

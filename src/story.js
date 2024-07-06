@@ -47,7 +47,7 @@ export async function renderStory(n) {
         option.style.listStyleType = 'circle';
       }
     })
-    option.addEventListener('mousedown', () => {
+    option.addEventListener('click', () => {
       if(clickedTiles.length > 0) {
         clickedOption = option;
         clickedOptionNumber = i + 1;
@@ -61,6 +61,7 @@ export async function renderStory(n) {
         displayScreen.changeButtonState();
       }
     })
+    /*
     option.addEventListener('touchstart', () => {
       option.style.color = '#33E2E6';
       option.style.textShadow = '0 0 3px #33E2E6';
@@ -89,6 +90,7 @@ export async function renderStory(n) {
         option.style.listStyleType = 'circle';
       }
     })
+    */
   })
   // Options container adjustment
   reView()
