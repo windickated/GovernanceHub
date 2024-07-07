@@ -89,16 +89,15 @@ img {
   margin-bottom: 0;
 }
 
-.display-buttons, #format {
+.display-buttons {
   position: absolute;
   width: 27.5%;
-  bottom: 0.5%;
+  bottom: 0;
   right: 0;
   z-index: 1;
-}
-
-#format {
-  z-index: 0;
+  background-image: url("assets/format.png");
+  background-position: top;
+  background-size: contain;
 }
 
 .video {
@@ -205,7 +204,7 @@ img {
   white-space: nowrap;
   list-style: circle inside;
   margin: 2vw;
-  margin-left: auto;
+  margin-left: 2vw;
   margin-bottom: auto;
   padding-left: 3vw;
   padding-bottom: auto;
