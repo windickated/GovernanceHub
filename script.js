@@ -23,10 +23,15 @@ export const optionsContainer = document.querySelector('.options');
 
 export const sidePanelContainer = document.querySelector('.side-panel-container');
 
-document.body.addEventListener('load', consolePanel.renderConsoleButtons());
-document.body.addEventListener('load', displayScreen.renderDisplayButtons());
-document.body.addEventListener('load', renderStory(storyNumber));
-document.body.addEventListener('load', sidePanel.renderPanel());
+
+document.body.addEventListener('load', renderGGH());
+
+async function renderGGH() {
+  consolePanel.renderConsoleButtons();
+  displayScreen.renderDisplayButtons();
+  renderStory(storyNumber);
+  sidePanel.renderPanel();
+}
 
 
 // Responsive design
@@ -45,6 +50,7 @@ export const displayBG = document.getElementById('display-bg');
 
 export const consoleButtons = document.querySelectorAll('.console-btn');
 export const consoleImage = document.getElementById('console');
+
 
 window.addEventListener('load', reView())
 window.addEventListener('resize', () => reView())
