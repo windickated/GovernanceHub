@@ -1,14 +1,14 @@
 import consolePanel from "./src/console.js";
 import displayScreen from "./src/display.js";
 import { renderStory, inactiveOptions, optionsCounter } from "./src/story.js";
-import { renderPanel, sidePanelIcon } from './src/sidepanel.js';
+import { renderPanel, sidePanelBar, sidePanelIcon } from './src/sidepanel.js';
 
 
 // Story node shown
 let storyNumber = 10;
 
 // Potentials shown (numbers)
-export const nftNumbers = [2, 5, 7, 22, 36, 246, 986];
+export const nftNumbers = [1, 3, 5, 11, 22, 38, 49, 79, 121, 200, 298, 305, 374, 489, 592, 645, 788, 815, 890, 950, 970];
 
 
 export const displayContainer = document.querySelector('.display-buttons');
@@ -59,12 +59,14 @@ function resizePage() {
   if(window.outerWidth <= 600) {
     document.body.style.paddingTop = '15%';
     storyText.style.visibility = 'visible';
+    sidePanelBar.style.top = '-80%';
     displayImage.src = 'assets/displayMobile.avif';
     displayBG.src = 'assets/displayMobileBG.avif';
     consoleImage.src = 'assets/consoleMobile.avif';
     sidePanelIcon.src = 'assets/sideIconMobileOpen.png';
   } else {
     document.body.style.paddingTop = '0';
+    sidePanelBar.style.top = '';
     displayImage.src = 'assets/display.avif';
     displayBG.src = 'assets/displayBG.avif';
     consoleImage.src = 'assets/console.avif';

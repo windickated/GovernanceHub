@@ -283,7 +283,7 @@ img {
 .side-panel {
   position: fixed;
   z-index: 19;
-  top: auto;
+  top: 0;
   left: auto;
   right: -80vw;
   height: 100%;
