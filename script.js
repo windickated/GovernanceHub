@@ -2,11 +2,14 @@ import consolePanel from "./src/console.js";
 import displayScreen from "./src/display.js";
 import { renderStory, inactiveOptions } from "./src/story.js";
 import reView from "./src/responsive.js";
-import { sidePanel, sidePanelIcon, sidePanelBG, tilesInteraction } from './src/sidepanel.js';
+import { renderPanel } from './src/sidepanel.js';
 
 
 // Story node shown
 let storyNumber = 10;
+
+// Potentials shown (numbers)
+export const nftNumbers = [2, 5, 7, 22, 36, 246, 986];
 
 
 export const displayContainer = document.querySelector('.display-buttons');
@@ -41,30 +44,14 @@ document.body.addEventListener('load', renderGGH());
 window.addEventListener('resize', () => reView());
 
 
-// Side panel interaction
-
-sidePanelIcon.addEventListener('load', tilesInteraction());
-sidePanelIcon.addEventListener('click', () => {
-  if(sidePanel.panelState) {
-    sidePanel.close();
-  } else {
-    sidePanel.open();
-  }
-})
-sidePanelBG.addEventListener('click', () => {
-  sidePanel.close();
-})
-
-
 // Generate page
 
 async function renderGGH() {
   consolePanel.renderConsoleButtons();
   displayScreen.renderDisplayButtons();
   renderStory(storyNumber);
-  sidePanel.renderPanel();
+  renderPanel();
   addListeners();
-  reView()
 }
 
 function addListeners() {

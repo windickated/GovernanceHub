@@ -1,12 +1,7 @@
-import { sidePanelContainer } from "../script.js";
+import { sidePanelContainer, nftNumbers } from "../script.js";
 import { optionsList, clickedOptionNumber } from "./story.js";
 import displayScreen from "./display.js";
-import potentialsMetadata from "../data/metadata.js";
 
-
-// Building NFT tiles from actual metadate (i used sample)
-
-const metadata = JSON.parse(potentialsMetadata);
 
 class Tile {
   constructor(date, i) {
@@ -17,24 +12,10 @@ class Tile {
     this.active = true;
   } 
 }
-
 const potentials = [];
-for(let i in metadata) {
-  potentials[i] = new Tile(metadata, i);
-}
 
 
-/*
-async function renderTiles() {
-  for(let i = 0; i < 10; i++) {
-    const response = await fetch(`https://api.degenerousdao.com/nft/data/${i + 1}`)
-    potentials[i] = await response.json();
-  }
-  console.log(potentials)
-}
-renderTiles();
-*/
-
+// Generate panel
 
 export let sidePanelIcon;
 export let sidePanelBar;
@@ -45,36 +26,59 @@ export let nftTilesClass;
 export let nftTotal;
 export let nftSelected;
 
+export async function renderPanel() {
+  const metadata = [];
+  for(let i in nftNumbers) {
+    const response = await fetch(`https://api.degenerousdao.com/nft/data/${nftNumbers[i]}`);
+    metadata[i] = await response.json();
+    potentials[i] = new Tile(metadata, i);
+  }
+  
+  let html = `
+  <img src="assets/sideIconPCOpen.png" class="panel-icon">
+  <div class="side-panel">
+    <div class="tiles-legend">
+      <p class="tiles-total">Total NFTs: ${potentials.length}</p>
+      <p class="tiles-selected">Selected NFTs: 0</p>
+    </div>
+    <div class="tiles-container">
+  `;
+  for(let i in potentials) {
+    html += `
+      <div class="tile" id="${potentials[i].name}">
+        <img class="tile-image" src="${potentials[i].image}"></img>
+        <p class="tile-name">${potentials[i].name}</p>
+        <p class="tile-class">${potentials[i].class}</p>
+      </div>
+    `;}
+  sidePanelContainer.innerHTML = html + '</div></div>';
+  sidePanelIcon = document.querySelector('.panel-icon');
+  sidePanelBar = document.querySelector('.side-panel');
+  sidePanelBG = document.querySelector('.side-panel-bg');
+  nftTiles = document.querySelectorAll('.tile');
+  nftTilesName = document.querySelectorAll('.tile-name');
+  nftTilesClass = document.querySelectorAll('.tile-class');
+  nftTotal = document.querySelector('.tiles-total');
+  nftSelected = document.querySelector('.tiles-selected');
+
+  sidePanelIcon.addEventListener('load', tilesInteraction());
+  sidePanelIcon.addEventListener('click', () => {
+    if(sidePanel.panelState) {
+      sidePanel.close();
+    } else {
+      sidePanel.open();
+    }
+  })
+  sidePanelBG.addEventListener('click', () => {
+    sidePanel.close();
+  })
+}
+
+
+// Side panel object
+
 export const sidePanel = {
   panelState: false,
-  renderPanel() {
-    let html = `
-    <img src="assets/sideIconPCOpen.png" class="panel-icon">
-    <div class="side-panel">
-      <div class="tiles-legend">
-        <p class="tiles-total">Total NFTs: ${potentials.length}</p>
-        <p class="tiles-selected">Selected NFTs: 0</p>
-      </div>
-      <div class="tiles-container">
-    `;
-    for(let i in potentials) {
-      html += `
-        <div class="tile" id="${potentials[i].name}">
-          <img class="tile-image" src="${potentials[i].image}"></img>
-          <p class="tile-name">${potentials[i].name}</p>
-          <p class="tile-class">${potentials[i].class}</p>
-        </div>
-      `;}
-    sidePanelContainer.innerHTML = html + '</div></div>';
-    sidePanelIcon = document.querySelector('.panel-icon');
-    sidePanelBar = document.querySelector('.side-panel');
-    sidePanelBG = document.querySelector('.side-panel-bg');
-    nftTiles = document.querySelectorAll('.tile');
-    nftTilesName = document.querySelectorAll('.tile-name');
-    nftTilesClass = document.querySelectorAll('.tile-class');
-    nftTotal = document.querySelector('.tiles-total');
-    nftSelected = document.querySelector('.tiles-selected');
-  },
   open() {
     sidePanelBG.style.display = 'block';
     nftSelected.innerHTML = `Selected NFTs: ${clickedTiles.length}`;
