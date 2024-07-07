@@ -1,7 +1,6 @@
-import { videoContainer, titleContainer, durationContainer, textContainer, optionsContainer } from '../script.js'
+import { videoContainer, titleContainer, durationContainer, textContainer, optionsContainer, resizeOptionsContainer } from '../script.js'
 import { clickedTiles, undefinedOption, tilesInactive } from './sidepanel.js';
 import displayScreen from './display.js';
-import reView from './responsive.js';
 
 
 const storyNode = [];
@@ -95,7 +94,7 @@ export async function renderStory(n) {
     })
   })
   // Options container adjustment
-  reView()
+  resizeOptionsContainer();
 }
 
 

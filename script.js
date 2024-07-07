@@ -1,8 +1,7 @@
 import consolePanel from "./src/console.js";
 import displayScreen from "./src/display.js";
-import { renderStory, inactiveOptions } from "./src/story.js";
-import reView from "./src/responsive.js";
-import { renderPanel } from './src/sidepanel.js';
+import { renderStory, inactiveOptions, optionsCounter } from "./src/story.js";
+import { renderPanel, sidePanelIcon } from './src/sidepanel.js';
 
 
 // Story node shown
@@ -41,18 +40,63 @@ export let consoleImage;
 
 
 document.body.addEventListener('load', renderGGH());
-window.addEventListener('resize', () => reView());
+window.addEventListener('load', () => resizePage());
+window.addEventListener('resize', () => resizePage());
 
 
 // Generate page
 
-async function renderGGH() {
+function renderGGH() {
   consolePanel.renderConsoleButtons();
   displayScreen.renderDisplayButtons();
   renderStory(storyNumber);
   renderPanel();
   addListeners();
 }
+
+function resizePage() {
+  resizeOptionsContainer();
+  if(window.outerWidth <= 600) {
+    document.body.style.paddingTop = '15%';
+    storyText.style.visibility = 'visible';
+    displayImage.src = 'assets/displayMobile.avif';
+    displayBG.src = 'assets/displayMobileBG.avif';
+    consoleImage.src = 'assets/consoleMobile.avif';
+    sidePanelIcon.src = 'assets/sideIconMobileOpen.png';
+  } else {
+    document.body.style.paddingTop = '0';
+    displayImage.src = 'assets/display.avif';
+    displayBG.src = 'assets/displayBG.avif';
+    consoleImage.src = 'assets/console.avif';
+    sidePanelIcon.src = 'assets/sideIconPCOpen.png';
+
+    if(formatButton.src.includes(displayScreen.displayButtons[0].video)) {
+      storyText.style.visibility = 'hidden';
+    } else if(formatButton.src.includes(displayScreen.displayButtons[0].text)) {
+      videoFrame.style.visibility = 'hidden';
+    }
+  }
+}
+
+export function resizeOptionsContainer() {
+  if(window.outerWidth >= 600) {
+    if(optionsCounter >= 4) {
+      storyOptions.style.fontSize = `${10/optionsCounter}vw`;
+      storyOptions.style.paddingTop = `${10/optionsCounter}vw`;
+    } else {
+      storyOptions.style.fontSize = '2.5vw';
+      if(optionsCounter == 3) {
+        storyOptions.style.paddingTop = '5vw';
+      } else {
+        storyOptions.style.paddingTop = '7vw';
+      }
+    }
+  } else {
+    storyOptions.style.fontSize = '1.1em';
+    storyOptions.style.paddingTop = '2vw';
+  }
+}
+
 
 function addListeners() {
   storyTitle = document.querySelector('.header');

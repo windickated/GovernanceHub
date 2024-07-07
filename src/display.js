@@ -21,8 +21,8 @@ const displayScreen = {
 
   renderDisplayButtons() {
     let html = '';
-    html += `<img src="${this.displayButtons[0].video}" class="display-btn">`;
-    html += `<img src="${this.displayButtons[1].inactive}" class="display-btn">`;
+    html += `<img src="${this.displayButtons[0].video}" class="display-btn format">`;
+    html += `<img src="${this.displayButtons[1].inactive}" class="display-btn vote">`;
     displayContainer.innerHTML = html;
   },
 

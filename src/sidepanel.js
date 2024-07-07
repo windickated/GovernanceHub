@@ -34,8 +34,15 @@ export async function renderPanel() {
     potentials[i] = new Tile(metadata, i);
   }
   
+  let sideIconImage;
+  if(window.outerWidth <= 600) {
+    sideIconImage = 'assets/sideIconMobileOpen.png';
+  } else {
+    sideIconImage = 'assets/sideIconPCOpen.png';
+  }
+
   let html = `
-  <img src="assets/sideIconPCOpen.png" class="panel-icon">
+  <img src="${sideIconImage}" class="panel-icon">
   <div class="side-panel">
     <div class="tiles-legend">
       <p class="tiles-total">Total NFTs: ${potentials.length}</p>
