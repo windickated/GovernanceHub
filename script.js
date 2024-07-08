@@ -82,7 +82,6 @@ function addListeners() {
 // Responsive design
 
 function resizePage() {
-  renderPanel();
   displayScreen.renderDisplayScreen();
   resizeOptionsContainer();
   consolePanel.renderConsolePanel();
