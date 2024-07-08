@@ -1,7 +1,7 @@
 import { consolePanel, storyNumber } from "./src/console.js";
 import displayScreen from "./src/display.js";
-import { renderStory, inactiveOptions, optionsCounter } from "./src/story.js";
-import { renderPanel, sidePanelBar, sidePanelIcon } from './src/sidepanel.js';
+import { renderStory, optionsCounter } from "./src/story.js";
+import { renderPanel, sidePanelBar } from './src/sidepanel.js';
 
 
 // Potentials shown (numbers)
@@ -82,6 +82,7 @@ function addListeners() {
 // Responsive design
 
 function resizePage() {
+  renderGGH();
   displayScreen.renderDisplayScreen();
   resizeOptionsContainer();
   consolePanel.renderConsolePanel();
