@@ -5,6 +5,8 @@ import { renderStory } from "./story.js";
 // Story node shown
 export let storyNumber = 10;
 
+
+// Console panel object
 export const consolePanel = {
   consoleButtons: [
     {

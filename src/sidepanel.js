@@ -3,6 +3,7 @@ import { optionsList, clickedOptionNumber } from "./story.js";
 import displayScreen from "./display.js";
 
 
+// NFT tiles constructor
 class Tile {
   constructor(date, i) {
     this.name = date[i].name;
@@ -15,7 +16,7 @@ class Tile {
 const potentials = [];
 
 
-// Generate panel
+// Generating panel
 
 export let sidePanelIcon;
 export let sidePanelBar;
@@ -83,7 +84,6 @@ export async function renderPanel() {
 
 
 // Side panel object
-
 export const sidePanel = {
   panelState: false,
   open() {
@@ -206,6 +206,8 @@ export function tilesInteraction() {
   })
 }
 
+
+// After user voted:
 export function tilesInactive() {
   for(let i in potentials) {
     if(potentials[i].clicked) {

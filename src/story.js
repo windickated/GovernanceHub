@@ -98,6 +98,7 @@ export async function renderStory(n) {
 }
 
 
+// After user voted:
 export function inactiveOptions() {
   optionsList.forEach((option, i) => {
     option.style.color = '#dedede';

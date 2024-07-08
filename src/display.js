@@ -2,6 +2,8 @@ import { displayContainer, displayImageContainer, formatButton, voteButton, stor
 import { clickedOption, inactiveOptions } from "./story.js";
 import { undefinedOption } from "./sidepanel.js";
 
+
+// Display screen object
 const displayScreen = {
   displayButtons: [
   {
@@ -84,7 +86,6 @@ const displayScreen = {
         videoFrame.style.visibility = 'visible';
       }
     })
-  
   
     voteButton.addEventListener('mouseenter', () => {
       if(voteButton.src.includes(displayScreen.displayButtons[1].image)) {
