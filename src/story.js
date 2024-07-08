@@ -1,5 +1,6 @@
 import { videoContainer, titleContainer, durationContainer, textContainer, optionsContainer, resizeOptionsContainer } from '../script.js'
 import { clickedTiles, undefinedOption, tilesInactive } from './sidepanel.js';
+import { storyNumber } from './console.js';
 import displayScreen from './display.js';
 
 
@@ -9,21 +10,21 @@ export let optionsCounter;
 export let clickedOption;
 export let clickedOptionNumber;
 
-export async function renderStory(n) {
+export async function renderStory(storyNumber) {
   // Getting story node JSON and render HTML
-  const response = await fetch(`./data/episode${n}.json`);
-  storyNode[n] = await response.json();
-  videoContainer.src = storyNode[n].videoLink;
-  titleContainer.innerHTML = storyNode[n].storyTitle;
-  durationContainer.innerHTML = storyNode[n].storyDuration;
+  const response = await fetch(`./data/episode${storyNumber}.json`);
+  storyNode[storyNumber] = await response.json();
+  videoContainer.src = storyNode[storyNumber].videoLink;
+  titleContainer.innerHTML = storyNode[storyNumber].storyTitle;
+  durationContainer.innerHTML = getStoryDate();
   let html = '';
-  storyNode[n].storyText.forEach((paragraph) => {
+  storyNode[storyNumber].storyText.forEach((paragraph) => {
     html += `<p class="story-p">${paragraph}</p>`
   })
   textContainer.innerHTML = html;
   html = '';
-  storyNode[n].storyOptions.forEach((option) => {
-    html += `<li class="option" id="option${n}">${option}</li>`;
+  storyNode[storyNumber].storyOptions.forEach((option) => {
+    html += `<li class="option" id="option${storyNumber}">${option}</li>`;
   })
   optionsContainer.innerHTML = html;
   optionsList = document.querySelectorAll('.option');
@@ -95,6 +96,26 @@ export async function renderStory(n) {
   })
   // Options container adjustment
   resizeOptionsContainer();
+}
+
+
+function getStoryDate() {
+  let dateStart = new Date(storyNode[storyNumber].storyDuration[0]);
+  let dateEnd = new Date(storyNode[storyNumber].storyDuration[1]);
+
+  let dayStart = ('0' + dateStart.getDate()).slice(-2);
+  let dayEnd = ('0' + dateEnd.getDate()).slice(-2);
+  let monthStart = ('0' + dateStart.getMonth()).slice(-2);
+  let monthEnd = ('0' + dateEnd.getMonth()).slice(-2);
+  let yearStart = dateStart.getFullYear();
+  let yearEnd = dateEnd.getFullYear();
+
+  let fullDateStart = `${dayStart}.${monthStart}.${yearStart}`;
+  let fullDateEnd = `${dayEnd}.${monthEnd}.${yearEnd}`;
+
+  let fullDate = 'Duration: ' + fullDateStart + ' - ' + fullDateEnd;
+
+  return fullDate;
 }
 
 
