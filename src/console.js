@@ -1,4 +1,4 @@
-import { consoleContainer } from "../script.js";
+import { consoleContainer, consoleImageContainer } from "../script.js";
 
 const consolePanel = {
   consoleButtons: [
@@ -37,6 +37,18 @@ const consolePanel = {
       click: "assets/sagaverse-active.png",
       size: "big"
     }],
+
+    renderConsolePanel() {
+      let html = '';
+      let consoleImageFile;
+      if(window.outerWidth <= 600) {
+        consoleImageFile = 'assets/consoleMobile.avif';
+      } else {
+        consoleImageFile = 'assets/console.avif';
+      }
+      html += `<img src="${consoleImageFile}" alt="Console" id="console"></img>`;
+      consoleImageContainer.innerHTML = html;
+    },
 
     renderConsoleButtons() {
       let html = '';

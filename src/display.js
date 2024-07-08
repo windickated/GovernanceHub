@@ -1,4 +1,4 @@
-import { displayContainer, voteButton } from "../script.js";
+import { displayContainer, displayImageContainer, voteButton } from "../script.js";
 import { clickedOption } from "./story.js";
 import { undefinedOption } from "./sidepanel.js";
 
@@ -18,6 +18,23 @@ const displayScreen = {
     click: "assets/vote-active.png",
     inactive: "assets/vote-inert.png"
   }],
+
+  renderDisplayScreen() {
+    let html = '';
+    let displayScreenImage;
+    let displayScreenBG;
+    if(window.outerWidth <= 600) {
+      displayScreenImage = 'assets/displayMobile.avif';
+      displayScreenBG = 'assets/displayMobileBG.avif';
+    } else {
+      displayScreenImage = 'assets/display.avif';
+      displayScreenBG = 'assets/displayBG.avif';
+    }
+    html += `
+      <img src="${displayScreenImage}" alt="Display" id="display"></img>
+      <img src="${displayScreenBG}" id="display-bg">`;
+    displayImageContainer.innerHTML = html;
+  },
 
   renderDisplayButtons() {
     let html = '';

@@ -12,7 +12,9 @@ export const nftNumbers = [1, 3, 5, 11, 22, 38, 49, 79, 121, 200, 298, 305, 374,
 
 
 export const displayContainer = document.querySelector('.display-buttons');
+export const displayImageContainer = document.querySelector('.display-image');
 export const consoleContainer = document.querySelector('.console-buttons');
+export const consoleImageContainer = document.querySelector('.console-image');
 
 export const videoContainer = document.getElementById('youtube');
 export const storyLegend = document.querySelector('.legend');
@@ -47,7 +49,9 @@ window.addEventListener('resize', () => resizePage());
 // Generate page
 
 function renderGGH() {
+  consolePanel.renderConsolePanel();
   consolePanel.renderConsoleButtons();
+  displayScreen.renderDisplayScreen();
   displayScreen.renderDisplayButtons();
   renderStory(storyNumber);
   renderPanel();
@@ -55,23 +59,16 @@ function renderGGH() {
 }
 
 function resizePage() {
+  displayScreen.renderDisplayScreen();
   resizeOptionsContainer();
+  consolePanel.renderConsolePanel();
   if(window.outerWidth <= 600) {
     document.body.style.paddingTop = '15%';
     storyText.style.visibility = 'visible';
     sidePanelBar.style.top = '-80%';
-    displayImage.src = 'assets/displayMobile.avif';
-    displayBG.src = 'assets/displayMobileBG.avif';
-    consoleImage.src = 'assets/consoleMobile.avif';
-    sidePanelIcon.src = 'assets/sideIconMobileOpen.png';
   } else {
     document.body.style.paddingTop = '0';
     sidePanelBar.style.top = '';
-    displayImage.src = 'assets/display.avif';
-    displayBG.src = 'assets/displayBG.avif';
-    consoleImage.src = 'assets/console.avif';
-    sidePanelIcon.src = 'assets/sideIconPCOpen.png';
-
     if(formatButton.src.includes(displayScreen.displayButtons[0].video)) {
       storyText.style.visibility = 'hidden';
     } else if(formatButton.src.includes(displayScreen.displayButtons[0].text)) {
