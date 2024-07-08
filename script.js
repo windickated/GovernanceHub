@@ -83,7 +83,6 @@ function addListeners() {
 
 function resizePage() {
   renderGGH();
-  displayScreen.renderDisplayScreen();
   resizeOptionsContainer();
   consolePanel.renderConsolePanel();
   if(window.outerWidth <= 600) {
