@@ -87,6 +87,7 @@ export async function renderPanel() {
 export const sidePanel = {
   panelState: false,
   open() {
+    document.body.style.overflowY = 'hidden';
     sidePanelBG.style.display = 'block';
     nftSelected.innerHTML = `Selected NFTs: ${clickedTiles.length}`;
     let interval;
@@ -120,6 +121,7 @@ export const sidePanel = {
     this.panelState = true;
   },
   close() {
+    document.body.style.overflowY = 'auto';
     sidePanelBG.style.display = 'none';
     let interval;
     let finalPosition = 80;
