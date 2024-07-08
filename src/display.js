@@ -1,5 +1,5 @@
-import { displayContainer, displayImageContainer, voteButton } from "../script.js";
-import { clickedOption } from "./story.js";
+import { displayContainer, displayImageContainer, formatButton, voteButton, storyText, videoFrame } from "../script.js";
+import { clickedOption, inactiveOptions } from "./story.js";
 import { undefinedOption } from "./sidepanel.js";
 
 const displayScreen = {
@@ -53,6 +53,58 @@ const displayScreen = {
     } else {
     voteButton.src = this.displayButtons[1].inactive;
     }
+  },
+
+  addDisplayListeners() {
+
+    formatButton.addEventListener('mouseenter', () => {
+      if(formatButton.src.includes(displayScreen.displayButtons[0].video)) {
+        formatButton.src = displayScreen.displayButtons[0].textHover;
+      } else {
+        formatButton.src = displayScreen.displayButtons[0].videoHover;
+      }
+    })
+  
+    formatButton.addEventListener('mouseout', () => {
+      if(formatButton.src.includes(displayScreen.displayButtons[0].textHover)) {
+        formatButton.src = displayScreen.displayButtons[0].video;
+      } else if(formatButton.src.includes(displayScreen.displayButtons[0].videoHover)){
+        formatButton.src = displayScreen.displayButtons[0].text;
+      }
+    })
+  
+    formatButton.addEventListener('click', () => {
+      if(formatButton.src.includes(displayScreen.displayButtons[0].textHover) || formatButton.src.includes(displayScreen.displayButtons[0].video)) {
+        formatButton.src = displayScreen.displayButtons[0].text;
+        storyText.style.visibility = 'visible';
+        videoFrame.style.visibility = 'hidden';
+      } else {
+        formatButton.src = displayScreen.displayButtons[0].video;
+        storyText.style.visibility = 'hidden';
+        videoFrame.style.visibility = 'visible';
+      }
+    })
+  
+  
+    voteButton.addEventListener('mouseenter', () => {
+      if(voteButton.src.includes(displayScreen.displayButtons[1].image)) {
+          voteButton.src = displayScreen.displayButtons[1].hover;
+      }
+    })
+  
+    voteButton.addEventListener('mouseout', () => {
+      if(voteButton.src.includes(displayScreen.displayButtons[1].hover)) {
+        voteButton.src = displayScreen.displayButtons[1].image;
+      }
+    })
+  
+    voteButton.addEventListener('click', () => {
+      if(voteButton.src.includes(displayScreen.displayButtons[1].hover)) {
+        voteButton.src = displayScreen.displayButtons[1].click;
+        inactiveOptions();
+      }
+    })
+  
   }
 }
 

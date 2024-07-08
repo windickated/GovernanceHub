@@ -1,6 +1,11 @@
-import { consoleContainer, consoleImageContainer } from "../script.js";
+import { consoleContainer, consoleImageContainer, consoleButtons } from "../script.js";
+import { renderStory } from "./story.js";
 
-const consolePanel = {
+
+// Story node shown
+export let storyNumber = 10;
+
+export const consolePanel = {
   consoleButtons: [
     {
       id: "conexus",
@@ -56,6 +61,60 @@ const consolePanel = {
         html += `<img src="assets/${this.consoleButtons[i].id}.png" data-name="${this.consoleButtons[i].id}" class="console-btn ${this.consoleButtons[i].size}">`;
       }
       consoleContainer.innerHTML = html;
+    },
+
+    addConsoleListeners() {
+
+      consoleButtons.forEach( (button) => {
+        button.addEventListener('mouseenter', () => {
+          button.src = `assets/${button.dataset.name}-hover.png`;
+        })
+        button.addEventListener('mouseout', () => {
+          button.src = `assets/${button.dataset.name}.png`;
+        })
+        button.addEventListener('mousedown', () => {
+          button.src = `assets/${button.dataset.name}-active.png`;
+        })
+        button.addEventListener('mouseup', () => {
+          button.src = `assets/${button.dataset.name}-hover.png`;
+        })
+        button.addEventListener('touchstart', () => {
+          button.src = `assets/${button.dataset.name}-hover.png`;
+        })
+        button.addEventListener('touchend', () => {
+          button.src = `assets/${button.dataset.name}.png`;
+        })
+        button.addEventListener('click', () => {
+          switch (button.dataset.name) {
+            case 'conexus': 
+              window.open('https://conexus.degenerousdao.com/', '_blank');
+              break;
+            case 'back': 
+            if(storyNumber != 1) {
+              storyNumber -= 1;
+              renderStory(storyNumber);
+            }
+              break;
+            case 'omnihub': 
+              //window.open();
+              break;
+            case 'forward':
+              if(storyNumber != 10) {
+                storyNumber += 1;
+                renderStory(storyNumber);
+              }
+              break;
+            case 'sagaverse':
+              window.open('https://degenerousdao.com/', '_blank');
+              break;
+          }
+        })
+      })
+    
+      // Inactive Omnihub button
+      consoleButtons[2].src = 'assets/omnihub-inactive.png';
+      consoleButtons[2].style.pointerEvents = 'none'
+    
     }
 }
 
