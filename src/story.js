@@ -76,10 +76,10 @@ export async function renderStory(n) {
         option.style.listStyleType = 'disc';
         clickedOption = option;
         clickedOptionNumber = i + 1;
-        if(opt != clickedOption) {
-          opt.style.color = '#dedede';
-          opt.style.textShadow = '';
-          opt.style.listStyleType = 'circle';
+        if(option != clickedOption) {
+          option.style.color = '#dedede';
+          option.style.textShadow = '';
+          option.style.listStyleType = 'circle';
         }
         if(window.outerWidth <= 600) {
           inactiveOptions();
