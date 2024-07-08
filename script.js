@@ -12,6 +12,7 @@ export const nftNumbers = [1, 3, 5, 11, 22, 38, 49, 79, 121, 200, 298, 305, 374,
 
 
 export const displayContainer = document.querySelector('.display-buttons');
+export const displayImageContainer = document.querySelector('.display-image');
 export const consoleContainer = document.querySelector('.console-buttons');
 
 export const videoContainer = document.getElementById('youtube');
