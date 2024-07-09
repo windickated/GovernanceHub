@@ -1,4 +1,4 @@
-import { sidePanelContainer, sidePanelIconContainer, nftNumbers } from "../script.js";
+import { sidePanelContainer, sidePanelIconContainer, tilesLegendContainer, tilesContainer, nftNumbers } from "../script.js";
 import { optionsList, clickedOptionNumber } from "./story.js";
 import displayScreen from "./display.js";
 
@@ -29,31 +29,31 @@ export let nftSelected;
 
 export async function renderPanel() {
   const metadata = [];
+  let html = '';
   for(let i in nftNumbers) {
     const response = await fetch(`https://api.degenerousdao.com/nft/data/${nftNumbers[i]}`);
     metadata[i] = await response.json();
     potentials[i] = new Tile(metadata, i);
-  }
-
-  renderPanelIcon();
-
-  let html = `
-  <div class="side-panel">
-    <div class="tiles-legend">
-      <p class="tiles-total">Total NFTs: ${potentials.length}</p>
-      <p class="tiles-selected">Selected NFTs: 0</p>
-    </div>
-    <div class="tiles-container">
-  `;
-  for(let i in potentials) {
     html += `
       <div class="tile" id="${potentials[i].name}">
         <img class="tile-image" src="${potentials[i].image}"></img>
         <p class="tile-name">${potentials[i].name}</p>
         <p class="tile-class">${potentials[i].class}</p>
-      </div>
-    `;}
-  sidePanelContainer.innerHTML = html + '</div></div>';
+      </div>`;
+  }
+
+  let sideIconImage;
+  if(window.outerWidth <= 600) {
+    sideIconImage = 'assets/sideIconMobileOpen.png';
+  } else {
+    sideIconImage = 'assets/sideIconPCOpen.png';
+  }
+  sidePanelIconContainer.innerHTML = `<img src="${sideIconImage}" class="panel-icon"></img>`;
+  tilesLegendContainer.innerHTML = `
+    <p class="tiles-total">Total NFTs: ${potentials.length}</p>
+    <p class="tiles-selected">Selected NFTs: 0</p>`;
+  tilesContainer.innerHTML = html;
+
   sidePanelIcon = document.querySelector('.panel-icon');
   sidePanelBar = document.querySelector('.side-panel');
   sidePanelBG = document.querySelector('.side-panel-bg');
@@ -76,6 +76,7 @@ export async function renderPanel() {
   })
 }
 
+/*
 export function renderPanelIcon() {
   let sideIconImage;
   if(window.outerWidth <= 600) {
@@ -86,7 +87,7 @@ export function renderPanelIcon() {
 
   sidePanelIconContainer.innerHTML = `<img src="${sideIconImage}" class="panel-icon">`;
 }
-
+*/
 
 // Side panel object
 export const sidePanel = {
