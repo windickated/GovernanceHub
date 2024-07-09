@@ -1,4 +1,4 @@
-import { sidePanelContainer, nftNumbers } from "../script.js";
+import { sidePanelContainer, sidePanelIconContainer, nftNumbers } from "../script.js";
 import { optionsList, clickedOptionNumber } from "./story.js";
 import displayScreen from "./display.js";
 
@@ -34,16 +34,10 @@ export async function renderPanel() {
     metadata[i] = await response.json();
     potentials[i] = new Tile(metadata, i);
   }
-  
-  let sideIconImage;
-  if(window.outerWidth <= 600) {
-    sideIconImage = 'assets/sideIconMobileOpen.png';
-  } else {
-    sideIconImage = 'assets/sideIconPCOpen.png';
-  }
+
+  renderPanelIcon();
 
   let html = `
-  <img src="${sideIconImage}" class="panel-icon">
   <div class="side-panel">
     <div class="tiles-legend">
       <p class="tiles-total">Total NFTs: ${potentials.length}</p>
@@ -80,6 +74,17 @@ export async function renderPanel() {
   sidePanelBG.addEventListener('click', () => {
     sidePanel.close();
   })
+}
+
+export function renderPanelIcon() {
+  let sideIconImage;
+  if(window.outerWidth <= 600) {
+    sideIconImage = 'assets/sideIconMobileOpen.png';
+  } else {
+    sideIconImage = 'assets/sideIconPCOpen.png';
+  }
+
+  sidePanelIconContainer.innerHTML = `<img src="${sideIconImage}" class="panel-icon">`;
 }
 
 

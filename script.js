@@ -1,7 +1,7 @@
 import { consolePanel, storyNumber } from "./src/console.js";
 import displayScreen from "./src/display.js";
 import { renderStory, optionsCounter } from "./src/story.js";
-import { renderPanel, sidePanelBar } from './src/sidepanel.js';
+import { renderPanel, sidePanelBar, renderPanelIcon } from './src/sidepanel.js';
 
 
 // Potentials shown (numbers)
@@ -22,6 +22,8 @@ export const optionsContainer = document.querySelector('.options');
 export const votingEndedContainer = document.querySelector('.voting-ended');
 
 export const sidePanelContainer = document.querySelector('.side-panel-container');
+export const sidePanelIconContainer
+= document.querySelector('.side-icon-container');
 
 export let storyTitle;
 export let storyDuration;
@@ -85,6 +87,7 @@ function addListeners() {
 function resizePage() {
   displayScreen.renderDisplayScreen();
   resizeOptionsContainer();
+  renderPanelIcon();
   consolePanel.renderConsolePanel();
   if(window.outerWidth <= 600) {
     document.body.style.paddingTop = '15%';
