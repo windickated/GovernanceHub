@@ -105,8 +105,8 @@ function getStoryDate() {
 
   let dayStart = ('0' + dateStart.getDate()).slice(-2);
   let dayEnd = ('0' + dateEnd.getDate()).slice(-2);
-  let monthStart = ('0' + dateStart.getMonth()).slice(-2);
-  let monthEnd = ('0' + dateEnd.getMonth()).slice(-2);
+  let monthStart = ('0' + (dateStart.getMonth() + 1)).slice(-2);
+  let monthEnd = ('0' + (dateEnd.getMonth() + 1)).slice(-2);
   let yearStart = dateStart.getFullYear();
   let yearEnd = dateEnd.getFullYear();
 

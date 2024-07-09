@@ -3,7 +3,8 @@ import { renderStory } from "./story.js";
 
 
 // Story node shown
-export let storyNumber = 10;
+export let storyNumber = 11;
+let lastStoryNumber = 11;
 
 
 // Console panel object
@@ -101,7 +102,7 @@ export const consolePanel = {
               //window.open();
               break;
             case 'forward':
-              if(storyNumber != 10) {
+              if(storyNumber != lastStoryNumber) {
                 storyNumber += 1;
                 renderStory(storyNumber);
               }
