@@ -89,7 +89,7 @@ export const consolePanel = {
               break;
             case 'back': 
             if(storyNumber != 1) {
-              activeEpisode(storyNumber);
+              activeEpisode(storyNumber - 2);
             }
               break;
             case 'omnihub': 

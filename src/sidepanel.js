@@ -158,7 +158,6 @@ export const sidePanel = {
         sidePanelIcon.src = 'assets/sideIconPCClose.png';
       }
     }
-      
   }
 }
 

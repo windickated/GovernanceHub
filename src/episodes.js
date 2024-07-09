@@ -36,7 +36,7 @@ export async function renderEpisodesPanel() {
       </div>`;
   }
 
-  otherEpisodesIconContainer.innerHTML = `<img class="episodes-icon" src="assets/sideIconPCOpen.png"></img>`;
+  otherEpisodesIconContainer.innerHTML = `<img class="episodes-icon" src="assets/episodesPCOpen.png"></img>`;
   otherEpisodes.innerHTML = html;
   otherEpisodesTitle.innerHTML = seasonTitle;
 
@@ -101,6 +101,7 @@ function inactiveEpisodes() {
 export const episodesPanel = {
   panelState: false,
   open() {
+    this.changeIconState();
     document.body.style.overflowY = 'hidden';
     sidePanelBG.style.display = 'block';
     let interval;
@@ -122,6 +123,7 @@ export const episodesPanel = {
     this.panelState = true;
   },
   close() {
+    this.changeIconState();
     document.body.style.overflowY = 'auto';
     sidePanelBG.style.display = 'none';
     let interval;
@@ -138,5 +140,20 @@ export const episodesPanel = {
       }
     }
     this.panelState = false;
+  },
+  changeIconState() {
+    if(window.outerWidth <= 600) {
+      if(this.panelState) {
+        otherEpisodesIcon.src = 'assets/sideIconMobileOpen.png';
+      } else {
+        otherEpisodesIcon.src = 'assets/sideIconMobileClose.png';
+      }
+    } else {
+      if(this.panelState) {
+        otherEpisodesIcon.src = 'assets/episodesPCOpen.png';
+      } else {
+        otherEpisodesIcon.src = 'assets/episodesPCClose.png';
+      }
+    }
   }
 }
