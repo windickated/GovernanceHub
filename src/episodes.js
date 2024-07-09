@@ -1,4 +1,4 @@
-import { otherEpisodesContainer, otherEpisodesTitle } from "../script.js";
+import { otherEpisodesIconContainer, otherEpisodesContainer, otherEpisodes, otherEpisodesTitle, sidePanelBG } from "../script.js";
 import { renderStory, storyNode, seasonTitle } from "./story.js";
 
 
@@ -20,6 +20,7 @@ const episode = [];
 // Generating and adding listeners to tiles
 
 let storyNodeTiles;
+let otherEpisodesIcon;
 export async function renderEpisodesPanel() {
   let html = '';
 
@@ -34,9 +35,11 @@ export async function renderEpisodesPanel() {
       </div>`;
   }
 
-  otherEpisodesContainer.innerHTML = html;
+  otherEpisodesIconContainer.innerHTML = `<img class="episodes-icon" src="assets/sideIconPCOpen.png"></img>`;
+  otherEpisodes.innerHTML = html;
   otherEpisodesTitle.innerHTML = seasonTitle;
 
+  otherEpisodesIcon = document.querySelector('.episodes-icon')
   storyNodeTiles = document.querySelectorAll('.story-node-tile');
   storyNodeTiles.forEach((tile, i) => {
     tile.addEventListener('mouseover', () => {
@@ -58,9 +61,16 @@ export async function renderEpisodesPanel() {
     })
   })
 
+  otherEpisodesIcon.addEventListener('click', () => {
+    if(episodesPanel.panelState) {
+      episodesPanel.close();
+    } else {
+      episodesPanel.open();
+    }
+  })
+  
   activeEpisode(storyNumber - 1);
 }
-
 
 // Make selected episode active
 export function activeEpisode(i) {
@@ -70,10 +80,7 @@ export function activeEpisode(i) {
   episode[i].active = true;
   storyNumber = i + 1;
   renderStory(storyNumber);
-
-  console.log(storyNumber)
 }
-
 
 // Make inactive all other tiles
 function inactiveEpisodes() {
@@ -85,4 +92,46 @@ function inactiveEpisodes() {
       tile.style.filter = 'none';
     }
   })
+}
+
+
+// Episodes panel object
+export const episodesPanel = {
+  panelState: false,
+  open() {
+    document.body.style.overflowY = 'hidden';
+    sidePanelBG.style.display = 'block';
+    let interval;
+    let finalPosition = 0;
+    clearInterval(interval);
+    interval = setInterval(moveRight, 5);
+    function moveRight() {
+      if(finalPosition == 40) {
+        clearInterval(interval);
+      } else {
+        finalPosition += 4;
+        otherEpisodesIconContainer.style.left = `${finalPosition + 4}vw`;
+        otherEpisodesContainer.style.left = `${finalPosition - 40}vw`;
+      }
+    }
+  this.panelState = true;
+  },
+  close() {
+    document.body.style.overflowY = 'auto';
+    sidePanelBG.style.display = 'none';
+    let interval;
+    let finalPosition = 44;
+    clearInterval(interval);
+    interval = setInterval(moveRight, 5);
+    function moveRight() {
+      if(finalPosition == 0) {
+        clearInterval(interval);
+      } else {
+        finalPosition -= 4;
+        otherEpisodesIconContainer.style.left = `${finalPosition}vw`;
+        otherEpisodesContainer.style.left = `${finalPosition - 44}vw`;
+      }
+    }
+    this.panelState = false;
+  }
 }

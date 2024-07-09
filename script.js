@@ -28,7 +28,9 @@ export const sidePanelBG = document.querySelector('.side-panel-bg');
 export const tilesLegendContainer = document.querySelector('.tiles-legend');
 export const tilesContainer = document.querySelector('.tiles-container');
 
-export const otherEpisodesContainer = document.querySelector('.story-nodes');
+export const otherEpisodesIconContainer = document.querySelector('.story-nodes-icon');
+export const otherEpisodesContainer = document.querySelector('.story-nodes-container');
+export const otherEpisodes = document.querySelector('.story-nodes');
 export const otherEpisodesTitle = document.querySelector('.story-nodes-legend');
 
 export let storyTitle;
