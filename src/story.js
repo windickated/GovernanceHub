@@ -14,19 +14,23 @@ export async function renderStory(storyNumber) {
   // Getting story node JSON and render HTML
   const response = await fetch(`./data/episode${storyNumber}.json`);
   storyNode[storyNumber] = await response.json();
+
   videoContainer.src = `https://www.youtube.com/embed/${storyNode[storyNumber].videoLink}`;
-  titleContainer.innerHTML = storyNode[storyNumber].storyTitle;
+  titleContainer.innerHTML = `The Dischordian Saga: ${storyNode[storyNumber].storyTitle} - Episode ${storyNumber}`;
   durationContainer.innerHTML = getStoryDate();
+
   let html = '';
   storyNode[storyNumber].storyText.forEach((paragraph) => {
     html += `<p class="story-p">${paragraph}</p>`
   })
   textContainer.innerHTML = html;
+
   html = '';
   storyNode[storyNumber].storyOptions.forEach((option) => {
     html += `<li class="option" id="option${storyNumber}">${option}</li>`;
   })
   optionsContainer.innerHTML = html;
+
   optionsList = document.querySelectorAll('.option');
   optionsCounter = optionsList.length;
 
