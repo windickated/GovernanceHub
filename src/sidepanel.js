@@ -1,5 +1,6 @@
 import { sidePanelBG, sidePanelIconContainer, tilesLegendContainer, tilesContainer, nftNumbers } from "../script.js";
 import { optionsList, clickedOptionNumber } from "./story.js";
+import { episodesPanel } from "./episodes.js";
 import displayScreen from "./display.js";
 
 
@@ -69,9 +70,6 @@ export async function renderPanel() {
       sidePanel.open();
     }
   })
-  sidePanelBG.addEventListener('click', () => {
-    sidePanel.close();
-  })
 }
 
 
@@ -108,6 +106,9 @@ export const sidePanel = {
           sidePanelBar.style.top = `${finalPosition - 80}%`;
         }
       }
+    }
+    if(episodesPanel.panelState) {
+      episodesPanel.close();
     }
     this.panelState = true;
   },

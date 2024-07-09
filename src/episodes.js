@@ -1,5 +1,6 @@
 import { otherEpisodesIconContainer, otherEpisodesContainer, otherEpisodes, otherEpisodesTitle, sidePanelBG } from "../script.js";
 import { renderStory, storyNode, seasonTitle } from "./story.js";
+import { sidePanel } from "./sidepanel.js";
 
 
 export let storyNumber = 11;
@@ -72,6 +73,7 @@ export async function renderEpisodesPanel() {
   activeEpisode(storyNumber - 1);
 }
 
+
 // Make selected episode active
 export function activeEpisode(i) {
   storyNodeTiles[i].style.color = '#010020';
@@ -114,7 +116,10 @@ export const episodesPanel = {
         otherEpisodesContainer.style.left = `${finalPosition - 40}vw`;
       }
     }
-  this.panelState = true;
+    if(sidePanel.panelState) {
+      sidePanel.close();
+    }
+    this.panelState = true;
   },
   close() {
     document.body.style.overflowY = 'auto';

@@ -1,8 +1,8 @@
 import displayScreen from "./src/display.js";
 import { consolePanel } from "./src/console.js";
 import { renderStory, optionsCounter } from "./src/story.js";
-import { renderPanel, sidePanelBar, sidePanelIcon } from './src/sidepanel.js';
-import { renderEpisodesPanel, storyNumber } from "./src/episodes.js";
+import { sidePanel, renderPanel, sidePanelBar, sidePanelIcon } from './src/sidepanel.js';
+import { episodesPanel, renderEpisodesPanel, storyNumber } from "./src/episodes.js";
 
 
 // Potentials shown (numbers)
@@ -88,6 +88,14 @@ function addListeners() {
 
   displayScreen.addDisplayListeners();
   consolePanel.addConsoleListeners();
+
+  sidePanelBG.addEventListener('click', () => {
+    if(sidePanel.panelState) {
+      sidePanel.close();
+    } else if(episodesPanel.panelState) {
+      episodesPanel.close();
+    }
+  })
 }
 
 
