@@ -1,4 +1,4 @@
-import { sidePanelContainer, sidePanelIconContainer, tilesLegendContainer, tilesContainer, nftNumbers } from "../script.js";
+import { sidePanelBG, sidePanelIconContainer, tilesLegendContainer, tilesContainer, nftNumbers } from "../script.js";
 import { optionsList, clickedOptionNumber } from "./story.js";
 import displayScreen from "./display.js";
 
@@ -20,7 +20,6 @@ const potentials = [];
 
 export let sidePanelIcon;
 export let sidePanelBar;
-export let sidePanelBG;
 export let nftTiles;
 export let nftTilesName;
 export let nftTilesClass;
@@ -56,7 +55,6 @@ export async function renderPanel() {
 
   sidePanelIcon = document.querySelector('.panel-icon');
   sidePanelBar = document.querySelector('.side-panel');
-  sidePanelBG = document.querySelector('.side-panel-bg');
   nftTiles = document.querySelectorAll('.tile');
   nftTilesName = document.querySelectorAll('.tile-name');
   nftTilesClass = document.querySelectorAll('.tile-class');

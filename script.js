@@ -1,7 +1,9 @@
-import { consolePanel, storyNumber } from "./src/console.js";
 import displayScreen from "./src/display.js";
+import { consolePanel, storyNumber } from "./src/console.js";
 import { renderStory, optionsCounter } from "./src/story.js";
 import { renderPanel, sidePanelBar, sidePanelIcon } from './src/sidepanel.js';
+import { renderEpisodesPanel } from "./src/otherepisodes.js";
+
 
 
 // Potentials shown (numbers)
@@ -21,11 +23,14 @@ export const textContainer = document.querySelector('.text');
 export const optionsContainer = document.querySelector('.options');
 export const votingEndedContainer = document.querySelector('.voting-ended');
 
-export const sidePanelContainer = document.querySelector('.side-panel');
 export const sidePanelIconContainer
 = document.querySelector('.side-icon-container');
+export const sidePanelBG = document.querySelector('.side-panel-bg');
 export const tilesLegendContainer = document.querySelector('.tiles-legend');
 export const tilesContainer = document.querySelector('.tiles-container');
+
+export const otherEpisodesContainer = document.querySelector('.story-nodes');
+export const otherEpisodesTitle = document.querySelector('.story-nodes-legend');
 
 export let storyTitle;
 export let storyDuration;
@@ -47,6 +52,7 @@ document.body.addEventListener('load', renderGGH());
 window.addEventListener('load', () => resizePage());
 window.addEventListener('resize', () => resizePage());
 
+renderEpisodesPanel();
 
 // Generating page
 

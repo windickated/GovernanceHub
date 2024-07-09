@@ -4,7 +4,7 @@ import { renderStory } from "./story.js";
 
 // Story node shown
 export let storyNumber = 11;
-let lastStoryNumber = 11;
+export let lastStoryNumber = 11;
 
 
 // Console panel object

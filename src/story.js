@@ -4,19 +4,21 @@ import { storyNumber } from './console.js';
 import displayScreen from './display.js';
 
 
-const storyNode = [];
+export const storyNode = [];
 export let optionsList;
 export let optionsCounter;
 export let clickedOption;
 export let clickedOptionNumber;
 
+export const seasonTitle = 'The Dischordian Saga';
+
 export async function renderStory(storyNumber) {
   // Getting story node JSON and render HTML
   const response = await fetch(`./data/episode${storyNumber}.json`);
   storyNode[storyNumber] = await response.json();
-
+  
   videoContainer.src = `https://www.youtube.com/embed/${storyNode[storyNumber].videoLink}`;
-  titleContainer.innerHTML = `The Dischordian Saga: ${storyNode[storyNumber].storyTitle} - Episode ${storyNumber}`;
+  titleContainer.innerHTML = `${seasonTitle}: ${storyNode[storyNumber].storyTitle} - Episode ${storyNumber}`;
   durationContainer.innerHTML = getStoryDate();
 
   let html = '';
