@@ -1,7 +1,7 @@
 import { consolePanel, storyNumber } from "./src/console.js";
 import displayScreen from "./src/display.js";
 import { renderStory, optionsCounter } from "./src/story.js";
-import { renderPanel, sidePanelBar } from './src/sidepanel.js';
+import { renderPanel, sidePanelBar, sidePanelIcon } from './src/sidepanel.js';
 
 
 // Potentials shown (numbers)
@@ -94,6 +94,7 @@ function resizePage() {
     document.body.style.paddingTop = '15%';
     storyText.style.visibility = 'visible';
     sidePanelBar.style.top = '-80%';
+    sidePanelIcon.src = 'assets/sideIconMobileOpen.png';
   } else {
     document.body.style.paddingTop = '0';
     sidePanelBar.style.top = '';
@@ -102,6 +103,7 @@ function resizePage() {
     } else if(formatButton.src.includes(displayScreen.displayButtons[0].text)) {
       videoFrame.style.visibility = 'hidden';
     }
+    sidePanelIcon.src = 'assets/sideIconPCOpen.png';
   }
 }
 

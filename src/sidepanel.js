@@ -76,23 +76,12 @@ export async function renderPanel() {
   })
 }
 
-/*
-export function renderPanelIcon() {
-  let sideIconImage;
-  if(window.outerWidth <= 600) {
-    sideIconImage = 'assets/sideIconMobileOpen.png';
-  } else {
-    sideIconImage = 'assets/sideIconPCOpen.png';
-  }
-
-  sidePanelIconContainer.innerHTML = `<img src="${sideIconImage}" class="panel-icon">`;
-}
-*/
 
 // Side panel object
 export const sidePanel = {
   panelState: false,
   open() {
+    this.changeIconState();
     document.body.style.overflowY = 'hidden';
     sidePanelBG.style.display = 'block';
     nftSelected.innerHTML = `Selected NFTs: ${clickedTiles.length}`;
@@ -100,7 +89,6 @@ export const sidePanel = {
     let finalPosition = 0;
     clearInterval(interval);
     if(window.outerWidth >= 600) {
-      sidePanelIcon.src = 'assets/sideIconPCClose.png';
       interval = setInterval(moveLeft, 5);
       function moveLeft() {
         if(finalPosition == 80) {
@@ -112,7 +100,6 @@ export const sidePanel = {
         }
       }
     } else {
-      sidePanelIcon.src = 'assets/sideIconMobileClose.png';
       interval = setInterval(moveDown, 5);
       function moveDown() {
         if(finalPosition == 80) {
@@ -127,13 +114,13 @@ export const sidePanel = {
     this.panelState = true;
   },
   close() {
+    this.changeIconState();
     document.body.style.overflowY = 'auto';
     sidePanelBG.style.display = 'none';
     let interval;
     let finalPosition = 80;
     clearInterval(interval);
     if(window.outerWidth >= 600) {
-      sidePanelIcon.src = 'assets/sideIconPCOpen.png';
       interval = setInterval(moveLeft, 5);
       function moveLeft() {
         if(finalPosition == 0) {
@@ -145,7 +132,6 @@ export const sidePanel = {
         }
       }
     } else {
-      sidePanelIcon.src = 'assets/sideIconMobileOpen.png';
       interval = setInterval(moveDown, 5);
       function moveDown() {
         if(finalPosition == 0) {
@@ -158,6 +144,22 @@ export const sidePanel = {
       }
     }
     this.panelState = false;
+  },
+  changeIconState() {
+    if(window.outerWidth <= 600) {
+      if(this.panelState) {
+        sidePanelIcon.src = 'assets/sideIconMobileOpen.png';
+      } else {
+        sidePanelIcon.src = 'assets/sideIconMobileClose.png';
+      }
+    } else {
+      if(this.panelState) {
+        sidePanelIcon.src = 'assets/sideIconPCOpen.png';
+      } else {
+        sidePanelIcon.src = 'assets/sideIconPCClose.png';
+      }
+    }
+      
   }
 }
 
