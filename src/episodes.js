@@ -1,6 +1,6 @@
 import { otherEpisodesIconContainer, otherEpisodesContainer, otherEpisodes, otherEpisodesTitle, sidePanelBG } from "../script.js";
 import { renderStory, storyNode, seasonTitle } from "./story.js";
-import { sidePanel } from "./sidepanel.js";
+import { sidePanel, sidePanelIcon } from "./sidepanel.js";
 
 
 export let storyNumber = 11;
@@ -98,27 +98,22 @@ function inactiveEpisodes() {
 
 
 // Episodes panel object
+
+let interval;
+let finalPosition;
 export const episodesPanel = {
   panelState: false,
   open() {
     this.changeIconState();
     document.body.style.overflowY = 'hidden';
     sidePanelBG.style.display = 'block';
-    let interval;
-    let finalPosition = 0;
+    finalPosition = 0;
     clearInterval(interval);
-    interval = setInterval(moveRight, 5);
-    function moveRight() {
-      if(finalPosition == 40) {
-        clearInterval(interval);
-      } else {
-        finalPosition += 4;
-        otherEpisodesIconContainer.style.left = `${finalPosition + 4}vw`;
-        otherEpisodesContainer.style.left = `${finalPosition - 40}vw`;
-      }
-    }
-    if(sidePanel.panelState) {
-      sidePanel.close();
+    if(window.outerWidth <= 600) {
+      interval = setInterval(slidePanelMobile, 5);
+    } else {
+      closePanel(sidePanel);
+      interval = setInterval(slidePanelPC, 5);
     }
     this.panelState = true;
   },
@@ -126,33 +121,85 @@ export const episodesPanel = {
     this.changeIconState();
     document.body.style.overflowY = 'auto';
     sidePanelBG.style.display = 'none';
-    let interval;
-    let finalPosition = 44;
     clearInterval(interval);
-    interval = setInterval(moveRight, 5);
-    function moveRight() {
-      if(finalPosition == 0) {
-        clearInterval(interval);
-      } else {
-        finalPosition -= 4;
-        otherEpisodesIconContainer.style.left = `${finalPosition}vw`;
-        otherEpisodesContainer.style.left = `${finalPosition - 44}vw`;
-      }
+    if(window.outerWidth <= 600) {
+      finalPosition = 80;
+      interval = setInterval(slidePanelMobile, 5);
+    } else {
+      finalPosition = 44;
+      interval = setInterval(slidePanelPC, 5);
     }
     this.panelState = false;
   },
   changeIconState() {
-    if(window.outerWidth <= 600) {
+    /*if(window.outerWidth <= 600) {
       if(this.panelState) {
         otherEpisodesIcon.src = 'assets/sideIconMobileOpen.png';
       } else {
         otherEpisodesIcon.src = 'assets/sideIconMobileClose.png';
       }
-    } else {
+    } else {*/
       if(this.panelState) {
         otherEpisodesIcon.src = 'assets/episodesPCOpen.png';
       } else {
         otherEpisodesIcon.src = 'assets/episodesPCClose.png';
+      }
+    //}
+  }
+}
+
+
+// Utility functions for panel object
+
+export function closePanel(panel) {
+  if(panel.panelState) {
+    panel.close();
+    sidePanelBG.style.display = 'block';
+  }
+}
+
+function slidePanelPC() {
+  if(episodesPanel.panelState) {
+    if(finalPosition == 40) {
+      clearInterval(interval);
+    } else {
+      finalPosition += 4;
+      otherEpisodesIconContainer.style.left = `${finalPosition + 4}vw`;
+      otherEpisodesContainer.style.left = `${finalPosition - 40}vw`;
+    }
+  } else {
+    if(finalPosition == 0) {
+      clearInterval(interval);
+    } else {
+      finalPosition -= 4;
+      otherEpisodesIconContainer.style.left = `${finalPosition}vw`;
+      otherEpisodesContainer.style.left = `${finalPosition - 44}vw`;
+    }
+  }
+}
+
+function slidePanelMobile() {
+  if(episodesPanel.panelState) {
+    if(finalPosition == 80) {
+      clearInterval(interval);
+    } else {
+      finalPosition += 4;
+      otherEpisodesIconContainer.style.top = `${finalPosition}%`;
+      otherEpisodesContainer.style.top = `${finalPosition - 80}%`;
+      // Moving another icon down with opening panel
+      if(episodesPanel.panelState) {
+        sidePanelIcon.style.top = `${finalPosition}%`;
+      }
+    }
+  } else {
+    if(finalPosition == 0) {
+      clearInterval(interval);
+    } else {
+      finalPosition -= 4;
+      otherEpisodesIconContainer.style.top = `${finalPosition}%`;
+      otherEpisodesContainer.style.top = `${finalPosition - 80}%`;
+      if(!episodesPanel.panelState) {
+        sidePanelIcon.style.top = `${finalPosition}%`;
       }
     }
   }

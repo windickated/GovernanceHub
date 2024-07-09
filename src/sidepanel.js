@@ -1,6 +1,6 @@
-import { sidePanelBG, sidePanelIconContainer, tilesLegendContainer, tilesContainer, nftNumbers } from "../script.js";
+import { sidePanelBG, sidePanelIconContainer, tilesLegendContainer, tilesContainer, nftNumbers, otherEpisodesIconContainer } from "../script.js";
 import { optionsList, clickedOptionNumber } from "./story.js";
-import { episodesPanel } from "./episodes.js";
+import { episodesPanel, closePanel } from "./episodes.js";
 import displayScreen from "./display.js";
 
 
@@ -74,6 +74,8 @@ export async function renderPanel() {
 
 
 // Side panel object
+let interval;
+let finalPosition;
 export const sidePanel = {
   panelState: false,
   open() {
@@ -81,34 +83,13 @@ export const sidePanel = {
     document.body.style.overflowY = 'hidden';
     sidePanelBG.style.display = 'block';
     nftSelected.innerHTML = `Selected NFTs: ${clickedTiles.length}`;
-    let interval;
-    let finalPosition = 0;
+    finalPosition = 0;
     clearInterval(interval);
-    if(window.outerWidth >= 600) {
-      interval = setInterval(moveLeft, 5);
-      function moveLeft() {
-        if(finalPosition == 80) {
-          clearInterval(interval);
-        } else {
-          finalPosition += 4;
-          sidePanelIcon.style.right = `${finalPosition}vw`;
-          sidePanelBar.style.right = `${finalPosition - 80}vw`;
-        }
-      }
+    if(window.outerWidth <= 600) {
+      interval = setInterval(slidePanelMobile, 5);
     } else {
-      interval = setInterval(moveDown, 5);
-      function moveDown() {
-        if(finalPosition == 80) {
-          clearInterval(interval);
-        } else {
-          finalPosition += 4;
-          sidePanelIcon.style.top = `${finalPosition}%`;
-          sidePanelBar.style.top = `${finalPosition - 80}%`;
-        }
-      }
-    }
-    if(episodesPanel.panelState) {
-      episodesPanel.close();
+      closePanel(episodesPanel);
+      interval = setInterval(slidePanelPC, 5);
     }
     this.panelState = true;
   },
@@ -116,31 +97,12 @@ export const sidePanel = {
     this.changeIconState();
     document.body.style.overflowY = 'auto';
     sidePanelBG.style.display = 'none';
-    let interval;
-    let finalPosition = 80;
+    finalPosition = 80;
     clearInterval(interval);
-    if(window.outerWidth >= 600) {
-      interval = setInterval(moveLeft, 5);
-      function moveLeft() {
-        if(finalPosition == 0) {
-          clearInterval(interval);
-        } else {
-          finalPosition -= 4;
-          sidePanelIcon.style.right = `${finalPosition}vw`;
-          sidePanelBar.style.right = `${finalPosition - 80}vw`;
-        }
-      }
+    if(window.outerWidth <= 600) {
+      interval = setInterval(slidePanelMobile, 5);
     } else {
-      interval = setInterval(moveDown, 5);
-      function moveDown() {
-        if(finalPosition == 0) {
-          clearInterval(interval);
-        } else {
-          finalPosition -= 4;
-          sidePanelIcon.style.top = `${finalPosition}%`;
-          sidePanelBar.style.top = `${finalPosition - 80}%`;
-        }
-      }
+      interval = setInterval(slidePanelPC, 5);
     }
     this.panelState = false;
   },
@@ -156,6 +118,56 @@ export const sidePanel = {
         sidePanelIcon.src = 'assets/sideIconPCOpen.png';
       } else {
         sidePanelIcon.src = 'assets/sideIconPCClose.png';
+      }
+    }
+  }
+}
+
+
+// Utility functions for panel object
+
+function slidePanelPC() {
+  if(sidePanel.panelState) {
+    if(finalPosition == 80) {
+      clearInterval(interval);
+    } else {
+      finalPosition += 4;
+      sidePanelIcon.style.right = `${finalPosition}vw`;
+      sidePanelBar.style.right = `${finalPosition - 80}vw`;
+    }
+  } else {
+    if(finalPosition == 0) {
+      clearInterval(interval);
+    } else {
+      finalPosition -= 4;
+      sidePanelIcon.style.right = `${finalPosition}vw`;
+      sidePanelBar.style.right = `${finalPosition - 80}vw`;
+    }
+  }
+}
+
+function slidePanelMobile() {
+  if(sidePanel.panelState) {
+    if(finalPosition == 80) {
+      clearInterval(interval);
+    } else {
+      finalPosition += 4;
+      sidePanelIcon.style.top = `${finalPosition}%`;
+      sidePanelBar.style.top = `${finalPosition - 80}%`;
+      // Moving another icon down with opening panel
+      if(!episodesPanel.panelState) {
+        otherEpisodesIconContainer.style.top = `${finalPosition}%`;
+      }
+    }
+  } else {
+    if(finalPosition == 0) {
+      clearInterval(interval);
+    } else {
+      finalPosition -= 4;
+      sidePanelIcon.style.top = `${finalPosition}%`;
+      sidePanelBar.style.top = `${finalPosition - 80}%`;
+      if(!episodesPanel.panelState) {
+        otherEpisodesIconContainer.style.top = `${finalPosition}%`;
       }
     }
   }

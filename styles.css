@@ -530,12 +530,16 @@ img {
   }
 
   .panel-icon {
-    width: 100%;
+    width: 90%;
     top: 0;
     filter: drop-shadow(0 0.5vw 1vw black);
   }
 
-  .side-panel {
+  .story-nodes-icon {
+    filter: drop-shadow(0 0.5vw 1vw black);
+  }
+
+  .side-panel, .story-nodes-container {
     width: 100vw;
     height: 80%;
     top: -80%;
