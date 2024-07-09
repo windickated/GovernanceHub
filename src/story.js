@@ -14,7 +14,7 @@ export async function renderStory(storyNumber) {
   // Getting story node JSON and render HTML
   const response = await fetch(`./data/episode${storyNumber}.json`);
   storyNode[storyNumber] = await response.json();
-  videoContainer.src = storyNode[storyNumber].videoLink;
+  videoContainer.src = `https://www.youtube.com/embed/${storyNode[storyNumber].videoLink}`;
   titleContainer.innerHTML = storyNode[storyNumber].storyTitle;
   durationContainer.innerHTML = getStoryDate();
   let html = '';
