@@ -1,6 +1,6 @@
 import { otherEpisodesIconContainer, otherEpisodesContainer, otherEpisodes, otherEpisodesTitle, sidePanelBG } from "../script.js";
 import { renderStory, storyNode, seasonTitle } from "./story.js";
-import { sidePanel, sidePanelIcon } from "./sidepanel.js";
+import { sidePanel, sidePanelBar, sidePanelIcon } from "./sidepanel.js";
 
 
 export let storyNumber = 11;
@@ -21,7 +21,7 @@ const episode = [];
 // Generating and adding listeners to tiles
 
 let storyNodeTiles;
-let otherEpisodesIcon;
+export let otherEpisodesIcon;
 export async function renderEpisodesPanel() {
   let html = '';
 
@@ -110,7 +110,14 @@ export const episodesPanel = {
     finalPosition = 0;
     clearInterval(interval);
     if(window.outerWidth <= 600) {
-      interval = setInterval(slidePanelMobile, 5);
+      if(sidePanel.panelState) {
+        sidePanel.panelState = false;
+        sidePanelIcon.src = 'assets/sideIconMobileOpen.png';
+        sidePanelBar.style.top = '-80%';
+        otherEpisodesContainer.style.top = '0';
+      } else {
+        interval = setInterval(slidePanelMobile, 5);
+      }
     } else {
       closePanel(sidePanel);
       interval = setInterval(slidePanelPC, 5);

@@ -1,6 +1,6 @@
-import { sidePanelBG, sidePanelIconContainer, tilesLegendContainer, tilesContainer, nftNumbers, otherEpisodesIconContainer } from "../script.js";
+import { sidePanelBG, sidePanelIconContainer, tilesLegendContainer, tilesContainer, nftNumbers, otherEpisodesIconContainer, otherEpisodesContainer } from "../script.js";
 import { optionsList, clickedOptionNumber } from "./story.js";
-import { episodesPanel, closePanel } from "./episodes.js";
+import { episodesPanel, closePanel, otherEpisodesIcon } from "./episodes.js";
 import displayScreen from "./display.js";
 
 
@@ -86,7 +86,14 @@ export const sidePanel = {
     finalPosition = 0;
     clearInterval(interval);
     if(window.outerWidth <= 600) {
+      if(episodesPanel.panelState) {
+        episodesPanel.panelState = false;
+        otherEpisodesIcon.src = 'assets/episodesPCOpen.png';
+        otherEpisodesContainer.style.top = '-80%';
+        sidePanelBar.style.top = '0';
+      } else {
       interval = setInterval(slidePanelMobile, 5);
+      }
     } else {
       closePanel(episodesPanel);
       interval = setInterval(slidePanelPC, 5);
