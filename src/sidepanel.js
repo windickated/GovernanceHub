@@ -5,10 +5,10 @@ import displayScreen from "./display.js";
 
 // NFT tiles constructor
 class Tile {
-  constructor(date, i) {
-    this.name = date[i].name;
-    this.image = date[i].image;
-    this.class = date[i].attributes[5].value;
+  constructor(data, i) {
+    this.name = data[i].name;
+    this.image = data[i].image;
+    this.class = data[i].attributes[5].value;
     this.clicked = false;
     this.active = true;
   } 

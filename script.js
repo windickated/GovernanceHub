@@ -1,9 +1,8 @@
 import displayScreen from "./src/display.js";
-import { consolePanel, storyNumber } from "./src/console.js";
+import { consolePanel } from "./src/console.js";
 import { renderStory, optionsCounter } from "./src/story.js";
 import { renderPanel, sidePanelBar, sidePanelIcon } from './src/sidepanel.js';
-import { renderEpisodesPanel } from "./src/otherepisodes.js";
-
+import { renderEpisodesPanel, storyNumber } from "./src/episodes.js";
 
 
 // Potentials shown (numbers)

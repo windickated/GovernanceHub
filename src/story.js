@@ -1,6 +1,6 @@
 import { videoContainer, titleContainer, durationContainer, textContainer, optionsContainer, resizeOptionsContainer, votingEndedContainer } from '../script.js'
 import { clickedTiles, undefinedOption, tilesInactive } from './sidepanel.js';
-import { storyNumber } from './console.js';
+import { storyNumber } from './episodes.js';
 import displayScreen from './display.js';
 
 

@@ -1,10 +1,5 @@
 import { consoleContainer, consoleImageContainer, consoleButtons } from "../script.js";
-import { renderStory } from "./story.js";
-
-
-// Story node shown
-export let storyNumber = 11;
-export let lastStoryNumber = 11;
+import { activeEpisode, storyNumber, lastStoryNumber } from "./episodes.js";
 
 
 // Console panel object
@@ -94,8 +89,7 @@ export const consolePanel = {
               break;
             case 'back': 
             if(storyNumber != 1) {
-              storyNumber -= 1;
-              renderStory(storyNumber);
+              activeEpisode(storyNumber);
             }
               break;
             case 'omnihub': 
@@ -103,8 +97,7 @@ export const consolePanel = {
               break;
             case 'forward':
               if(storyNumber != lastStoryNumber) {
-                storyNumber += 1;
-                renderStory(storyNumber);
+                activeEpisode(storyNumber);
               }
               break;
             case 'sagaverse':
