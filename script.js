@@ -19,6 +19,7 @@ export const titleContainer = document.querySelector('.header');
 export const durationContainer = document.querySelector('.duration');
 export const textContainer = document.querySelector('.text');
 export const optionsContainer = document.querySelector('.options');
+export const votingEndedContainer = document.querySelector('.voting-ended');
 
 export const sidePanelContainer = document.querySelector('.side-panel-container');
 

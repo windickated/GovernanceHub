@@ -1,4 +1,4 @@
-import { videoContainer, titleContainer, durationContainer, textContainer, optionsContainer, resizeOptionsContainer } from '../script.js'
+import { videoContainer, titleContainer, durationContainer, textContainer, optionsContainer, resizeOptionsContainer, votingEndedContainer } from '../script.js'
 import { clickedTiles, undefinedOption, tilesInactive } from './sidepanel.js';
 import { storyNumber } from './console.js';
 import displayScreen from './display.js';
@@ -114,6 +114,17 @@ function getStoryDate() {
   let fullDateEnd = `${dayEnd}.${monthEnd}.${yearEnd}`;
 
   let fullDate = 'Duration: ' + fullDateStart + ' - ' + fullDateEnd;
+
+  let dateNow = new Date();
+  if(dateNow > dateEnd) {
+    votingEndedContainer.innerHTML = 'Voting ended';
+    votingEndedContainer.style.color = 'rgba(255, 255, 255, 0.5)';
+    votingEndedContainer.style.webkitTextStroke = '0.2vw rgba(255, 0, 0, 0.1)';
+  } else {
+    votingEndedContainer.innerHTML = 'Voting active';
+    votingEndedContainer.style.color = 'rgba(51, 226, 230, 0.8)';
+    votingEndedContainer.style.webkitTextStroke = '0.2vw rgba(0, 255, 0, 0.1)';
+  }
 
   return fullDate;
 }

@@ -239,7 +239,7 @@ img {
 .voting-ended {
   margin-top: 8vw;
   margin-bottom: -4vw;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.5);
   text-align: center;
   font-size: 3vw;
   filter: drop-shadow(0 0 1vw 5vw #33E2E6);
