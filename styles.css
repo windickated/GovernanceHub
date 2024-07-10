@@ -287,7 +287,7 @@ img {
   right: 0;
   height: auto;
   width: 15vw;
-  filter: drop-shadow(-0.1vw 0.1vw 0.5vw black);
+  filter: drop-shadow(-0.1vw 0.1vw 0.5vw #010020);
   cursor: pointer;
 }
 
@@ -304,7 +304,7 @@ img {
   background-repeat: no-repeat;
   background-color: rgba(1, 0, 32, 0.5);
   backdrop-filter: blur(1vw);
-  filter: drop-shadow(-0.1vw 0.1vw 0.5vw black);
+  filter: drop-shadow(-0.1vw 0.1vw 0.5vw #010020);
   overflow-y: scroll;
 }
 
@@ -349,7 +349,7 @@ img {
   box-sizing: border-box;
   width: 17vw;
   height: 23vw;
-  background-color: #161E5F;
+  background-color: rgba(22, 30, 95, 0.75);
   margin: 1vw;
   border: 0.05vw solid #33E2E6;
   border-radius: 1.5vw;
@@ -359,7 +359,7 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  filter: drop-shadow(0 0 0.1vw black);
+  filter: drop-shadow(0 0 0.1vw #010020);
 }
 
 .tile-image {
@@ -380,6 +380,47 @@ img {
   padding-bottom: 1vw;
 }
 
+.wallet-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(51, 226, 230, 0.5);
+  filter: drop-shadow(0 0 1vw rgba(51, 226, 230, 0.5));
+  margin: 3vw 5vw 1vw 5vw;
+  padding: 1vw 2vw;
+  border: 0.05vw solid #33E2E6;
+  border-radius: 1.5vw;
+}
+
+.wallet-legend {
+  color: #161E5F;
+  font-size: 2.5vw;
+  filter: drop-shadow(0 0 0.05vw #010020);
+  text-align: right;
+  padding-right: 2.5vw;
+}
+
+.user-wallet {
+  display: none;
+  padding: 0.5vw 3vw;
+  font-size: 2vw;
+  color: rgba(51, 226, 230, 1);
+  background-color: rgba(51, 226, 230, 0.2);
+  border: 0.05vw solid #33E2E6;
+  border-radius: 1vw;
+}
+
+.wallet-connect {
+  height: 5vw;
+  width: 25vw;
+  border: 0.05vw solid #33E2E6;
+  border-radius: 1vw;
+  font-size: 2vw;
+  background-color: #161E5F;
+  color: #33E2E6;
+}
+
+
 /* Other episodes panel */
 
 .story-nodes-icon {
@@ -389,7 +430,7 @@ img {
   left: 0;
   height: auto;
   width: 20.5vw;
-  filter: drop-shadow(0.1vw 0.1vw 0.5vw black);
+  filter: drop-shadow(0.1vw 0.1vw 0.5vw #010020);
   cursor: pointer;
 }
 
@@ -408,7 +449,7 @@ img {
   background-color: rgba(1, 0, 32, 0.5);
   background-position: right;
   backdrop-filter: blur(1vw);
-  filter: drop-shadow(-0.1vw 0.1vw 0.5vw black);
+  filter: drop-shadow(-0.1vw 0.1vw 0.5vw #010020);
   overflow-y: scroll;
   padding: 1vw 2vw;
 }
@@ -532,12 +573,12 @@ img {
   .panel-icon {
     width: 90%;
     top: 0;
-    filter: drop-shadow(0 0.5vw 1vw black);
+    filter: drop-shadow(0 0.5vw 1vw #010020);
   }
 
   .story-nodes-icon {
     width: 31.6vw;
-    filter: drop-shadow(0 0.5vw 1vw black);
+    filter: drop-shadow(0 0.5vw 1vw #010020);
   }
 
   .story-nodes-legend {
@@ -594,5 +635,26 @@ img {
 
   #youtube {
     visibility: visible;
+  }
+
+  .wallet-container {
+    margin-top: 6vw;
+    margin-bottom: 2vw;
+    height: 14vw;
+  }
+
+  .wallet-legend {
+    font-size: inherit;
+  }
+
+  .user-wallet {
+    font-size: inherit;
+    padding: 2vw 3vw;
+  }
+
+  .wallet-connect {
+    font-size: inherit;
+    width: 38vw;
+    height: 10vw;
   }
 }

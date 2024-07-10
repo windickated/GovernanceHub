@@ -28,6 +28,11 @@ export const sidePanelBG = document.querySelector('.side-panel-bg');
 export const tilesLegendContainer = document.querySelector('.tiles-legend');
 export const tilesContainer = document.querySelector('.tiles-container');
 
+export const walletContainer = document.querySelector('.wallet-container');
+export const walletLegend = document.querySelector('.wallet-legend');
+export const walletUser = document.querySelector('.user-wallet');
+export const walletButton = document.querySelector('.wallet-connect');
+
 export const otherEpisodesIconContainer = document.querySelector('.story-nodes-icon');
 export const otherEpisodesContainer = document.querySelector('.story-nodes-container');
 export const otherEpisodes = document.querySelector('.story-nodes');

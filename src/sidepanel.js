@@ -1,4 +1,4 @@
-import { sidePanelBG, sidePanelIconContainer, tilesLegendContainer, tilesContainer, nftNumbers, otherEpisodesIconContainer, otherEpisodesContainer } from "../script.js";
+import { sidePanelBG, sidePanelIconContainer, tilesLegendContainer, tilesContainer, nftNumbers, otherEpisodesIconContainer, otherEpisodesContainer, walletContainer, walletLegend, walletUser, walletButton } from "../script.js";
 import { optionsList, clickedOptionNumber } from "./story.js";
 import { episodesPanel, closePanel, otherEpisodesIcon } from "./episodes.js";
 import displayScreen from "./display.js";
@@ -70,6 +70,39 @@ export async function renderPanel() {
       sidePanel.open();
     }
   })
+
+  walletLegend.innerHTML = 'Connect your wallet:';
+  walletButton.innerHTML = 'Connect wallet';
+  addWalletListeners();
+}
+
+function addWalletListeners() {
+  let walletConnected = false;
+
+  walletButton.addEventListener('click', () => {
+    if(!walletConnected) {
+      walletButton.innerHTML = 'Disconnect';
+      walletButton.style.backgroundColor = 'rgba(51, 226, 230, 0.9)';
+      walletButton.style.color = '#010020';
+      walletLegend.style.color = '#33E2E6';
+      walletLegend.innerHTML = '';
+      walletUser.style.display = 'block';
+      walletUser.innerHTML = '0xeb0a...60c1';
+      walletContainer.style.backgroundColor = 'rgba(22, 30, 95, 0.75)';
+      walletConnected = true;
+    } else {
+      walletButton.innerHTML = 'Connect wallet';
+      walletButton.style.backgroundColor = '#161E5F';
+      walletButton.style.color = '#33E2E6';
+      walletLegend.style.color = '#010020';
+      walletLegend.innerHTML = 'Connect your wallet:';
+      walletUser.style.display = 'none';
+      walletUser.innerHTML = '';
+      walletContainer.style.backgroundColor = 'rgba(51, 226, 230, 0.5)';
+      walletConnected = false;
+    }
+  })
+
 }
 
 
@@ -191,19 +224,21 @@ export function tilesInteraction() {
   nftTiles.forEach((tile, i) => {
     tile.addEventListener('mouseover', () => {
       if(!potentials[i].clicked) {
-        tile.style.backgroundColor = '#171F6F';
+        tile.style.backgroundColor = 'rgba(22, 30, 95, 1)';
+        tile.style.filter = 'drop-shadow(0 0 0.5vw rgba(51, 226, 230, 1))';
       }
     })
     tile.addEventListener('mouseout', () => {
       if(!potentials[i].clicked) {
-        tile.style.backgroundColor = '#161E5F';
+        tile.style.backgroundColor = 'rgba(22, 30, 95, 0.75)';
+        tile.style.filter = '';
       }
     })
     tile.addEventListener('click', () => {
       nftSelected.innerHTML = 'Selected NFTs: 0';
       if(!potentials[i].clicked) {
         tile.style.backgroundColor = '#2441BD';
-        tile.style.filter = 'drop-shadow(0 0 0.5vw #33E2E6)';
+        tile.style.filter = 'drop-shadow(0 0 0.5vw rgba(51, 226, 230, 1))';
         tile.style.color = '#33E2E6';
         potentials[i].clicked = true;
         if(!clickedTiles.includes(nftTilesName[i].innerHTML)) {
