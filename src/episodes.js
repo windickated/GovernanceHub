@@ -1,6 +1,6 @@
-import { otherEpisodesIconContainer, otherEpisodesContainer, otherEpisodes, otherEpisodesTitle, sidePanelBG } from "../script.js";
+import { sidePanelBar, otherEpisodesIconContainer, otherEpisodesContainer, otherEpisodes, otherEpisodesTitle, sidePanelBG } from "../script.js";
 import { renderStory, storyNode, seasonTitle } from "./story.js";
-import { sidePanel, sidePanelBar, sidePanelIcon } from "./sidepanel.js";
+import { sidePanel, sidePanelIcon } from "./sidepanel.js";
 
 
 export let storyNumber = 11;

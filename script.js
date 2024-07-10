@@ -1,7 +1,7 @@
 import displayScreen from "./src/display.js";
 import { consolePanel } from "./src/console.js";
 import { renderStory, optionsCounter } from "./src/story.js";
-import { sidePanel, renderPanel, sidePanelBar, sidePanelIcon } from './src/sidepanel.js';
+import { sidePanel, renderPanel, sidePanelIcon } from './src/sidepanel.js';
 import { episodesPanel, renderEpisodesPanel, storyNumber, otherEpisodesIcon } from "./src/episodes.js";
 
 
@@ -24,6 +24,7 @@ export const votingEndedContainer = document.querySelector('.voting-ended');
 
 export const sidePanelIconContainer
 = document.querySelector('.side-icon-container');
+export const sidePanelBar = document.querySelector('.side-panel');
 export const sidePanelBG = document.querySelector('.side-panel-bg');
 export const tilesLegendContainer = document.querySelector('.tiles-legend');
 export const tilesContainer = document.querySelector('.tiles-container');
