@@ -144,7 +144,7 @@ export function inactiveOptions() {
     option.style.listStyleType = 'circle';
   })
   if(walletConnected) {
-    alert('Story: ' + storyNumber + '\n' + 'You selected option ' + clickedOptionNumber  + '\n' + clickedTiles);
+    alert('Episode: ' + storyNumber + '\n' + 'You selected option ' + clickedOptionNumber  + '\n' + clickedTiles);
   }
   clickedOption = undefined;
   clickedOptionNumber = undefined;
