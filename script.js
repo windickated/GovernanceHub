@@ -134,6 +134,7 @@ function resizePage() {
     otherEpisodesContainer.style.top = '0';
     otherEpisodesContainer.style.left = '-44vw';
     sidePanelIcon.style.top = '0';
+    otherEpisodesIconContainer.style.top = '0';
     if(formatButton.src.includes(displayScreen.displayButtons[0].video)) {
       storyText.style.visibility = 'hidden';
     } else if(formatButton.src.includes(displayScreen.displayButtons[0].text)) {
