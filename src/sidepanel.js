@@ -80,6 +80,7 @@ export const sidePanel = {
   panelState: false,
   open() {
     this.changeIconState();
+    otherEpisodesIconContainer.style.zIndex = '19';
     document.body.style.overflowY = 'hidden';
     sidePanelBG.style.display = 'block';
     nftSelected.innerHTML = `Selected NFTs: ${clickedTiles.length}`;
@@ -88,7 +89,7 @@ export const sidePanel = {
     if(window.outerWidth <= 600) {
       if(episodesPanel.panelState) {
         episodesPanel.panelState = false;
-        otherEpisodesIcon.src = 'assets/episodesPCOpen.png';
+        otherEpisodesIcon.src = 'assets/episodesMobileOpen.png';
         otherEpisodesContainer.style.top = '-80%';
         sidePanelBar.style.top = '0';
       } else {

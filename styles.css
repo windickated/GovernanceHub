@@ -418,7 +418,6 @@ img {
 }
 
 .story-nodes-legend {
-  color: white;
   text-align: center;
   padding: 2vw;
   font-size: 3vw;
@@ -444,13 +443,14 @@ img {
   width: 35vw;
   font-size: 2.5vw;
   line-height: 3vw;
+  text-shadow: 0 0 0.1vw #010020;
 }
 
 .story-node-image {
   object-fit: cover;
   border: 0.05vw solid #33E2E6;
   border-radius: 1vw;
-  width: 35vw;
+  width: 100%;
   height: 20vw;
 }
 
@@ -536,7 +536,30 @@ img {
   }
 
   .story-nodes-icon {
+    width: 31.6vw;
     filter: drop-shadow(0 0.5vw 1vw black);
+  }
+
+  .story-nodes-legend {
+    font-size: 5vw;
+    padding: 3vw;
+  }
+
+  .story-node-tile {
+    width: 86vw;
+    margin: 4vw;
+    margin-top: 0;
+  }
+
+  .story-node-title {
+    padding-left: 2.5%;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    width: 95%;
+  }
+
+  .story-node-image {
+    height: 50vw;
   }
 
   .side-panel, .story-nodes-container {
