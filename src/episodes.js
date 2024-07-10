@@ -134,6 +134,7 @@ export const episodesPanel = {
   },
   close() {
     this.changeIconState();
+    otherEpisodesIconContainer.style.zIndex = '19';
     document.body.style.overflowY = 'auto';
     sidePanelBG.style.display = 'none';
     clearInterval(interval);
