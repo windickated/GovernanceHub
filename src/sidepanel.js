@@ -137,9 +137,9 @@ export const sidePanel = {
     finalPosition = 0;
     clearInterval(interval);
     if(window.outerWidth <= 600) {
+      otherEpisodesIcon.src = 'assets/episodesMobileOpen-Inactive.png';
       if(episodesPanel.panelState) {
         episodesPanel.panelState = false;
-        otherEpisodesIcon.src = 'assets/episodesMobileOpen.png';
         otherEpisodesContainer.style.top = '-80%';
         sidePanelBar.style.top = '0';
       } else {
@@ -158,6 +158,7 @@ export const sidePanel = {
     finalPosition = 80;
     clearInterval(interval);
     if(window.outerWidth <= 600) {
+      otherEpisodesIcon.src = 'assets/episodesMobileOpen.png';
       interval = setInterval(slidePanelMobile, 5);
     } else {
       interval = setInterval(slidePanelPC, 5);

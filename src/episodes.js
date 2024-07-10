@@ -118,9 +118,9 @@ export const episodesPanel = {
     finalPosition = 0;
     clearInterval(interval);
     if(window.outerWidth <= 600) {
+      sidePanelIcon.src = 'assets/sideIconMobileOpen-Inactive.png';
       if(sidePanel.panelState) {
         sidePanel.panelState = false;
-        sidePanelIcon.src = 'assets/sideIconMobileOpen.png';
         sidePanelBar.style.top = '-80%';
         otherEpisodesContainer.style.top = '0';
       } else {
@@ -139,6 +139,7 @@ export const episodesPanel = {
     sidePanelBG.style.display = 'none';
     clearInterval(interval);
     if(window.outerWidth <= 600) {
+      sidePanelIcon.src = 'assets/sideIconMobileOpen.png';
       finalPosition = 80;
       interval = setInterval(slidePanelMobile, 5);
     } else {
