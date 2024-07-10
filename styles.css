@@ -373,11 +373,12 @@ img {
 
 .tile-name {
   font-size: 2vw;
+  line-height: 2.5vw;
 }
 
 .tile-class {
   font-size: 1.5vw;
-  padding-bottom: 1vw;
+  line-height: 2.5vw;
 }
 
 .wallet-container {
@@ -402,17 +403,18 @@ img {
 
 .user-wallet {
   display: none;
-  padding: 0.5vw 3vw;
+  padding: 0 3vw;
   font-size: 2vw;
   color: rgba(51, 226, 230, 1);
   background-color: rgba(51, 226, 230, 0.2);
   border: 0.05vw solid #33E2E6;
   border-radius: 1vw;
+  line-height: 3.5vw;
 }
 
 .wallet-connect {
-  height: 5vw;
-  width: 25vw;
+  height: 3.5vw;
+  width: 18vw;
   border: 0.05vw solid #33E2E6;
   border-radius: 1vw;
   font-size: 2vw;
@@ -429,7 +431,7 @@ img {
   top: 0;
   left: 0;
   height: auto;
-  width: 20.5vw;
+  width: 20vw;
   filter: drop-shadow(0.1vw 0.1vw 0.5vw #010020);
   cursor: pointer;
 }
@@ -623,6 +625,7 @@ img {
   .tile {
     width: 46vw;
     height: 60vw;
+    padding-bottom: 4vw;
   }
 
   .tile-name {
@@ -644,7 +647,7 @@ img {
   }
 
   .wallet-legend {
-    font-size: inherit;
+    font-size: 0.9em;
   }
 
   .user-wallet {

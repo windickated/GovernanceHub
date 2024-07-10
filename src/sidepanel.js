@@ -1,5 +1,5 @@
 import { sidePanelBG, sidePanelIconContainer, sidePanelBar, tilesLegendContainer, tilesContainer, nftNumbers, otherEpisodesIconContainer, otherEpisodesContainer, walletContainer, walletLegend, walletUser, walletButton } from "../script.js";
-import { optionsList, clickedOptionNumber } from "./story.js";
+import { optionsList, clickedOptionNumber, inactiveOptions } from "./story.js";
 import { episodesPanel, closePanel, otherEpisodesIcon } from "./episodes.js";
 import displayScreen from "./display.js";
 
@@ -47,9 +47,7 @@ export function renderPanel() {
   renderWallet();
 }
 
-
-// Render panel functions:
-
+// Fetch NFTs metadata
 async function getNFTs() {
   const metadata = [];
   let html = '';
@@ -74,9 +72,19 @@ async function getNFTs() {
   renderTilesLegend();
 }
 
-let walletConnected = false;
+// Update total/selected numbers
+function renderTilesLegend() {
+  tilesLegendContainer.innerHTML = `
+    <p class="tiles-total">Total NFTs: ${potentials.length}</p>
+    <p class="tiles-selected">Selected NFTs: ${clickedTiles.length}</p>`;
+  nftTotal = document.querySelector('.tiles-total');
+  nftSelected = document.querySelector('.tiles-selected');
+}
+
+// Wallet connection
+export let walletConnected = false;
 function renderWallet() {
-  walletLegend.innerHTML = 'Connect your wallet:';
+  walletLegend.innerHTML = 'Connect Web3 Wallet:';
   walletButton.innerHTML = 'Connect wallet';
 
   walletButton.addEventListener('click', () => {
@@ -91,31 +99,27 @@ function renderWallet() {
       walletContainer.style.backgroundColor = 'rgba(22, 30, 95, 0.75)';
       walletContainer.style.filter = 'drop-shadow(0 0 0.5vw rgba(51, 226, 230, 0.2))';
       walletConnected = true;
+      // Fetch and paste NFT tiles
       getNFTs();
     } else {
       walletButton.innerHTML = 'Connect wallet';
       walletButton.style.backgroundColor = '#161E5F';
       walletButton.style.color = '#33E2E6';
       walletLegend.style.color = '#010020';
-      walletLegend.innerHTML = 'Connect your wallet:';
+      walletLegend.innerHTML = 'Connect Web3 Wallet:';
       walletUser.style.display = 'none';
       walletUser.innerHTML = '';
       walletContainer.style.filter = 'drop-shadow(0 0 1vw rgba(51, 226, 230, 0.5))';
       walletContainer.style.backgroundColor = 'rgba(51, 226, 230, 0.5)';
       walletConnected = false;
+      // Removing information about tiles
+      inactiveOptions();
+      nftTiles = undefined;
       potentials = [];
       tilesContainer.innerHTML = '';
       tilesLegendContainer.innerHTML = '';
     }
   })
-}
-
-function renderTilesLegend() {
-  tilesLegendContainer.innerHTML = `
-    <p class="tiles-total">Total NFTs: ${potentials.length}</p>
-    <p class="tiles-selected">Selected NFTs: ${clickedTiles.length}</p>`;
-  nftTotal = document.querySelector('.tiles-total');
-  nftSelected = document.querySelector('.tiles-selected');
 }
 
 

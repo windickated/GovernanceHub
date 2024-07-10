@@ -1,5 +1,5 @@
 import { videoContainer, titleContainer, durationContainer, textContainer, optionsContainer, resizeOptionsContainer, votingEndedContainer } from '../script.js'
-import { clickedTiles, undefinedOption, tilesInactive } from './sidepanel.js';
+import { clickedTiles, undefinedOption, tilesInactive, walletConnected } from './sidepanel.js';
 import { storyNumber } from './episodes.js';
 import displayScreen from './display.js';
 
@@ -143,7 +143,9 @@ export function inactiveOptions() {
     option.style.textShadow = '';
     option.style.listStyleType = 'circle';
   })
-  alert('You chose option ' + clickedOptionNumber  + '\n' + clickedTiles);
+  if(walletConnected) {
+    alert('Story: ' + storyNumber + '\n' + 'You selected option ' + clickedOptionNumber  + '\n' + clickedTiles);
+  }
   clickedOption = undefined;
   clickedOptionNumber = undefined;
   tilesInactive();
