@@ -234,7 +234,6 @@ function slidePanelMobile() {
 
 
 // Interaction with tiles
-
 export let clickedTiles = [];
 export let undefinedOption = false;
 
