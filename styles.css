@@ -78,6 +78,10 @@ img {
   width: 100%;
 }
 
+button {
+  cursor: pointer;
+}
+
 .top, .bottom {
   position: relative;
   display: block;
@@ -647,7 +651,7 @@ img {
   }
 
   .wallet-legend {
-    font-size: 0.9em;
+    font-size: inherit;
   }
 
   .user-wallet {

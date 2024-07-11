@@ -87,6 +87,18 @@ function renderWallet() {
   walletLegend.innerHTML = 'Connect Web3 Wallet:';
   walletButton.innerHTML = 'Connect wallet';
 
+  walletButton.addEventListener('mouseover', () => {
+    if(!walletConnected) {
+      walletButton.style.backgroundColor = 'rgba(22, 30, 95, 0.75)';
+    }
+  })
+
+  walletButton.addEventListener('mouseout', () => {
+    if(!walletConnected) {
+      walletButton.style.backgroundColor = '#161E5F';
+    }
+  })
+
   walletButton.addEventListener('click', () => {
     if(!walletConnected) {
       walletButton.innerHTML = 'Disconnect';
