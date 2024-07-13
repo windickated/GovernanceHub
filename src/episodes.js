@@ -3,8 +3,8 @@ import { renderStory, storyNode, seasonTitle } from "./story.js";
 import { sidePanel, sidePanelIcon } from "./sidepanel.js";
 
 
-export let storyNumber = 11;
-export let lastStoryNumber = 11;
+export let storyNumber = 12;
+export let lastStoryNumber = 12;
 
 
 // Story node tiles constructor
