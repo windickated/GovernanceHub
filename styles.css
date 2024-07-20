@@ -139,6 +139,7 @@ button {
   align-items: center;
   justify-content: space-between;
   background-color: rgba(1, 0, 32, 0.6);
+  -webkit-backdrop-filter: blur(1vw);
   backdrop-filter: blur(1vw);
   margin-top: 2vw;
   margin-bottom: -4vw;
@@ -307,6 +308,7 @@ button {
   background-size: contain;
   background-repeat: no-repeat;
   background-color: rgba(1, 0, 32, 0.5);
+  -webkit-backdrop-filter: blur(1vw);
   backdrop-filter: blur(1vw);
   filter: drop-shadow(-0.1vw 0.1vw 0.5vw #010020);
   overflow-y: scroll;
@@ -454,6 +456,7 @@ button {
   background-repeat: no-repeat;
   background-color: rgba(1, 0, 32, 0.5);
   background-position: right;
+  -webkit-backdrop-filter: blur(1vw);
   backdrop-filter: blur(1vw);
   filter: drop-shadow(-0.1vw 0.1vw 0.5vw #010020);
   overflow-y: scroll;
@@ -552,6 +555,7 @@ button {
     line-height: inherit;
     margin-bottom: 2vw;
     background-color: rgba(22, 30, 95, 0.75);
+    -webkit-backdrop-filter: blur(2vw);
     backdrop-filter: blur(2vw);
     border: 0.1vw solid rgba(51, 226, 230, 0.5);
     border-radius: 2.5vw;
@@ -569,6 +573,7 @@ button {
     margin-left: -2vw;
     margin-bottom: 4vw;
     background-color: rgba(1, 0, 32, 0.6);
+    -webkit-backdrop-filter: blur(1vw);
     backdrop-filter: blur(1vw);
     border: 0.1vw solid rgba(51, 226, 230, 0.5);
     border-radius: 2.5vw;
